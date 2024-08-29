@@ -1,8 +1,9 @@
 "use server";
-import { connectDB } from "@/lib/mongodb";
-import code_of_conduct_qna from "@/models/code-of-conduct";
+// import { connectDB } from "@/lib/mongodb";
+import code_of_conduct_qna from "models/code-of-conduct";
 import path from "path";
 import fs from "fs";
+import { connectDB } from "lib/mongodb";
 
 async function savePDFFile(params: any) {
   // Decode the Base64 string

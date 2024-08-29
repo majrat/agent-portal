@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DefaultLayout from "../../components/layouts/user-default-layout";
 import React, { useEffect, useState } from "react";
-import { acceptPriorityPrinciples, getPriorityPrinciples } from "@/actions/priority-principles";
+import { acceptPriorityPrinciples, getPriorityPrinciples } from "actions/priority-principles";
 
 
 export default function Home() {

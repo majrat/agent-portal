@@ -8,7 +8,7 @@ import "survey-core/modern.min.css";
 import { Survey } from "survey-react-ui";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-import { survey_json } from "@/models/code-of-conduct-form";
+import { survey_json } from "models/code-of-conduct-form";
 import React from "react";
 import DefaultLayout from "../../components/layouts/user-default-layout";
 import {

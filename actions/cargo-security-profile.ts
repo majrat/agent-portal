@@ -1,6 +1,9 @@
 "use server";
-import { connectDB } from "@/lib/mongodb";
-import cargo_security_profile from "@/models/cargo-security-profile";
+
+import { connectDB } from "lib/mongodb";
+import cargo_security_profile from "models/cargo-security-profile";
+
+
 
 export const add_cargo_security_profile = async (values: any) => {
   const { user_id, answers, questions } = values;

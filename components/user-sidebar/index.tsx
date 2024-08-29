@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SidebarItem from "./sidebar-item";
-import useLocalStorage from "@/hooks/use-local-storage";
+import useLocalStorage from "hooks/use-local-storage";
 import ClickOutside from "../click-outside";
 
 interface SidebarProps {

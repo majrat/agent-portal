@@ -2,11 +2,11 @@
 import { FormEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { register } from "@/actions/register";
+import { register } from "actions/register";
 import React from "react";
 import Image from "next/image";
-import Breadcrumb from "@/components/breadcrumbs/breadcrumb";
-import DefaultLayout from "@/components/layouts/user-default-layout";
+import Breadcrumb from "components/breadcrumbs/breadcrumb";
+import DefaultLayout from "components/layouts/user-default-layout";
 
 const SignUp: React.FC = () => {
   const [error, setError] = useState<string>();

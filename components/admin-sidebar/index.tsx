@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import SidebarItem from "./sidebar-item";
 import ClickOutside from "../click-outside";
-import useLocalStorage from "@/hooks/use-local-storage";
+import useLocalStorage from "hooks/use-local-storage";
 
 interface SidebarProps {
   sidebarOpen: boolean;

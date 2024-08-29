@@ -1,6 +1,6 @@
 "use server";
-import { connectDB } from "@/lib/mongodb";
-import forms from "@/models/forms";
+import { connectDB } from "lib/mongodb";
+import forms from "models/forms";
 
 export const post_forms = async (values: any) => {
   const data = values;

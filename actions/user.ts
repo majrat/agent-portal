@@ -1,6 +1,6 @@
 "use server";
-import { connectDB } from "@/lib/mongodb";
-import user_model from "@/models/user";
+import { connectDB } from "lib/mongodb";
+import user_model from "models/user";
 
 export const getAllusers = async () => {
   try {

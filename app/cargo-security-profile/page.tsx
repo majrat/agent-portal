@@ -1,5 +1,5 @@
 "use client";
-import DefaultLayout from "@/components/layouts/user-default-layout";
+import DefaultLayout from "components/layouts/user-default-layout";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
@@ -9,13 +9,13 @@ import "survey-core/modern.min.css";
 import { Survey } from "survey-react-ui";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-import { survey_json } from "@/models/cargo-security-profile-form";
+import { survey_json } from "models/cargo-security-profile-form";
 import {
-  addAssessmentQnA,
-  getAssessmentQnA,
+  add_cargo_security_profile,
+  get_cargo_security_profile,
 } from "../../actions/cargo-security-profile";
-import { CargoSecurityProfileType } from "@/types/cargo-security-profile";
-import { ErrorResponse } from "@/types/error-response";
+import { CargoSecurityProfileType } from "types/cargo-security-profile";
+import { ErrorResponse } from "types/error-response";
 
 export default function Assessment() {
   const { status } = useSession();
@@ -80,7 +80,7 @@ export default function Assessment() {
 
   useEffect(() => {
     async function fetchData() {
-      return await getAssessmentQnA(data?.user?.id);
+      return await get_cargo_security_profile(data?.user?.id);
     }
     fetchData().then((response) => setcheckIfAnswered(response));
   }, [data]);
@@ -90,7 +90,7 @@ export default function Assessment() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addAssessmentQnA({
+  await add_cargo_security_profile({
     user_id: user_id,
     answers: answers,
     questions: questions,

@@ -3,8 +3,8 @@ import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import DefaultLayout from "@/components/layouts/user-default-layout";
-import CardDataStats from "@/components/card-data-stats";
+import DefaultLayout from "components/layouts/user-default-layout";
+import CardDataStats from "components/card-data-stats";
 
 export default function Home() {
   const { status, data } = useSession();

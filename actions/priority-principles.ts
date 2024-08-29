@@ -1,6 +1,6 @@
 "use server";
-import { connectDB } from "@/lib/mongodb";
-import priority_principles from "@/models/priority-principles";
+import { connectDB } from "lib/mongodb";
+import priority_principles from "models/priority-principles";
 
 export const acceptPriorityPrinciples = async (values: any) => {
   const { user_id, accepted } = values;

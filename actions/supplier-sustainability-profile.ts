@@ -1,6 +1,6 @@
 "use server";
-import { connectDB } from "@/lib/mongodb";
-import SupplierSustainabilityProfile from "@/models/supplier-sustainability-profile-qna";
+import { connectDB } from "lib/mongodb";
+import SupplierSustainabilityProfile from "models/supplier-sustainability-profile-qna";
 
 export const addSupplierSustainabilityProfile = async (values: any) => {
   const { user_id, answers, questions } = values;

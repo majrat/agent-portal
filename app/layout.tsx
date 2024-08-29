@@ -6,7 +6,8 @@ import "@/css/style.css";
 import { Provider } from "./provider";
 import "./globals.css";
 import { useEffect, useState } from "react";
-import Loader from "@/components/common/Loader";
+import Loader from "components/common/loader";
+// import Loader from "@/components/common/Loader";
 
 export default function RootLayout({
   children,

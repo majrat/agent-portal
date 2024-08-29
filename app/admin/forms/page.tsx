@@ -1,8 +1,8 @@
 "use client";
-import { getAllusers, userPercentageChange } from "@/actions/user";
-import CardDataStats from "@/components/card-data-stats";
-import DefaultLayout from "@/components/layouts/admin-default-layout";
-import { Agent } from "@/types/package";
+import { getAllusers, userPercentageChange } from "actions/user";
+import CardDataStats from "components/card-data-stats";
+import DefaultLayout from "components/layouts/admin-default-layout";
+import { Agent } from "types/package";
 import { Metadata } from "next";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";

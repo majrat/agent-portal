@@ -1,50 +1,21 @@
 "use client";
-import { getAllusers, userPercentageChange } from "@/actions/user";
-import CardDataStats from "@/components/card-data-stats";
-import DefaultLayout from "@/components/layouts/admin-default-layout";
-import { Agent } from "@/types/package";
+// import { getAllusers, userPercentageChange } from "@/actions/user";
+// import CardDataStats from "@/components/card-data-stats";
+// import DefaultLayout from "@/components/layouts/admin-default-layout";
+// import { Agent } from "@/types/package";
 import { Metadata } from "next";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import DefaultLayout from "components/layouts/user-default-layout";
+import { Agent } from "../../../types/package";
 
 export default function Dashboard() {
   const { status, data } = useSession();
   const agentData: Agent[] = [
-    {
-      image: "/images/product/product-01.png",
-      name: "Apple Watch Series 7",
-      category: "Electronics",
-      price: 296,
-      sold: 22,
-      profit: 45,
-    },
-    {
-      image: "/images/product/product-02.png",
-      name: "Macbook Pro M1",
-      category: "Electronics",
-      price: 546,
-      sold: 12,
-      profit: 125,
-    },
-    {
-      image: "/images/product/product-03.png",
-      name: "Dell Inspiron 15",
-      category: "Electronics",
-      price: 443,
-      sold: 64,
-      profit: 247,
-    },
-    {
-      image: "/images/product/product-04.png",
-      name: "HP Probook 450",
-      category: "Electronics",
-      price: 499,
-      sold: 72,
-      profit: 103,
-    },
+    
   ];
   const showSession = () => {
     if (status === "authenticated" && data.user.role === "ADMIN") {
@@ -84,7 +55,7 @@ export default function Dashboard() {
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                     <div className="h-12.5 w-15 rounded-md">
                       <Image
-                        src={product.image}
+                        src={product.image || "public/images/user/user-svgrepo-com.svg"}
                         width={60}
                         height={50}
                         alt="Product"
@@ -97,21 +68,21 @@ export default function Dashboard() {
                 </div>
                 <div className="col-span-2 hidden items-center sm:flex">
                   <p className="text-sm text-black dark:text-white">
-                    {product.category}
+                   test
                   </p>
                 </div>
                 <div className="col-span-1 flex items-center">
                   <p className="text-sm text-black dark:text-white">
-                    ${product.price}
+                    test
                   </p>
                 </div>
                 <div className="col-span-1 flex items-center">
                   <p className="text-sm text-black dark:text-white">
-                    {product.sold}
+                    test
                   </p>
                 </div>
                 <div className="col-span-1 flex items-center">
-                  <p className="text-sm text-meta-3">${product.profit}</p>
+                  <p className="text-sm text-meta-3">$</p>
                 </div>
               </div>
             ))}
