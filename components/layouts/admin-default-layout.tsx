@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, ReactNode } from "react";
-import Header from "../Header";
+import Header from "../header/header";
 import Sidebar from "../admin-sidebar";
 
 export default function DefaultLayout({

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import GoToAdminPanel from "./go-to-admin-panel";
 import DarkModeSwitcher from "./dark-mode-switcher";
 import Dropdownuser from "./dropdown-user";
+import GoToAdminPanel from "./go-to-admin-panel";
 
 
 const Header = (props: {
