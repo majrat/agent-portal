@@ -33,7 +33,7 @@ export default function Dashboard() {
                 <p className="font-medium">Agent Name</p>
               </div>
               <div className="col-span-2 hidden items-center sm:flex">
-                <p className="font-medium">Category</p>
+                <p className="font-medium">E-MAIL</p>
               </div>
               <div className="col-span-1 flex items-center">
                 <p className="font-medium">Price</p>
