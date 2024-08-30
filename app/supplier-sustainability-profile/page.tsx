@@ -10,9 +10,12 @@ import { Model } from "survey-core";
 import { useCallback } from "react";
 import { surveyJson } from "../../models/supplier-sustainability-profile-form";
 import React from "react";
-import { getQuestionaireQnA, addQuestionaireQnA } from '../../actions/supplier-sustainability-profile';
-import DefaultLayout from "../../components/layouts/user-default-layout";
+import {
+  getSupplierSustainabilityProfile,
+  addSupplierSustainabilityProfile,
+} from "../../actions/supplier-sustainability-profile";
 
+import DefaultLayout from "../../components/layouts/user-default-layout";
 
 export default function Questionaire() {
   const { status } = useSession();
@@ -88,7 +91,7 @@ export default function Questionaire() {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      return await getQuestionaireQnA(data?.user?.id);
+      return await getSupplierSustainabilityProfile(data?.user?.id);
     }
     fetchData().then((response) => setcheckIfAnswered(response));
   }, [data]);
@@ -97,7 +100,7 @@ export default function Questionaire() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addQuestionaireQnA({
+  await addSupplierSustainabilityProfile({
     user_id: user_id,
     answers: answers,
     questions: questions,
