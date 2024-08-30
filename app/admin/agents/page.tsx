@@ -30,7 +30,7 @@ export default function Dashboard() {
 
             <div className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
               <div className="col-span-3 flex items-center">
-                <p className="font-medium">Product Name</p>
+                <p className="font-medium">Agent Name</p>
               </div>
               <div className="col-span-2 hidden items-center sm:flex">
                 <p className="font-medium">Category</p>
