@@ -24,6 +24,7 @@ const SignUp: React.FC = () => {
     if (r?.error) {
       setError(r.error);
     } else {
+      console.log("user created successfully ===> ", r?.success)
       return router.push("/login");
     }
   };

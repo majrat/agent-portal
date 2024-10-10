@@ -25,7 +25,10 @@ export const register = async (values: any) => {
         email,
         password: hashedPassword,
       });
-      return await user.save();
+      await user.save();
+      return {
+        success: "New User created"
+      }
     }
     return {
       error: "Wrong Organisation Code",
