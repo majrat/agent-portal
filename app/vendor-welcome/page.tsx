@@ -5,28 +5,34 @@ import Image from "next/image";
 import Link from "next/link";
 import DefaultLayout from "components/layouts/user-default-layout";
 import { useEffect, useState } from "react";
-// import {
-//   acceptVendorWelcome,
-//   getVendorWelcome,
-// } from "@/actions/vendor-welcome";
+import {
+  add_vendor_welcome,
+  get_vendor_welcome,
+} from "../../actions/vendor-welcome";
 
 export default function Home() {
   const { status, data } = useSession();
-  const [Accepted, setAccepted] = useState();
+  const [Agreed, setAgreed] = useState<boolean>(false);
+  console.log("user===> ", data?.user?.id);
   const handleAcceptSubmit = async () => {
-    const acceptSubmitData = { user_id: data?.user?.id, accepted: true };
+    const acceptSubmitData = { user_id: data?.user?.id };
     console.log("acceptSubmitData", acceptSubmitData);
-    // await acceptVendorWelcome(acceptSubmitData).then(() => {
-    //   redirect("/priority-principles");
-    // });
+    await add_vendor_welcome(acceptSubmitData)
+      .then(() => {
+        redirect("/priority-principles");
+      })
+      .catch((e) => console.log(e));
   };
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     return await getVendorWelcome(data?.user?.id);
-  //   }
-  //   fetchData().then((response) => setAccepted(response.accepted));
-  // }, [data]);
-  console.log("Accepted=", Accepted);
+  useEffect(() => {
+    async function fetchData() {
+      return await get_vendor_welcome(data?.user?.id);
+    }
+    fetchData().then((response) => {
+      console.log("response====>", response);
+      setAgreed(response?.agreed);
+    });
+  }, [data]);
+  console.log("Accepted=", Agreed);
   const showSession = () => {
     if (status === "authenticated") {
       return (
@@ -127,7 +133,7 @@ export default function Home() {
             PHYSICAL OFFICES OF PRIORITY WORLDWIDE
           </h2>
           <ul className="list-disc mx-12">
-            <li className="text-lg font-bold">Canada</li> 
+            <li className="text-lg font-bold">Canada</li>
             <span>Montreal</span>
             <br />
             <li className="text-lg font-bold mt-4">United States</li>
@@ -139,9 +145,9 @@ export default function Home() {
             <span>Sydney</span>
             <li className="text-lg font-bold mt-4">United Arab Emirates</li>
             <span>Dubai</span>
-            <li className="text-lg font-bold mt-4">Bosnia  </li>
+            <li className="text-lg font-bold mt-4">Bosnia </li>
             <span>Tuzla</span>
-            <li className="text-lg font-bold mt-4">Mali  </li>
+            <li className="text-lg font-bold mt-4">Mali </li>
             <span>Bamako</span>
             <li className="text-lg font-bold mt-4">Niger</li>
             <span>Niamey</span>
@@ -159,19 +165,9 @@ export default function Home() {
             <span>Bangui</span>
             <li className="text-lg font-bold mt-4">Tanzania</li>
             <span>Dar Es Salam</span>
-            
           </ul>
           <div className="relative">
-            {true ? (
-              // {false ? (
-              <Link
-              href="priority-principles"
-              // onClick={handleAcceptSubmit}
-                className="fixed bottom-9 right-9 bg-slate-600/80 px-3 py-2 font-extrabold text-white rounded-2xl"
-              >
-                Accept & Continue
-              </Link>
-            ) : (
+            {Agreed ? (
               <div className="fixed bottom-9 right-9 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -180,9 +176,9 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -191,6 +187,14 @@ export default function Home() {
                 </svg>
                 <p>Done</p>
               </div>
+            ) : (
+              // {false ? (
+              <p
+                onClick={handleAcceptSubmit}
+                className="fixed bottom-9 right-9 bg-slate-600/80 px-3 py-2 font-extrabold cursor-pointer text-white rounded-2xl"
+              >
+                Accept & Continue
+              </p>
             )}
           </div>
         </div>

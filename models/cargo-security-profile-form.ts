@@ -3,7 +3,7 @@ export const survey_json = {
   "completedHtml": "<h3>Assessment completed. Thank you</h3>",
   "completedHtmlOnCondition": [
     {
-      "html": "<h3>Thank you for your participation</h3> <h4>We are glad that you love our product and service. Your ideas and suggestions will help us make it even better.</h4>",
+      "html": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",
     },
     {
       "html": "<h3>Thank you for your participation</h3> <h4>We are glad that you shared your ideas with us. They will help us make our product and service better.</h4>",

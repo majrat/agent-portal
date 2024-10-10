@@ -70,7 +70,7 @@ export default function Questionaire() {
                   Already Answered
                 </h2>
                 <Link
-                  href="/codeOfConduct"
+                  href="/code-of-conduct"
                   className="bg-slate-700 text-gray hover:bg-slate-800 px-40 py-3 text-xl"
                 >
                   Next
