@@ -46,8 +46,6 @@ export default function Dashboard() {
                   ? "0"
                   : userPercentageChangeData + ""
               }
-              red={Number(userPercentageChangeData) < 0 || false}
-              green={Number(userPercentageChangeData) > 0 || false}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +68,6 @@ export default function Dashboard() {
               big_txt="Forms Completed"
               small_txt="no. of agrents"
               status_txt="1"
-              red
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +91,6 @@ export default function Dashboard() {
               big_txt="Forms Not Completed"
               small_txt="no. of agents"
               status_txt="1"
-              red
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
