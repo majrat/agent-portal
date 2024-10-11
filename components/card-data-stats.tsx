@@ -5,9 +5,7 @@ interface CardDataStatsProps {
   small_txt?: string;
   big_txt?: string;
   status_txt?: string;
-  green?: boolean;
-  blue?: boolean;
-  red?: boolean;
+  color?: string;
   page_link?: string;
   children: ReactNode;
 }
@@ -16,9 +14,7 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   small_txt,
   big_txt,
   status_txt,
-  green,
-  blue,
-  red,
+  color,
   children,
   page_link,
 }) => {
@@ -40,8 +36,8 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
 
         <span
           className={`flex items-center gap-1 text-sm font-medium text-end ${
-            green && "text-meta-3"
-          } ${blue && "text-meta-5"} ${red && "text-red"} `}
+            color === "green" && "text-meta-3"
+          } ${color === "blue" && "text-meta-5"} ${color === "red" && "text-red"} `}
         >
           {status_txt}
 

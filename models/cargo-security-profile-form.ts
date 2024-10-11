@@ -1,6 +1,6 @@
 export const survey_json = {
   "title": "CTPAT/PIP BUSINESS PARTNER ASSESSMENT",
-  "completedHtml": "<h3>Assessment completed. Thank you</h3>",
+  "completedHtml": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",
   "completedHtmlOnCondition": [
     {
       "html": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",

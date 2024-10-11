@@ -3,8 +3,6 @@
 import { connectDB } from "lib/mongodb";
 import cargo_security_profile from "models/cargo-security-profile";
 
-
-
 export const add_cargo_security_profile = async (values: any) => {
   const { user_id, answers, questions } = values;
 
@@ -37,18 +35,21 @@ export const get_cargo_security_profile = async (id: any) => {
     const cargo_security_profile_founds = await cargo_security_profile.findOne({
       user_id: id,
     });
-    // if (!cargo_security_profile_founds) {
-    //   console.log("!assess_already_answered", cargo_security_profile_founds);
-    //   return {
-    //     statusCode: 404,
-    //     error: "No Questions exists!",
-    //   };
-    // }
+    if (!cargo_security_profile_founds) {
+      console.log("!assess_already_answered", cargo_security_profile_founds);
+      return {
+        exists: false,
+        error: "No Questions exists!",
+      };
+    }
     const cargo_security_profile_found = JSON.parse(
       JSON.stringify(cargo_security_profile_founds)
     );
     console.log("assessAlreadyAnswered", cargo_security_profile_found);
-    return cargo_security_profile_found;
+    return {
+      exists: true,
+      data: cargo_security_profile_found,
+    };
   } catch (e) {
     console.log(e);
   }

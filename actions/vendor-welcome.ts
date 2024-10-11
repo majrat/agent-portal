@@ -2,8 +2,8 @@
 import { connectDB } from "lib/mongodb";
 import vendor_welcome from "models/vendor-welcome";
 
-export const get_vendor_welcome = async (values: any) => {
-  const { user_id } = values;
+export const get_vendor_welcome = async (user_id: any) => {
+  console.log("values==>",user_id)
   try {
     await connectDB();
     const vendor_welcome_found = await vendor_welcome.findOne({ user_id });
@@ -40,9 +40,9 @@ export const add_vendor_welcome = async (values: any) => {
 
     const user = new vendor_welcome({
       user_id,
-      agreed: true,
+      accepted: true,
     });
-    
+
     await user.save();
     return {
       success: "saved",

@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
 import mongoose, { Schema, model } from "mongoose";
 
-export interface type_of_vendor_welcome {
+export interface type_of_cargo_security_program {
   _id: String;
   accepted: Boolean;
   user_id: Schema.Types.ObjectId;
@@ -9,7 +9,7 @@ export interface type_of_vendor_welcome {
   updated_at: Date;
 }
 
-const vendor_welcome_schema = new Schema<type_of_vendor_welcome>(
+const cargo_security_program_schema = new Schema<type_of_cargo_security_program>(
   {
     accepted: {
       type: Boolean,
@@ -27,7 +27,7 @@ const vendor_welcome_schema = new Schema<type_of_vendor_welcome>(
   }
 );
 
-const vendor_welcome =
-  mongoose.models?.vendor_welcome ||
-  model<type_of_vendor_welcome>("vendor_welcome", vendor_welcome_schema);
-export default vendor_welcome;
+const cargo_security_program =
+  mongoose.models?.cargo_security_program ||
+  model<type_of_cargo_security_program>("cargo_security_program", cargo_security_program_schema);
+export default cargo_security_program;

@@ -5,17 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import DefaultLayout from "../../components/layouts/user-default-layout";
 import React, { useEffect, useState } from "react";
-import { acceptPriorityPrinciples, getPriorityPrinciples } from "actions/priority-principles";
-
+import {
+  acceptPriorityPrinciples,
+  getPriorityPrinciples,
+} from "actions/priority-principles";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const { status, data } = useSession();
+  const router = useRouter();
   const [Accepted, setAccepted] = useState();
   const handleAcceptSubmit = async () => {
     const acceptSubmitData = { user_id: data?.user?.id, accepted: true };
     console.log("acceptSubmitData", acceptSubmitData);
     await acceptPriorityPrinciples(acceptSubmitData);
-    redirect("/priority-principles");
+    router.push("/priority-principles");
   };
   useEffect(() => {
     async function fetchData() {
@@ -134,35 +138,56 @@ export default function Home() {
             </li>
           </ul>
           <div className="relative">
-            {true ? (
-              // {false ? (
+            {Accepted ? (
+              <>
+                <div className="fixed bottom-9 right-22 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                  <p>Accepted</p>
+                </div>
+                <div className="fixed bottom-9 right-9 bg-green-600/80 cursor-pointer hover:bg-green-800 px-3 py-2 font-bold text-white rounded-2xl flex">
+                  <Link href="/vendor-profile">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M7 7l5 5l-5 5" />
+                      <path d="M13 7l5 5l-5 5" />
+                    </svg>
+                  </Link>
+                </div>
+              </>
+            ) : (
               <Link
-              href="/vendor-profile"
-                // onClick={handleAcceptSubmit}
+                href="/vendor-profile"
+                onClick={handleAcceptSubmit}
                 className="fixed bottom-9 right-9 bg-slate-600/80 px-3 py-2 font-extrabold text-white rounded-2xl"
               >
                 Accept & Continue
               </Link>
-            ) : (
-              <div className="fixed bottom-9 right-9 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-                  <path d="M9 12l2 2l4 -4" />
-                </svg>
-                <p>Done</p>
-              </div>
             )}
           </div>
         </div>

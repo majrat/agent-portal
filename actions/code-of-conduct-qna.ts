@@ -60,16 +60,23 @@ export const addCodeOfConductQnA = async (values: any) => {
 export const getCodeOfConductQnA = async (id: any) => {
   try {
     await connectDB();
-    const codeOfConductQnAFounds = await code_of_conduct_qna.find({ user_id: id });
+    const codeOfConductQnAFounds = await code_of_conduct_qna.findOne({
+      user_id: id,
+    });
     if (!codeOfConductQnAFounds) {
       return {
+        exists: false,
         error: "No Questions exists!",
       };
     }
+    console.log("cod==> ", codeOfConductQnAFounds)
     const codeOfConductQnAFound = JSON.parse(
       JSON.stringify(codeOfConductQnAFounds)
     );
-    return codeOfConductQnAFound;
+    return {
+      exists: true,
+      data: codeOfConductQnAFound,
+    };
   } catch (e) {
     console.log(e);
   }

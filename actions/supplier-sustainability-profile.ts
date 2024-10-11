@@ -35,6 +35,7 @@ export const getSupplierSustainabilityProfile = async (id: any) => {
       await SupplierSustainabilityProfile.find({ user_id: id });
     if (!SupplierSustainabilityProfileFounds) {
       return {
+        exists: false,
         error: "No Questions exists!",
       };
     }
@@ -42,7 +43,10 @@ export const getSupplierSustainabilityProfile = async (id: any) => {
       JSON.stringify(SupplierSustainabilityProfileFounds)
     );
     console.log(SupplierSustainabilityProfileFound);
-    return SupplierSustainabilityProfileFound;
+    return {
+      exists: true,
+      data: SupplierSustainabilityProfileFound,
+    };
   } catch (e) {
     console.log(e);
   }

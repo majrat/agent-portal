@@ -13,7 +13,7 @@ const GoToAdminPanel = () => {
       <li>
         <Link
           href={pathname?.includes("/admin/") ? `/` : `/admin/dashboard`}
-          className="relative flex w-40 h-8 items-center justify-evenly rounded-full border-[0.5px] border-stroke hover:bg-meta-4 hover:text-white bg-gray dark:border-strokedark dark:bg-meta-4 dark:text-gray dark:hover:text-meta-4 dark:hover:bg-gray"
+          className="relative flex w-40 h-8 items-center justify-evenly rounded-full border-[0.5px] text-stone-900 border-stroke hover:bg-meta-4 hover:text-white bg-gray dark:border-strokedark dark:bg-meta-4 dark:text-gray dark:hover:text-meta-4 dark:hover:bg-gray"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
