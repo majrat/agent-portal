@@ -32,7 +32,7 @@ export const getSupplierSustainabilityProfile = async (id: any) => {
   try {
     await connectDB();
     const SupplierSustainabilityProfileFounds =
-      await SupplierSustainabilityProfile.find({ user_id: id });
+      await SupplierSustainabilityProfile.findOne({ user_id: id });
     if (!SupplierSustainabilityProfileFounds) {
       return {
         exists: false,
