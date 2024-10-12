@@ -9,18 +9,17 @@ export const getAllusers = async () => {
       role: "USER",
     });
     if (!usersFound) {
-      return {
-        error: "No users exists!",
-      };
+      throw new Error("No users exists!");
     }
     const allusersFound = JSON.parse(JSON.stringify(usersFound));
-    // console.log(allusersFound);
-    return allusersFound;
-  } catch (e) {
-    console.log(e);
     return {
-      error: `Something Went Wrong: Info: ${e}`,
+      success: true,
+      message: "User data found",
+      data: allusersFound,
     };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };
 
@@ -66,21 +65,18 @@ export const userPercentageChange = async () => {
       createdAt: { $gte: startOfCurrentMonth, $lt: startOfNextMonth },
     });
 
-    // console.log("previousMonthCount====> ", previousMonthCount);
-    // console.log("currentMonthCount====> ", currentMonthCount);
     // Calculate the change
     const change = currentMonthCount - previousMonthCount;
 
     // Calculate the percentage change
     const percentageChange = (change / previousMonthCount) * 100 || 0; // Handle division by zero
-
-    console.log(`Percentage change: ${percentageChange.toFixed(2)}%`);
-
-    return percentageChange.toFixed(2) + "";
-  } catch (error) {
-    console.error("Error calculating percentage change:", error);
     return {
-      error: `Something Went Wrong: Info: ${error}`,
+      success: true,
+      message: "Calculated the percentage change",
+      data: percentageChange.toFixed(2) + "",
     };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

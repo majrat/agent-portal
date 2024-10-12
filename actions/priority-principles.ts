@@ -8,32 +8,45 @@ export const acceptPriorityPrinciples = async (values: any) => {
   try {
     await connectDB();
 
-    const addPriorityPrinciplesFound = await priority_principles.findOne({ user_id });
+    const addPriorityPrinciplesFound = await priority_principles.findOne({
+      user_id,
+    });
     if (addPriorityPrinciplesFound) {
-      return {
-        error: "Already answered!",
-      };
+      throw new Error("Already answered!");
     }
 
     const newPriorityPrinciples = new priority_principles({
       user_id,
-      accepted
+      accepted,
     });
 
     await newPriorityPrinciples.save();
-  } catch (e) {
-    console.log(e);
+    return {
+      success: true,
+      message: "Priority principles saved",
+    };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };
 
 export const getPriorityPrinciples = async (id: any) => {
   try {
     await connectDB();
-    const PriorityPrinciplesFounds = await priority_principles.findOne({ user_id: id });
-    const PriorityPrinciplesFound = JSON.parse(JSON.stringify(PriorityPrinciplesFounds));
-    console.log("PriorityPrinciplesFound===>", PriorityPrinciplesFound);
-    return PriorityPrinciplesFound;
-  } catch (e) {
-    console.log(e);
+    const PriorityPrinciplesFounds = await priority_principles.findOne({
+      user_id: id,
+    });
+    const PriorityPrinciplesFound = JSON.parse(
+      JSON.stringify(PriorityPrinciplesFounds)
+    );
+    return {
+      success: true,
+      message: "Priority principles saved",
+      data: PriorityPrinciplesFound,
+    };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

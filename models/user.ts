@@ -30,7 +30,6 @@ const user_schema = new Schema<user_document>(
     org_code: {
       type: String,
       required: [true, "Organisation Code is Required"],
-      //unique: true,
     },
     password: {
       type: String,

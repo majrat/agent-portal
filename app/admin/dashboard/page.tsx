@@ -2,15 +2,13 @@
 import { getAllusers, userPercentageChange } from "actions/user";
 import CardDataStats from "components/card-data-stats";
 import DefaultLayout from "components/layouts/admin-default-layout";
-import { Metadata } from "next";
-import { signOut, useSession } from "next-auth/react";
-import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Dashboard() {
+  const [error, seterror] = useState<string>("");
   const { status, data } = useSession();
-  console.log("useSession()======> ", useSession());
   const [users, setusers] = useState([]);
   const [userPercentageChangeData, setuserPercentageChangeData] = useState<
     string | { error: string }
@@ -21,15 +19,17 @@ export default function Dashboard() {
       // You can await here
       return await getAllusers();
     }
-    fetchuserData().then((response) => setusers(response));
+    fetchuserData()
+      .then((response) => setusers(response?.data))
+      .catch((e) => seterror(`${e}`));
 
     async function fetchuserPercentageChangeData() {
       // You can await here
       return await userPercentageChange();
     }
-    fetchuserPercentageChangeData().then((response) =>
-      setuserPercentageChangeData(response)
-    );
+    fetchuserPercentageChangeData()
+      .then((response) => setuserPercentageChangeData(response?.data))
+      .catch((e) => seterror(`${e}`));
   }, []);
 
   const showSession = () => {
@@ -37,6 +37,7 @@ export default function Dashboard() {
       return (
         <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
           <h3 className="pb-4 text-lg">Summary:</h3>
+          {error && <p className="text-red">{error}</p>}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
             <CardDataStats
               big_txt="Total No. of Agents"

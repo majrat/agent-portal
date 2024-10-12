@@ -31,55 +31,69 @@ export default function Home() {
     checkIfCargoSecurityProfileAnswered,
     setcheckIfCargoSecurityProfileAnswered,
   ] = useState<boolean | undefined>(false);
+  const [error, seterror] = useState<string>("");
 
   useEffect(() => {
     async function fetchVendorWelcomeData() {
       return await get_vendor_welcome(data?.user?.id);
     }
-    fetchVendorWelcomeData().then((response) => {
-      console.log("response====>", response);
-      setVendorWelcomeAccepted(response?.accepted);
-    });
+    fetchVendorWelcomeData()
+      .then((response) => {
+        setVendorWelcomeAccepted(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
 
     async function fetchPriorityPrincipleData() {
       return await getPriorityPrinciples(data?.user?.id);
     }
-    fetchPriorityPrincipleData().then((response) => {
-      console.log("PriorityPrincipleAcceptedresponse====>", response);
-      setPriorityPrincipleAccepted(response?.accepted);
-    });
+    fetchPriorityPrincipleData()
+      .then((response) => {
+        setPriorityPrincipleAccepted(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
 
     async function fetchCargoSecurityProgram() {
       return await get_cargo_security_program(data?.user?.id);
     }
-    fetchCargoSecurityProgram().then((response) => {
-      console.log("CargoSecurityProgram response====>", response);
-      setCargoSecurityProgramAccepted(response?.accepted);
-    });
+    fetchCargoSecurityProgram()
+      .then((response) => {
+        setCargoSecurityProgramAccepted(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
 
     async function fetchCodeOfConductQnAData() {
       return await getCodeOfConductQnA(data?.user?.id);
     }
-    fetchCodeOfConductQnAData().then((response) => {
-      console.log("CodeOfConductQnA response====>", response);
-      setcheckIfCodeOfConductAnswered(response?.exists);
-    });
+    fetchCodeOfConductQnAData()
+      .then((response) => {
+        setcheckIfCodeOfConductAnswered(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
 
     async function fetchSupplierSustainabilityProfileData() {
       return await getSupplierSustainabilityProfile(data?.user?.id);
     }
-    fetchSupplierSustainabilityProfileData().then((response) => {
-      console.log("SupplierSustainabilityProfile response====>", response);
-      setcheckIfSupplierSustainabilityProfileAnswered(response?.exists);
-    });
+    fetchSupplierSustainabilityProfileData()
+      .then((response) => {
+        setcheckIfSupplierSustainabilityProfileAnswered(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
 
     async function fetchCargoSecurityProfileData() {
       return await get_cargo_security_profile(data?.user?.id);
     }
-    fetchCargoSecurityProfileData().then((response) => {
-      console.log("CargoSecurityProfile response====>", response);
-      setcheckIfCargoSecurityProfileAnswered(response?.exists);
-    });
+    fetchCargoSecurityProfileData()
+      .then(
+        (response: {
+          success:
+            | boolean
+            | ((prevState: boolean | undefined) => boolean | undefined)
+            | undefined;
+        }) => {
+          setcheckIfCargoSecurityProfileAnswered(response?.success);
+        }
+      )
+      .catch((e) => seterror(`${e}`));
   }, [data]);
   const showSession = () => {
     if (status === "authenticated") {
@@ -116,6 +130,7 @@ export default function Home() {
             {'" '}The values set our path.. The people make it happen.. Our
             culture sets us apart..{' "'}
           </p>
+          {error && <p className="text-red">Error: {error}</p>}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-4 pb-4">
             <CardDataStats
               small_txt={email}

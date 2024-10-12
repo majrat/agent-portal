@@ -8,7 +8,6 @@ import { connectDB } from "lib/mongodb";
 async function savePDFFile(params: any) {
   // Decode the Base64 string
   const buffer: any = Buffer.from(params.content, "base64");
-  console.log("buffer===========> ", buffer);
 
   // Define the file path
   const filePath = path.join(process.cwd(), "public", "files", params.name);
@@ -19,41 +18,40 @@ async function savePDFFile(params: any) {
   // Save the file
   fs.writeFileSync(filePath, buffer);
 
-  console.log("filePath=====> ", filePath);
   return filePath;
 }
 
 export const addCodeOfConductQnA = async (values: any) => {
-  const { user_id, answers, questions } = values;
-
   try {
-    // console.log("answers=====> ", answers.question1[0])
+    const { user_id, answers, questions } = values;
     // SAVE THE FILE IN A STORAGE
     const filePath = await savePDFFile(answers.question1[0]);
     // REASSIGN THAT FILE PATH IN QUESTION
     answers.question1 = filePath;
-    // console.log("answers=====> ", answers)
 
     await connectDB();
 
-    const addcodeOfConductQnAFound = await code_of_conduct_qna.findOne({
+    const code_of_conduct_qna_data = await code_of_conduct_qna.findOne({
       user_id,
     });
-    if (addcodeOfConductQnAFound) {
-      return {
-        error: "Code of conduct already answered!",
-      };
+    if (code_of_conduct_qna_data) {
+      throw new Error("Code of conduct already answered!");
     }
 
-    const newCodeOfConductQnA = new code_of_conduct_qna({
+    const new_code_of_conduct_qna = new code_of_conduct_qna({
       user_id,
       answers,
       questions,
     });
 
-    await newCodeOfConductQnA.save();
-  } catch (e) {
-    console.log(e);
+    await new_code_of_conduct_qna.save();
+    return {
+      success: true,
+      message: "Code of conduct saved successfully",
+    };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };
 
@@ -64,20 +62,18 @@ export const getCodeOfConductQnA = async (id: any) => {
       user_id: id,
     });
     if (!codeOfConductQnAFounds) {
-      return {
-        exists: false,
-        error: "No Questions exists!",
-      };
+      throw new Error("No Questions exists!");
     }
-    console.log("cod==> ", codeOfConductQnAFounds)
     const codeOfConductQnAFound = JSON.parse(
       JSON.stringify(codeOfConductQnAFounds)
     );
     return {
-      exists: true,
+      success: true,
+      message: "Code of conduct form found",
       data: codeOfConductQnAFound,
     };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

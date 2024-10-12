@@ -3,25 +3,25 @@ import { connectDB } from "lib/mongodb";
 import cargo_security_program from "models/cargo-security-program";
 
 export const get_cargo_security_program = async (user_id: any) => {
-  console.log("values==>",user_id)
   try {
     await connectDB();
-    const cargo_security_program_found = await cargo_security_program.findOne({ user_id });
-    if (!cargo_security_program_found) {
-      return {
-        error: "No cargo_security_program exists!",
-      };
+    const cargo_security_program_data = await cargo_security_program.findOne({
+      user_id,
+    });
+    if (!cargo_security_program_data) {
+      throw new Error("No cargo_security_program exists!");
     }
-    const cargo_security_program_founds = JSON.parse(
-      JSON.stringify(cargo_security_program_found)
+    const cargo_security_program_json = JSON.parse(
+      JSON.stringify(cargo_security_program_data)
     );
-    // console.log(cargo_security_programFound);
-    return cargo_security_program_founds;
-  } catch (e) {
-    console.log(e);
     return {
-      error: `Something Went Wrong: Info: ${e}`,
+      success: true,
+      message: "Cargo security program form found",
+      data: cargo_security_program_json,
     };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };
 
@@ -30,24 +30,25 @@ export const add_cargo_security_program = async (values: any) => {
 
   try {
     await connectDB();
-    const userFound = await cargo_security_program.findOne({ user_id });
-    if (userFound) {
-      return {
-        error: "already agreed!",
-      };
+    const cargo_security_program_data = await cargo_security_program.findOne({
+      user_id,
+    });
+    if (cargo_security_program_data) {
+      throw new Error("Already agreed!");
     }
-    console.log("values in add_cargo_security_program=========> ", values);
 
-    const user = new cargo_security_program({
+    const save_cargo_security_program = new cargo_security_program({
       user_id,
       accepted: true,
     });
 
-    await user.save();
+    await save_cargo_security_program.save();
     return {
-      success: "saved",
+      success: true,
+      message: "Cargo security program form saved",
     };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

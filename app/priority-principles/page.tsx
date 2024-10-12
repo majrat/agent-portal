@@ -14,10 +14,10 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const { status, data } = useSession();
   const router = useRouter();
-  const [Accepted, setAccepted] = useState();
+  const [Accepted, setAccepted] = useState<boolean>();
+  const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const acceptSubmitData = { user_id: data?.user?.id, accepted: true };
-    console.log("acceptSubmitData", acceptSubmitData);
     await acceptPriorityPrinciples(acceptSubmitData);
     router.push("/priority-principles");
   };
@@ -25,13 +25,15 @@ export default function Home() {
     async function fetchData() {
       return await getPriorityPrinciples(data?.user?.id);
     }
-    fetchData().then((response) => setAccepted(response?.accepted));
+    fetchData()
+      .then((response) => setAccepted(response?.success))
+      .catch((e) => seterror(`${e}`));
   }, [data]);
-  console.log("Accepted=", Accepted);
   const showSession = () => {
     if (status === "authenticated") {
       return (
         <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+          {error && <p className="text-red">{error}</p>}
           <h1 className="text-3xl pb-3"></h1>
           {/* <h1 className="text-5xl pb-4">PRIORITY WORLDWIDE</h1> */}
           <Link className="mb-3 inline-block" href="/">

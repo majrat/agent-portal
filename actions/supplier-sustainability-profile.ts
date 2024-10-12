@@ -8,12 +8,10 @@ export const addSupplierSustainabilityProfile = async (values: any) => {
   try {
     await connectDB();
 
-    const addSupplierSustainabilityProfileFound =
+    const addSupplierSustainabilityProfileData =
       await SupplierSustainabilityProfile.findOne({ user_id });
-    if (addSupplierSustainabilityProfileFound) {
-      return {
-        error: "questionaire already answered!",
-      };
+    if (addSupplierSustainabilityProfileData) {
+      throw new Error("questionaire already answered!");
     }
 
     const newSupplierSustainabilityProfile = new SupplierSustainabilityProfile({
@@ -23,31 +21,34 @@ export const addSupplierSustainabilityProfile = async (values: any) => {
     });
 
     await newSupplierSustainabilityProfile.save();
-  } catch (e) {
-    console.log(e);
+    return {
+      success: true,
+      message: "Supplier sustainability profile saved",
+    };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };
 
 export const getSupplierSustainabilityProfile = async (id: any) => {
   try {
     await connectDB();
-    const SupplierSustainabilityProfileFounds =
+    const SupplierSustainabilityProfileData =
       await SupplierSustainabilityProfile.findOne({ user_id: id });
-    if (!SupplierSustainabilityProfileFounds) {
-      return {
-        exists: false,
-        error: "No Questions exists!",
-      };
+    if (!SupplierSustainabilityProfileData) {
+      throw new Error("No Questions exists!");
     }
-    const SupplierSustainabilityProfileFound = JSON.parse(
-      JSON.stringify(SupplierSustainabilityProfileFounds)
+    const SupplierSustainabilityProfileJson = JSON.parse(
+      JSON.stringify(SupplierSustainabilityProfileData)
     );
-    console.log(SupplierSustainabilityProfileFound);
     return {
-      exists: true,
-      data: SupplierSustainabilityProfileFound,
+      success: true,
+      message: "Supplier sustainability profile found",
+      data: SupplierSustainabilityProfileJson,
     };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

@@ -14,7 +14,7 @@ export const add_cargo_security_profile = async (values: any) => {
         user_id,
       });
     if (add_cargo_security_profile_found) {
-      throw new Error("already answered!");
+      throw new Error("Already answered!");
     }
 
     const new_cargo_security_profile = new cargo_security_profile({
@@ -24,33 +24,35 @@ export const add_cargo_security_profile = async (values: any) => {
     });
 
     await new_cargo_security_profile.save();
-  } catch (e) {
-    throw e;
+    return {
+      success: true,
+      message: "Cargo security profile form saved successfully",
+    };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };
 
 export const get_cargo_security_profile = async (id: any) => {
   try {
     await connectDB();
-    const cargo_security_profile_founds = await cargo_security_profile.findOne({
+    const cargo_security_profile_data = await cargo_security_profile.findOne({
       user_id: id,
     });
-    if (!cargo_security_profile_founds) {
-      console.log("!assess_already_answered", cargo_security_profile_founds);
-      return {
-        exists: false,
-        error: "No Questions exists!",
-      };
+    if (!cargo_security_profile_data) {
+      throw new Error("No Questions exists!");
     }
-    const cargo_security_profile_found = JSON.parse(
-      JSON.stringify(cargo_security_profile_founds)
+    const cargo_security_profile_json = JSON.parse(
+      JSON.stringify(cargo_security_profile_data)
     );
-    console.log("assessAlreadyAnswered", cargo_security_profile_found);
     return {
-      exists: true,
-      data: cargo_security_profile_found,
+      success: true,
+      message: "Cargo security profile form found",
+      data: cargo_security_profile_json,
     };
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

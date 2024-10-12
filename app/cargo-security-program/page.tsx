@@ -8,36 +8,36 @@ import {
   get_cargo_security_program,
 } from "actions/cargo-security-program";
 import { redirect, useRouter } from "next/navigation";
-import { data } from "tailwindcss/defaultTheme";
 import { useSession } from "next-auth/react";
 
 export default function WelcomeLetter() {
   const { status, data } = useSession();
   const router = useRouter();
   const [Accepted, setAccepted] = useState<boolean>(false);
-  console.log("user===> ", status);
+  const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const acceptSubmitData = { user_id: data?.user?.id };
-    console.log("acceptSubmitData", acceptSubmitData);
     await add_cargo_security_program(acceptSubmitData)
       .then(() => {
         router.push("/cargo-security-profile");
       })
-      .catch((e) => console.log(e));
+      .catch((e) => seterror(`${e}`));
   };
   useEffect(() => {
     async function fetchData() {
       return await get_cargo_security_program(data?.user?.id);
     }
-    fetchData().then((response) => {
-      console.log("response====>", response);
-      setAccepted(response?.accepted);
-    });
+    fetchData()
+      .then((response) => {
+        setAccepted(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
   }, [data]);
   const showSession: any = () => {
     if (status === "authenticated") {
       return (
         <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+          {error && <p className="text-red">{error}</p>}
           <div className="grid grid-cols-3 pb-12">
             <div className="col-span-2">
               <Link className="mb-5.5 inline-block" href="/">

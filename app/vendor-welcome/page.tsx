@@ -15,26 +15,26 @@ export default function Home() {
   const { status, data } = useSession();
   const router = useRouter();
   const [Accepted, setAccepted] = useState<boolean>(false);
-  console.log("user===> ", data?.user?.id);
+  const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const acceptSubmitData = { user_id: data?.user?.id };
-    console.log("acceptSubmitData", acceptSubmitData);
     await add_vendor_welcome(acceptSubmitData)
       .then(() => {
         router.push("/priority-principles");
       })
-      .catch((e) => console.log(e));
+      .catch((e) => seterror(`${e}`));
   };
   useEffect(() => {
     async function fetchData() {
       return await get_vendor_welcome(data?.user?.id);
     }
-    fetchData().then((response) => {
-      console.log("response====>", response);
-      setAccepted(response?.accepted);
-    });
+    fetchData()
+      .then((response) => {
+        setAccepted(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
   }, [data]);
-  console.log("Accepted=", Accepted);
+
   const showSession = () => {
     if (status === "authenticated") {
       return (
@@ -55,6 +55,7 @@ export default function Home() {
               height={64}
             />
           </Link>
+          {error && <p className="text-red">{error}</p>}
           <p className="pb-3">
             Welcome to Priority Worldwide. We are a full service logistics
             provider operating around the globe.
@@ -212,7 +213,6 @@ export default function Home() {
                 </div>
               </>
             ) : (
-              // {false ? (
               <a
                 onClick={handleAcceptSubmit}
                 className="fixed bottom-9 right-9 bg-slate-600/80 px-3 py-2 font-extrabold cursor-pointer text-white rounded-2xl"

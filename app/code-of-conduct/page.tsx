@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import "survey-core/defaultV2.min.css";
 import "survey-core/modern.min.css";
@@ -17,28 +17,10 @@ import {
 } from "../../actions/code-of-conduct-qna";
 
 export default function CodeOfConduct() {
-  // State to track checkbox status
-  const [isChecked, setIsChecked] = useState(false);
-
-  // Function to handle checkbox change
-  const handleCheckboxChange = (event: {
-    target: { checked: boolean | ((prevState: boolean) => boolean) };
-  }) => {
-    setIsChecked(event.target.checked);
-  };
-
-  // Function to handle button click (for example, navigating to the next page)
-  const handleNextClick = () => {
-    if (isChecked) {
-      // Logic to navigate to the next page
-      console.log("Navigating to the next page");
-      // Example: use router.push('/next-page') if you're using Next.js routing
-    }
-  };
-
   const { status } = useSession();
   const { data } = useSession();
   const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
+  const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
@@ -49,10 +31,11 @@ export default function CodeOfConduct() {
       return await getCodeOfConductQnA(data?.user?.id);
     }
 
-    fetchData().then((response) => {
-      console.log(response);
-      setcheckIfAnswered(response?.exists);
-    });
+    fetchData()
+      .then((response) => {
+        setcheckIfAnswered(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
   }, [data]);
 
   const surveyComplete = useCallback(
@@ -69,8 +52,6 @@ export default function CodeOfConduct() {
         },
         {}
       );
-      console.log("CodeOfConduct-survey-questions=====> ", questions);
-      console.log("CodeOfConduct-survey-answers=====> ", thisSurvey.data);
       saveSurveyResults(data?.user?.id, answers, questions);
     },
     [data?.user?.id, survey]
@@ -83,6 +64,9 @@ export default function CodeOfConduct() {
       if (checkIfAnswered) {
         return (
           <div className="min-h-screen flex flex-col items-center justify-center rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+            {error && (
+              <p className="text-red">{error}</p>
+            )}
             <div className="max-w-full overflow-x-auto">
               <div className="border-b-4 border-slate-700 mb-9">
                 <h2 className="text-lg text-stone-900 sm:text-3xl font-semibold mb-1 text-center">
@@ -133,7 +117,6 @@ export default function CodeOfConduct() {
       return redirect("/login");
     }
   };
-
   return <DefaultLayout>{showSession()}</DefaultLayout>;
 }
 

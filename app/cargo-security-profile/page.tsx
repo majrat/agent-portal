@@ -14,13 +14,12 @@ import {
   add_cargo_security_profile,
   get_cargo_security_profile,
 } from "../../actions/cargo-security-profile";
-import { CargoSecurityProfileType } from "types/cargo-security-profile";
-import { ErrorResponse } from "types/error-response";
 
 export default function Assessment() {
   const { status } = useSession();
   const { data } = useSession();
   const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
+  const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
@@ -51,15 +50,17 @@ export default function Assessment() {
     async function fetchData() {
       return await get_cargo_security_profile(data?.user?.id);
     }
-    fetchData().then((response) => setcheckIfAnswered(response?.exists));
+    fetchData()
+      .then((response) => setcheckIfAnswered(response?.success))
+      .catch((e) => seterror(`${e}`));
   }, [data]);
-  console.log("+++++>>>-------->>> checkIfAnswered", checkIfAnswered);
 
   const showSession: any = () => {
     if (status === "authenticated") {
       if (checkIfAnswered) {
         return (
           <div className="min-h-screen flex flex-col items-center justify-center rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+            {error && <p className="text-red">{error}</p>}
             <div className="max-w-full overflow-x-auto">
               <div className="border-b-4 border-slate-700 mb-9">
                 <h2 className="text-lg text-stone-900 sm:text-3xl font-semibold mb-1 text-center">
@@ -103,14 +104,19 @@ export default function Assessment() {
           </div>
         );
       }
-      return <Survey model={survey} />;
+
+      return (
+        <>
+          {error && <p className="text-red">Error: {error}</p>}
+          <Survey model={survey} />
+        </>
+      );
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7">Loading...</span>;
     } else {
       return redirect("/login");
     }
   };
-
   return <DefaultLayout>{showSession()}</DefaultLayout>;
 }
 

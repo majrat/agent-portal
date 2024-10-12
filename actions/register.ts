@@ -8,15 +8,12 @@ export const register = async (values: any) => {
 
   try {
     await connectDB();
-    const userFound = await user_model.findOne({ email, org_code });
+    const userFound = await user_model.findOne({ email });
     if (userFound) {
-      return {
-        error: "User with this email or organisation code already exist!",
-      };
+      throw new Error("User with this email already exist!");
     }
-    console.log("values in register=========> ", values);
 
-    const available_org_codes = ["123456", "678901"];
+    const available_org_codes = ["123456", "678901", "1234567"];
     if (available_org_codes.includes(org_code)) {
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = new user_model({
@@ -27,13 +24,13 @@ export const register = async (values: any) => {
       });
       await user.save();
       return {
-        success: "New User created"
-      }
+        success: true,
+        message: "New agent registeration successfull",
+      };
     }
-    return {
-      error: "Wrong Organisation Code",
-    };
-  } catch (e) {
-    console.log(e);
+    throw new Error("Wrong Organisation Code");
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
   }
 };

@@ -18,13 +18,12 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // console.log(credentials);
-
         await connectDB();
-        const user = await user_model.findOne({
-          email: credentials?.email,
-        }).select("+password");
-        // console.log("auth.ts user ============>>> ", user);
+        const user = await user_model
+          .findOne({
+            email: credentials?.email,
+          })
+          .select("+password");
         if (!user) throw new Error("Wrong Email");
 
         const passwordMatch = await bcrypt.compare(
@@ -33,15 +32,12 @@ export const authOptions: NextAuthOptions = {
         );
 
         if (!passwordMatch) throw new Error("Wrong Password");
-        console.log("authorize user =======> ", user);
         return user;
       },
     }),
   ],
   callbacks: {
     jwt({ token, user }: { token: any; user: any }) {
-      console.log("||token|| in jwt callback ========> ", token);
-      console.log("||user|| in jwt callback ========> ", user);
       if (user) {
         token.role = user.role;
         token.email_verified = user.email_verified;
@@ -49,16 +45,20 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
-    session({ session, token, user }: { session: Session; token: any; user: any }) {
+    session({
+      session,
+      token,
+      user,
+    }: {
+      session: Session;
+      token: any;
+      user: any;
+    }) {
       session.user.role = token.role;
       session.user.id = token.sub;
       session.user.email_verified = token.email_verified;
       session.user.joined_date = token.joined_date;
       // Send properties to the client, like an access_token and user id from a provider.
-      // console.log("||user|| in session callback ========> ", user);
-      console.log("||session|| session callback ========> ", session);
-      // console.log("||token|| in session callback ========> ", token);
-
       return session;
     },
   },
