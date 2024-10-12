@@ -131,7 +131,7 @@ const Dropdownuser = () => {
             </li>
           </ul> */}
             <button
-              className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+              className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out text-rose-400 hover:text-rose-800 lg:text-base"
               onClick={() => {
                 signOut({ redirect: true }).then(() => {
                   router.push("/");
