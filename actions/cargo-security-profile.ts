@@ -56,3 +56,27 @@ export const get_cargo_security_profile = async (id: any) => {
     return { success: false, message: `${error}` };
   }
 };
+
+export const get_all_cargo_security_profile = async (user_role: any) => {
+  try {
+    if (user_role !== "ADMIN") {
+      throw new Error("You are not Authorized. Only Admin have access.");
+    }
+    await connectDB();
+    const cargo_security_profile_data = await cargo_security_profile.find();
+    if (!cargo_security_profile_data) {
+      throw new Error("No Questions exists!");
+    }
+    const all_cargo_security_profile_json = JSON.parse(
+      JSON.stringify(cargo_security_profile_data)
+    );
+    return {
+      success: true,
+      message: "Cargo security profile forms found",
+      data: all_cargo_security_profile_json,
+    };
+  } catch (error) {
+    console.error(error);
+    return { success: false, message: `${error}` };
+  }
+};

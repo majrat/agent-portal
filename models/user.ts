@@ -11,6 +11,7 @@ export interface user_document {
   image: string;
   role: string;
   email_verified: boolean;
+  status: Number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -47,6 +48,7 @@ const user_schema = new Schema<user_document>(
       required: [true, "verification required"],
       default: false,
     },
+    status: { type: Number, required: true, default: 1 },
   },
   {
     timestamps: true,

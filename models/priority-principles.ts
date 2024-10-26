@@ -5,6 +5,7 @@ export interface type_of_priority_principles {
   _id: String;
   user_id: Schema.Types.ObjectId;
   accepted: Boolean;
+  status: Number;
   created_at: Date;
   updated_at: Date;
 }
@@ -17,6 +18,7 @@ const priority_principles_schema = new Schema<type_of_priority_principles>(
       required: [true, "user id is Required"],
     },
     accepted: { type: Boolean, default: false },
+    status: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: true,

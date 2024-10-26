@@ -6,6 +6,7 @@ export interface type_of_code_of_conduct {
   user_id: Schema.Types.ObjectId;
   questions: Map<string, string>;
   answers: Map<string, string>;
+  status: Number;
   created_at: Date;
   updated_at: Date;
 }
@@ -19,6 +20,7 @@ const code_of_conduct_schema = new Schema<type_of_code_of_conduct>(
     },
     questions: { type: Map, of: String },
     answers: { type: Map, of: String },
+    status: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: true,

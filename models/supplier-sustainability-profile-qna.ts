@@ -6,6 +6,7 @@ export interface type_of_supplier_sustainability_profile {
   user_id: Schema.Types.ObjectId;
   questions: Map<string, string>;
   answers: Map<string, string>;
+  status: Number;
   created_at: Date;
   updated_at: Date;
 }
@@ -19,6 +20,7 @@ const supplier_sustainability_profile_schema = new Schema<type_of_supplier_susta
     },
     questions: { type: Map, of: String },
     answers: { type: Map, of: String },
+    status: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: true,

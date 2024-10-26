@@ -5,6 +5,7 @@ export interface type_of_cargo_security_program {
   _id: String;
   accepted: Boolean;
   user_id: Schema.Types.ObjectId;
+  status: Number;
   created_at: Date;
   updated_at: Date;
 }
@@ -21,6 +22,7 @@ const cargo_security_program_schema = new Schema<type_of_cargo_security_program>
       ref: "user",
       required: [true, "user id is Required"],
     },
+    status: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: true,
