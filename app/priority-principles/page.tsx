@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const { status, data } = useSession();
   const router = useRouter();
-  const [Accepted, setAccepted] = useState<boolean>();
+  const [Accepted, setAccepted] = useState<boolean>(false);
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const acceptSubmitData = { user_id: data?.user?.id, accepted: true };
@@ -26,7 +26,9 @@ export default function Home() {
       return await getPriorityPrinciples(data?.user?.id);
     }
     fetchData()
-      .then((response) => setAccepted(response?.success))
+      .then((response) => {
+        setAccepted(response?.success);
+      })
       .catch((e) => seterror(`${e}`));
   }, [data]);
   const showSession = () => {

@@ -1,5 +1,5 @@
 "use client";
-import { getAllusers } from "actions/user";
+import { getAllusers, userPercentageChange } from "actions/user";
 import CardDataStats from "components/card-data-stats";
 import DefaultLayout from "components/layouts/admin-default-layout";
 import { Agent } from "types/package";
@@ -15,34 +15,119 @@ import { getPriorityPrinciples } from "actions/priority-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
 import { get_vendor_welcome } from "actions/vendor-welcome";
 
-type userDataType = {
-  status: number;
-  _id: string;
-  email: string;
-  org_code: string;
-  password: string;
-  name: string;
-  role: string;
-  email_verified: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-  __v: number;
-};
-
 export default function Dashboard() {
   const { status, data } = useSession();
+  const [VendorWelcome, setVendorWelcome] = useState<boolean>(false);
+  const [PriorityPrinciple, setPriorityPrinciple] = useState<boolean>(false);
+  const [CargoSecurityProgram, setCargoSecurityProgram] =
+    useState<boolean>(false);
+  const [CodeOfConduct, setCodeOfConduct] = useState<boolean | undefined>(
+    false
+  );
+  const [SupplierSustainabilityProfile, setSupplierSustainabilityProfile] =
+    useState<boolean | undefined>(false);
+  const [CargoSecurityProfile, setCargoSecurityProfile] = useState([]);
   const [error, seterror] = useState<string>("");
-  const [UserData, setUserData] = useState<userDataType[] | undefined>();
+
   useEffect(() => {
+    async function fetchVendorWelcomeData() {
+      return await get_vendor_welcome(data?.user?.id);
+    }
+    fetchVendorWelcomeData()
+      .then((response) => {
+        setVendorWelcome(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchPriorityPrincipleData() {
+      return await getPriorityPrinciples(data?.user?.id);
+    }
+    fetchPriorityPrincipleData()
+      .then((response) => {
+        setPriorityPrinciple(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchCargoSecurityProgram() {
+      return await get_cargo_security_program(data?.user?.id);
+    }
+    fetchCargoSecurityProgram()
+      .then((response) => {
+        setCargoSecurityProgram(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
     async function fetchCodeOfConductQnAData() {
-      return await getAllusers();
+      return await getCodeOfConductQnA(data?.user?.id);
     }
     fetchCodeOfConductQnAData()
       .then((response) => {
-        setUserData(response.data);
+        setCodeOfConduct(response?.success);
       })
       .catch((e) => seterror(`${e}`));
-  }, []);
+
+    async function fetchSupplierSustainabilityProfileData() {
+      return await getSupplierSustainabilityProfile(data?.user?.id);
+    }
+    fetchSupplierSustainabilityProfileData()
+      .then((response) => {
+        setSupplierSustainabilityProfile(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchCargoSecurityProfileData() {
+      return await get_all_cargo_security_profile(data?.user?.role);
+    }
+
+    fetchCargoSecurityProfileData()
+      .then((response) => {
+        setCargoSecurityProfile(response?.data);
+      })
+      .catch((e) => seterror(`${e}`));
+  }, [data]);
+  const AgentSSPData: Agent[] = [
+    {
+      name: "Jauhar",
+      email: "jauhar@gmail.com",
+      status: "Pending",
+      last_updated: "12 Aug 2024",
+    },
+    {
+      name: "Naseeh",
+      email: "naseeh@gmail.com",
+      status: "Completed",
+      last_updated: "12 Jul 2024",
+    },
+  ];
+  const AgentCSPData: Agent[] = [
+    {
+      name: "Jauhar",
+      email: "jauhar@gmail.com",
+      status: "Pending",
+      last_updated: "12 Aug 2024",
+    },
+    {
+      name: "Naseeh",
+      email: "naseeh@gmail.com",
+      status: "Completed",
+      last_updated: "12 Jul 2024",
+    },
+  ];
+
+  const AgentCOCData: Agent[] = [
+    {
+      name: "Jauhar",
+      email: "jauhar@gmail.com",
+      status: "Pending",
+      last_updated: "12 Aug 2024",
+    },
+    {
+      name: "Naseeh",
+      email: "naseeh@gmail.com",
+      status: "Completed",
+      last_updated: "12 Jul 2024",
+    },
+  ];
 
   const showSession = () => {
     if (status === "authenticated" && data.user.role === "ADMIN") {
@@ -55,21 +140,21 @@ export default function Dashboard() {
                 <thead>
                   <tr className="bg-gray-2 text-left dark:bg-meta-4">
                     <th className="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
-                      Agent
+                      Form
                     </th>
                     <th className="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
-                      Joined
+                      Last Updated
                     </th>
                     <th className="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                      Verified
+                      Status
                     </th>
                     <th className="px-4 py-4 font-medium text-black dark:text-white">
-                      Forms Status
+                      Actions
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {UserData?.map((agentItem, key) => (
+                  {AgentCOCData.map((agentItem, key) => (
                     <tr key={key}>
                       <td className="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
                         <h5 className="font-medium text-black dark:text-white">
@@ -79,19 +164,21 @@ export default function Dashboard() {
                       </td>
                       <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                         <p className="text-black dark:text-white">
-                          {agentItem.createdAt.toString().split("T")[0] + ""}
+                          {agentItem.last_updated}
                         </p>
                       </td>
                       <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                        {agentItem.email_verified === true ? (
-                          <p className="bg-success text-success inline-flex rounded-full bg-opacity-10 px-3 py-1 text-sm font-medium">
-                            Verified
-                          </p>
-                        ) : (
-                          <p className="bg-warning text-warning inline-flex rounded-full bg-opacity-10 px-3 py-1 text-sm font-medium">
-                            Pending
-                          </p>
-                        )}
+                        <p
+                          className={`inline-flex rounded-full bg-opacity-10 px-3 py-1 text-sm font-medium ${
+                            agentItem.status === "Completed"
+                              ? "bg-success text-success"
+                              : // : agentItem.status === "Unpaid"
+                                // ? "bg-danger text-danger"
+                                "bg-warning text-warning"
+                          }`}
+                        >
+                          {agentItem.status}
+                        </p>
                       </td>
                       <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                         <div className="flex items-center space-x-3.5">

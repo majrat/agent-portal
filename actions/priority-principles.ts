@@ -37,14 +37,17 @@ export const getPriorityPrinciples = async (id: any) => {
     const PriorityPrinciplesFounds = await priority_principles.findOne({
       user_id: id,
     });
-    const PriorityPrinciplesFound = JSON.parse(
-      JSON.stringify(PriorityPrinciplesFounds)
-    );
-    return {
-      success: true,
-      message: "Priority principles saved",
-      data: PriorityPrinciplesFound,
-    };
+    if (PriorityPrinciplesFounds) {
+      const PriorityPrinciplesFound = JSON.parse(
+        JSON.stringify(PriorityPrinciplesFounds)
+      );
+      return {
+        success: true,
+        message: "Priority principles saved",
+        data: PriorityPrinciplesFound,
+      };
+    }
+    throw new Error("Not Agreed to Priority Principles")
   } catch (error) {
     console.error(error);
     return { success: false, message: `${error}` };

@@ -16,7 +16,7 @@ export default function Dashboard() {
 
   const handleSubmit = async (formData: FormData) => {
     const res = await send_invitation({
-      user_id: "123",
+      user_id: data?.user.id,
       first_name: formData.get("first_name"),
       last_name: formData.get("last_name"),
       email: formData.get("email"),

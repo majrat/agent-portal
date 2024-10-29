@@ -1,45 +1,39 @@
 "use client";
-import { FormEvent, useState } from "react";
-import { signIn } from "next-auth/react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import DefaultLayout from "components/layouts/user-default-layout";
-import Breadcrumb from "components/breadcrumbs/breadcrumb";
+import React from "react";
 import Image from "next/image";
+import Breadcrumb from "components/breadcrumbs/breadcrumb";
+import DefaultLayout from "components/layouts/user-default-layout";
+import { resend_invitation_code } from "../../actions/resend-invitation-code";
 
-export default function Login() {
-  const [error, setError] = useState("");
-  const router = useRouter();
+const SignUp: React.FC = () => {
+  const [error, seterror] = useState<string>("");
   const [success, setsuccess] = useState<string>("");
-
+  const router = useRouter();
+  const ref = useRef<HTMLFormElement>(null);
+  // email, org_code
   const handleSubmit = async (formData: FormData) => {
-    const res = await signIn("credentials", {
+    const r = await resend_invitation_code({
       email: formData.get("email"),
       password: formData.get("password"),
-      redirect: false,
     });
-    if (res?.error) {
-      setError(res.error as string);
-    }
-    if (res?.ok) {
-      setsuccess("Login Successful");
+    if (r?.success) {
+      ref.current?.reset();
+      setsuccess(`${r?.message}` as string);
       await new Promise((resolve) => setTimeout(resolve, 2500));
-      return router.push("/");
+      return router.push("/login");
+    } else {
+      seterror(`${r?.message}` as string);
     }
   };
-  //"Email not verified!"
+
   return (
     <DefaultLayout>
-      <Breadcrumb pageName="Login" />
+      <Breadcrumb pageName="Email Verification" />
 
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-        {success && (
-          <div className="relative ease-in-out duration-500 bg-gray-100">
-            <p className="fixed text-black inset-1 w-screen h-screen text-2xl font-bold bg-white/30 backdrop-blur-lg rounded-lg flex items-center justify-center text-center p-4 m-auto z-50">
-              {success}
-            </p>
-          </div>
-        )}
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="px-26 py-17.5 text-center">
@@ -59,7 +53,6 @@ export default function Login() {
                   height={32}
                 />
               </Link>
-
               <p className="2xl:px-20">
                 Priority Worldwide is a full service logistics provider
                 operating around the globe.
@@ -190,25 +183,24 @@ export default function Login() {
             </div>
           </div>
 
-          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
+          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:bor/*  */der-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-              <span className="mb-1.5 block font-medium">
-                Authentication Required
+              {error && <p className="text-red">{error}</p>}
+              {success && (
+                <div className="relative ease-in-out duration-500 bg-gray-100">
+                  <p className="fixed text-black inset-1 w-screen h-screen text-2xl font-bold bg-white/30 backdrop-blur-lg rounded-lg flex items-center justify-center text-center p-4 m-auto z-50">
+                    {success}
+                  </p>
+                </div>
+              )}
+              <span className="my-1.5 block font-medium">
+                Verify using the Organisation Code we mailed you
               </span>
-              <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                Sign In to Priority Worldwide
+              <h2 className="mb-9 text-xl font-bold text-black dark:text-white sm:text-title-lg">
+                Secure your Priority Worldwide Account
               </h2>
-
-              <form action={handleSubmit}>
+              <form ref={ref} action={handleSubmit}>
                 <div className="mb-4">
-                  {error && <span className="text-red mr-4">{error}</span>}
-                  {error === "Email not verified!" && (
-                    <span className="">
-                      <Link href="/verify-email" className="text-white bg-primary py-1 px-3 rounded-md hover:text-primary hover:bg-slate-300 ease-in transition">
-                        Click Here to Verify Email
-                      </Link>
-                    </span>
-                  )}
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Email
                   </label>
@@ -218,6 +210,7 @@ export default function Login() {
                       placeholder="Enter your email"
                       name="email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      required
                     />
 
                     <span className="absolute right-4 top-4">
@@ -239,8 +232,7 @@ export default function Login() {
                     </span>
                   </div>
                 </div>
-
-                <div className="mb-6">
+                <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Password
                   </label>
@@ -248,7 +240,7 @@ export default function Login() {
                     <input
                       type="password"
                       name="password"
-                      placeholder="6+ Characters, 1 Capital letter"
+                      placeholder="Enter your password"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
@@ -275,20 +267,18 @@ export default function Login() {
                     </span>
                   </div>
                 </div>
-
                 <div className="mb-5">
                   <input
                     type="submit"
-                    value="Sign In"
+                    value="Resend Organisation Code"
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   />
                 </div>
 
                 <div className="mt-6 text-center">
                   <p>
-                    Don’t have any account?{" "}
-                    <Link href="/register" className="text-primary">
-                      Register
+                    <Link href="/login" className="text-primary">
+                      Go back to Sign in
                     </Link>
                   </p>
                 </div>
@@ -299,4 +289,6 @@ export default function Login() {
       </div>
     </DefaultLayout>
   );
-}
+};
+
+export default SignUp;

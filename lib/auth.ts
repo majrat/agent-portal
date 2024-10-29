@@ -3,13 +3,9 @@ import user_model from "models/user";
 import type { NextAuthOptions, Session } from "next-auth";
 import credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import EmailProvider from "next-auth/providers/email";
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    // EmailProvider({
-    //   server: process.env.EMAIL_SERVER,
-    // }),
     credentials({
       name: "Credentials",
       id: "credentials",
@@ -32,6 +28,9 @@ export const authOptions: NextAuthOptions = {
         );
 
         if (!passwordMatch) throw new Error("Wrong Password");
+        if (user.email_verified === false) {
+          throw new Error("Email not verified!");
+        }
         return user;
       },
     }),
@@ -64,6 +63,9 @@ export const authOptions: NextAuthOptions = {
   },
   session: {
     strategy: "jwt",
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_JWT_SECRET,
   },
   secret: process.env.AUTH_SECRET,
 };

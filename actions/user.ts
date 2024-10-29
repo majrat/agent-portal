@@ -12,6 +12,8 @@ export const getAllusers = async () => {
       throw new Error("No users exists!");
     }
     const allusersFound = JSON.parse(JSON.stringify(usersFound));
+
+    console.log("allusersFound====>", allusersFound);
     return {
       success: true,
       message: "User data found",
