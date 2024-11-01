@@ -38,7 +38,7 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white bg-[url('/images/home-bg-02.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           <Link className="mb-3 inline-block" href="/">
             <Image
               className="hidden dark:block p-2"

@@ -36,7 +36,7 @@ export default function WelcomeLetter() {
   const showSession: any = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/80 bg-blend-screen bg-[url('/images/air-international-transport-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           {error && <p className="text-red">{error}</p>}
           <div className="grid grid-cols-3 pb-12">
             <div className="col-span-2">

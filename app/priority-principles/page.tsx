@@ -34,10 +34,9 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-[url('/images/compliance-1-640x480.jpg')] bg-cover px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/80 bg-blend-screen bg-[url('/images/domestic-2-640x480.jpg')] bg-cover px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
           {/* Overlay */}
-          <div className="absolute inset-0 bg-white opacity-90"></div>
-          <div className="relative z-10">
+          <div>
             {error && <p className="text-red">{error}</p>}
             <h1 className="text-3xl pb-3"></h1>
             {/* <h1 className="text-5xl pb-4">PRIORITY WORLDWIDE</h1> */}

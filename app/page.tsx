@@ -102,7 +102,7 @@ export default function Home() {
       const email = data.user.email;
       const name = data.user.name;
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white bg-[url('/images/home-bg.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
+        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/10 bg-blend-screen bg-[url('/images/home-bg.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
           <Link className="mb-3 inline-block" href="/">
             <Image
               className="hidden dark:block p-2"

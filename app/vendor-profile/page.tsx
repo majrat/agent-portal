@@ -11,7 +11,7 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/80 bg-blend-screen bg-[url('/images/global-v1-640x480.jpg')] bg-cover px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
           <ul className="list-disc ps-6 pb-3">
             <li className="pb-3">Vendor Registration/Company details</li>
             <li className="pb-3">International Agency Agreement</li>
