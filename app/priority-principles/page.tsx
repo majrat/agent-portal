@@ -34,7 +34,7 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/80 bg-blend-screen bg-[url('/images/domestic-2-640x480.jpg')] bg-cover px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/domestic-2-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           {/* Overlay */}
           <div>
             {error && <p className="text-red">{error}</p>}
@@ -42,36 +42,29 @@ export default function Home() {
             {/* <h1 className="text-5xl pb-4">PRIORITY WORLDWIDE</h1> */}
             <Link className="mb-3 inline-block" href="/">
               <Image
-                className="hidden dark:block p-2"
-                src={"/logo.svg"}
-                alt="Logo"
-                width={352}
-                height={64}
-              />
-              <Image
-                className="dark:hidden bg-slate-500 rounded p-2"
+                className="bg-meta-4 rounded p-2"
                 src={"/logo.svg"}
                 alt="Logo"
                 width={352}
                 height={64}
               />
             </Link>
-            <p className="pb-3">
+            <p className="p-6 bg-white/30">
               Welcome to Priority Worldwide. We are a full service logistics
               provider operating around the globe.
             </p>
             <h2 className="font-medium text-xl py-3">PRIORITY{"'"}S WORLD</h2>
-            <p className="pb-1">
+            <p className="pt-6 px-6 bg-white/30">
               {'" '}Freight Forward People{' "'}
             </p>
-            <p className="pb-3">
+            <p className="pb-6 px-6 bg-white/30">
               {'" '}The values set our path.. The people make it happen.. Our
               culture sets us apart..{' "'}
             </p>
-            <h3 className="text-xl font-medium pt-3 pb-3">
+            <h3 className="text-xl font-medium pb-2">
               PRIORITY PRINCIPLES
             </h3>
-            <ul className="list-disc ps-6 pb-3">
+            <ul className="list-disc p-6 bg-white/30">
               <li className="pb-3">
                 Principle One: <span className="font-bold">Compliance</span> -{" "}
                 Compliance in international logistics is crucial for the

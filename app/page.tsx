@@ -105,14 +105,7 @@ export default function Home() {
         <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/10 bg-blend-screen bg-[url('/images/home-bg.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
           <Link className="mb-3 inline-block" href="/">
             <Image
-              className="hidden dark:block p-2"
-              src={"/logo.svg"}
-              alt="Logo"
-              width={352}
-              height={64}
-            />
-            <Image
-              className="dark:hidden bg-slate-500 rounded p-2"
+              className="bg-meta-4 rounded p-2"
               src={"/logo.svg"}
               alt="Logo"
               width={352}

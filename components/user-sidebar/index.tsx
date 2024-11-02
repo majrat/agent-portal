@@ -60,6 +60,10 @@ const menuGroups = [
         ),
         label: "Vendor Welcome",
         route: "/vendor-welcome",
+        children: [
+          { label: "Bank Details", route: "/bank-details" },
+          { label: "Our Offices", route: "/our-offices" },
+        ],
       },
       {
         icon: (

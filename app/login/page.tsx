@@ -52,7 +52,7 @@ export default function Login() {
                   height={32}
                 />
                 <Image
-                  className="dark:hidden bg-slate-500 rounded p-2"
+                  className="dark:hidden bg-meta-4 rounded p-2"
                   src={"/logo.svg"}
                   alt="Logo"
                   width={176}

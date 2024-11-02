@@ -38,17 +38,10 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-meta-4 sm:px-7.5">
           <Link className="mb-3 inline-block" href="/">
             <Image
-              className="hidden dark:block p-2"
-              src={"/logo.svg"}
-              alt="Logo"
-              width={352}
-              height={64}
-            />
-            <Image
-              className="dark:hidden bg-slate-500 rounded p-2"
+              className="bg-meta-4 rounded p-2"
               src={"/logo.svg"}
               alt="Logo"
               width={352}
@@ -56,20 +49,20 @@ export default function Home() {
             />
           </Link>
           {error && <p className="text-red">{error}</p>}
-          <p className="pb-3">
+          <p className="p-6 bg-white/30">
             Welcome to Priority Worldwide. We are a full service logistics
             provider operating around the globe.
           </p>
           <h2 className="font-medium text-xl py-3">PRIORITY{"'"}S WORLD</h2>
-          <p className="pb-1">
+          <p className="pt-6 px-6 bg-white/30">
             {'" '}Freight Forward People{' "'}
           </p>
-          <p className="pb-3">
+          <p className="pb-6 px-6 bg-white/30">
             {'" '}The values set our path.. The people make it happen.. Our
             culture sets us apart..{' "'}
           </p>
           <h2 className="font-medium text-xl py-3">OUR QUALITY POLICY</h2>
-          <p className="pb-3">
+          <p className="p-6 bg-white/30">
             Priority Worldwide is committed to provide the ultimate customer
             experience in global logistics. <br /> Quality service shall be
             provided by responsive employees, on-time delivery, client education
@@ -80,7 +73,7 @@ export default function Home() {
           <h3 className="text-xl font-medium pt-3 pb-3">
             OUR EFFORTS SHALL BE GUIDED BY THE FOLLOWING PRINCIPLES:
           </h3>
-          <ul className="list-disc ps-6 pb-3">
+          <ul className="list-disc p-6 bg-white/30">
             <li>
               Protect our environment through our purchasing decisions, energy
               conservation, waste management efforts and by being discretionary
@@ -116,7 +109,7 @@ export default function Home() {
             </li>
           </ul>
           <h2 className="font-medium text-xl py-3">GOALS OF THIS PROFILE</h2>
-          <p className="pb-6">
+          <p className="p-6 bg-white/30">
             The primary goal of our vendor supplier profile is to establish a
             comprehensive and transparent overview of our suppliers. Strong and
             collaborative relationships drive mutual growth and innovation. By
@@ -132,43 +125,7 @@ export default function Home() {
             society for future generations. We thank you in advance for your
             participation!
           </p>
-          <h2 className="text-xl font-medium pb-2">
-            PHYSICAL OFFICES OF PRIORITY WORLDWIDE
-          </h2>
-          <ul className="list-disc mx-12">
-            <li className="text-lg font-bold">Canada</li>
-            <span>Montreal</span>
-            <br />
-            <li className="text-lg font-bold mt-4">United States</li>
-            <p>Baltimore</p>
-            <span>Los Angeles</span>
-            <li className="text-lg font-bold mt-4">United Kingdom</li>
-            <span>London</span>
-            <li className="text-lg font-bold mt-4">Australia</li>
-            <span>Sydney</span>
-            <li className="text-lg font-bold mt-4">United Arab Emirates</li>
-            <span>Dubai</span>
-            <li className="text-lg font-bold mt-4">Bosnia </li>
-            <span>Tuzla</span>
-            <li className="text-lg font-bold mt-4">Mali </li>
-            <span>Bamako</span>
-            <li className="text-lg font-bold mt-4">Niger</li>
-            <span>Niamey</span>
-            <li className="text-lg font-bold mt-4">Togo</li>
-            <span>Lomé</span>
-            <li className="text-lg font-bold mt-4">Senegal</li>
-            <span>Dakar</span>
-            <li className="text-lg font-bold mt-4">Benin</li>
-            <span>Benin</span>
-            <li className="text-lg font-bold mt-4">Chad</li>
-            <span>N{"’"}Djamena</span>
-            <li className="text-lg font-bold mt-4">Burkina Faso</li>
-            <span>Ouagadougou</span>
-            <li className="text-lg font-bold mt-4">Central African Republic</li>
-            <span>Bangui</span>
-            <li className="text-lg font-bold mt-4">Tanzania</li>
-            <span>Dar Es Salam</span>
-          </ul>
+
           <div className="relative">
             {Accepted ? (
               <>
