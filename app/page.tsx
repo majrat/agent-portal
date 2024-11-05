@@ -96,6 +96,7 @@ export default function Home() {
       )
       .catch((e) => seterror(`${e}`));
   }, [data]);
+  //asdasdasd
   const showSession = () => {
     if (status === "authenticated") {
       const joinedDate = new Date(data.user.joined_date);
