@@ -4,9 +4,8 @@ const options = { dbName: "priority-worldwide-bpa-db" };
 export const connectDB = async () => {
   try {
     const { connection } = await mongoose.connect(
-      NODE_ENV === "development"
-        ? (MONGODB_URI as string)
-        : (AZURE_COSMOS_CONNECTIONSTRING as string),
+      // AZURE_COSMOS_CONNECTIONSTRING as string,
+      MONGODB_URI as string,
       options
     );
     console.log("connected to = ", connection);
