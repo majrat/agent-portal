@@ -73,8 +73,8 @@ export default function Home() {
                 customs requirements ensures that our operations run smoothly
                 and legally.
                 <ul className="list-disc mx-12">
-                  <li>Anti-Corruption Statement & Policy</li>
-                </ul>
+                  <li><a href="/docs/Anti-Corruption Statement and Policy.docx">Anti-Corruption Statement & Policy</a></li>
+                </ul> 
               </li>
               <li className="pb-3">
                 Principle Two: <span className="font-bold">Humanities</span> -{" "}

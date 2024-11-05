@@ -15,6 +15,7 @@ import { get_cargo_security_profile } from "actions/cargo-security-profile";
 
 export default function Home() {
   const { status, data } = useSession();
+  
   const [VendorWelcomeAccepted, setVendorWelcomeAccepted] =
     useState<boolean>(false);
   const [PriorityPrincipleAccepted, setPriorityPrincipleAccepted] =
@@ -112,19 +113,19 @@ export default function Home() {
               height={64}
             />
           </Link>
-          <p className="pb-1">
+          <p className="p-2 bg-white dark:border-strokedark dark:bg-boxdark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
             Welcome to Priority Worldwide. We are a full service logistics
             provider operating around the globe.
           </p>
-          <p className="pb-1">
+          <p className="p-2 bg-white dark:border-strokedark dark:bg-boxdark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
             {'" '}Freight Forward People{' "'}
           </p>
-          <p className="pb-3">
+          <p className="p-2 bg-white dark:border-strokedark dark:bg-boxdark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
             {'" '}The values set our path.. The people make it happen.. Our
             culture sets us apart..{' "'}
           </p>
           {error && <p className="text-red">Error: {error}</p>}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-4 pb-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-4 py-4">
             <CardDataStats
               small_txt={email}
               big_txt={name}

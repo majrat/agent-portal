@@ -7,7 +7,6 @@ import { Provider } from "./provider";
 import "./globals.css";
 import { useEffect, useState } from "react";
 import Loader from "components/common/loader";
-// import Loader from "@/components/common/Loader";
 
 export default function RootLayout({
   children,
@@ -15,9 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [loading, setLoading] = useState<boolean>(true);
-
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    setTimeout(() => setLoading(false), 500);
   }, []);
   return (
     <html lang="en">

@@ -6,22 +6,27 @@ import Link from "next/link";
 import DefaultLayout from "components/layouts/user-default-layout";
 import Breadcrumb from "components/breadcrumbs/breadcrumb";
 import Image from "next/image";
+import LoaderMini from "components/common/loader-mini";
 
 export default function Login() {
   const [error, setError] = useState("");
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
   const [success, setsuccess] = useState<string>("");
 
   const handleSubmit = async (formData: FormData) => {
+    setLoading(true);
     const res = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
       redirect: false,
     });
     if (res?.error) {
+      setLoading(false);
       setError(res.error as string);
     }
     if (res?.ok) {
+      setLoading(false);
       setsuccess("Login Successful");
       await new Promise((resolve) => setTimeout(resolve, 2500));
       return router.push("/");
@@ -201,14 +206,20 @@ export default function Login() {
 
               <form action={handleSubmit}>
                 <div className="mb-4">
-                  {error && <span className="text-red mr-4">{error}</span>}
-                  {error === "Email not verified!" && (
-                    <span className="">
-                      <Link href="/verify-email" className="text-white bg-primary py-1 px-3 rounded-md hover:text-primary hover:bg-slate-300 ease-in transition">
-                        Click Here to Verify Email
-                      </Link>
-                    </span>
-                  )}
+                  <div className="flex">
+                    {error && <span className="text-red mr-4">{error}</span>}
+                    {error === "Email not verified!" && (
+                      <span className="">
+                        <Link
+                          href="/verify-email"
+                          className="text-white bg-primary py-1 px-3 rounded-md hover:text-primary hover:bg-slate-300 ease-in transition"
+                        >
+                          Click Here to Verify Email
+                        </Link>
+                      </span>
+                    )}
+                    {loading && <LoaderMini />}
+                  </div>
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Email
                   </label>

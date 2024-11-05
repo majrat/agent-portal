@@ -4,8 +4,9 @@ import sgMail from "@sendgrid/mail";
 import { get_invitation } from "./admin/invitation";
 import user_model from "models/user";
 import bcrypt from "bcryptjs";
+import nodemailer from "nodemailer";
 
-const { SENDGRID_API_KEY, SENDGRID_SENDER_EMAIL } = process.env;
+const { SENDER_EMAIL, SENDER_PASSWORD, NODE_ENV } = process.env;
 
 export const resend_invitation_code = async (values: any) => {
   const { password, email } = values;
@@ -17,15 +18,42 @@ export const resend_invitation_code = async (values: any) => {
 
     const invitation_code_found = await get_invitation(email);
     if (invitation_code_found.success) {
-      sgMail.setApiKey(SENDGRID_API_KEY as string);
-      const msg = {
-        to: email, // Change to your recipient
-        from: SENDGRID_SENDER_EMAIL as string, // Change to your verified resender
+      let transporter =
+        NODE_ENV === "development"
+          ? nodemailer.createTransport({
+              service: "Gmail",
+              host: "smtp.gmail.com", // Use Gmail service
+              port: 465,
+              secure: true,
+              auth: {
+                user: SENDER_EMAIL,
+                pass: SENDER_PASSWORD,
+              },
+            })
+          : nodemailer.createTransport({
+              host: "smtp.office365.com",
+              port: 587,
+              secure: false,
+              auth: {
+                user: SENDER_EMAIL,
+                pass: SENDER_PASSWORD,
+              },
+              tls: {
+                rejectUnauthorized: true,
+              },
+            });
+
+      const mailOptions = {
+        from: SENDER_EMAIL,
+        to: email,
         subject: "RESEND:" + invitation_code_found.data.subject,
-        text: "RESEND:" + invitation_code_found.data.message,
-        html: `<p>Hi Agent! Please use the following <strong>organization code: ${invitation_code_found.data.org_code}</strong>, along with your email, to access the agent portal and begin your journey with us.</p>`,
+        text: `"RESEND:" + invitation_code_found.data.message,
+        <p>Hi Agent! Please use the following <strong>organization code: ${invitation_code_found.data.org_code}</strong>, along with your email, to access the agent portal and begin your journey with us.</p>`,
       };
-      sgMail.send(msg);
+
+      const info = await transporter.sendMail(mailOptions);
+      console.log("Email sent: " + info.response);
+
       return {
         success: true,
         message: "RESEND invitation Code sent successfully",

@@ -75,14 +75,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:benin@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;benin@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+22996040699" className="text-[#FFBF3C]">
+                  <a href="tel:+22996040699" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+229 96 04 06 99
                   </a>
                 </div>
@@ -108,14 +108,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:car@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;car@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+23675657582" className="text-[#FFBF3C]">
+                  <a href="tel:+23675657582" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+236 75 65 75 82
                   </a>
                 </div>
@@ -139,7 +139,7 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:sales.au@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;sales.au@priorityworldwide.com
                   </a>
@@ -164,14 +164,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:bosnia@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;bosnia@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+38762885360" className="text-[#FFBF3C]">
+                  <a href="tel:+38762885360" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+387 62 885 360
                   </a>
                 </div>
@@ -195,7 +195,7 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:burkina@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;burkina@priorityworldwide.com
                   </a>
@@ -220,20 +220,20 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:sales.ca@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;sales.ca@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+15149055983" className="text-[#FFBF3C]">
+                  <a href="tel:+15149055983" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+1.514.905.5983
                   </a>
                 </div>
                 <div className="flex">
                   <p className="font-semibold">24/7 AOG Hotline: </p>
-                  <a href="tel:+17189473702" className="text-[#FFBF3C]">
+                  <a href="tel:+17189473702" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+1.718.947.3702
                   </a>
                 </div>
@@ -257,14 +257,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:chad@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;chad@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+23566541919" className="text-[#FFBF3C]">
+                  <a href="tel:+23566541919" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+235 66 54 19 19
                   </a>
                 </div>
@@ -288,14 +288,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:lebanon@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;lebanon@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+9611500047" className="text-[#FFBF3C]">
+                  <a href="tel:+9611500047" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+961.1.500.047
                   </a>
                 </div>
@@ -320,14 +320,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:mali@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;mali@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+22344905113" className="text-[#FFBF3C]">
+                  <a href="tel:+22344905113" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+223 44 90 51 13
                   </a>
                 </div>
@@ -351,14 +351,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:niger@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;niger@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+22791151060" className="text-[#FFBF3C]">
+                  <a href="tel:+22791151060" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+227.91.15.10.60
                   </a>
                 </div>
@@ -382,7 +382,7 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:senegal@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;senegal@priorityworldwide.com
                   </a>
@@ -406,14 +406,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:togo@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;togo@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+22890146066" className="text-[#FFBF3C]">
+                  <a href="tel:+22890146066" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+228.90.14.60.66
                   </a>
                 </div>
@@ -440,14 +440,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:dubai@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;dubai@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+97147187128" className="text-[#FFBF3C]">
+                  <a href="tel:+97147187128" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+971 4 718 7128
                   </a>
                 </div>
@@ -470,20 +470,20 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:sales@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;sales@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+14107667470" className="text-[#FFBF3C]">
+                  <a href="tel:+14107667470" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+1.410.766.7470
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">24/7 AOG HOTLINE: </p>
-                  <a href="tel:+17189473702" className="text-[#FFBF3C]">
+                  <a href="tel:+17189473702" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+1.718.947.3702
                   </a>
                 </div>
@@ -506,14 +506,14 @@ export default function Home() {
                   <p className="font-semibold">Email: </p>
                   <a
                     href="mailto:laxsales@priorityworldwide.com"
-                    className="text-[#FFBF3C]"
+                    className="text-[#FFBF3C] hover:underline"
                   >
                     &nbsp;laxsales@priorityworldwide.com
                   </a>
                 </div>
                 <div className="mt-3 flex">
                   <p className="font-semibold">Telephone: </p>
-                  <a href="tel:+13103488449" className="text-[#FFBF3C]">
+                  <a href="tel:+13103488449" className="text-[#FFBF3C] hover:underline">
                     &nbsp;+1.310.348.8449
                   </a>
                 </div>
