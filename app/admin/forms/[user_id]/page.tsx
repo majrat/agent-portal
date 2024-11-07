@@ -1,7 +1,6 @@
 "use client";
 import { getAllusers, userPercentageChange } from "actions/user";
-import CardDataStats from "components/card-data-stats";
-import DefaultLayout from "components/layouts/admin-default-layout";
+import CardDataStats from "components/common/card-data-stats";
 import { Agent } from "types/package";
 import { Metadata } from "next";
 import { signOut, useSession } from "next-auth/react";
@@ -14,6 +13,8 @@ import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getPriorityPrinciples } from "actions/priority-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
 import { get_vendor_welcome } from "actions/vendor-welcome";
+import DefaultLayout from "components/admin/layouts/admin-default-layout";
+import Loader from "components/common/loader";
 
 export default function Dashboard() {
   const { status, data } = useSession();
@@ -258,9 +259,9 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

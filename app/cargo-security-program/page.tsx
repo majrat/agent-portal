@@ -2,13 +2,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import DefaultLayout from "../../components/layouts/user-default-layout";
+import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import {
   add_cargo_security_program,
   get_cargo_security_program,
 } from "actions/cargo-security-program";
 import { redirect, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Loader from "components/common/loader";
+import LogoCard from "components/common/logo-card";
 
 export default function WelcomeLetter() {
   const { status, data } = useSession();
@@ -19,7 +21,7 @@ export default function WelcomeLetter() {
     const acceptSubmitData = { user_id: data?.user?.id };
     await add_cargo_security_program(acceptSubmitData)
       .then(() => {
-        router.push("/cargo-security-profile");
+        router.push("/cargo-security-program/cargo-security-profile");
       })
       .catch((e) => seterror(`${e}`));
   };
@@ -38,19 +40,9 @@ export default function WelcomeLetter() {
       return (
         <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/air-international-transport-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           {error && <p className="text-red">{error}</p>}
-          <div className="grid grid-cols-3 pb-12">
-            <div className="col-span-2">
-              <Link className="mb-5.5 inline-block" href="/">
-                <Image
-                  className="bg-meta-4 rounded p-2"
-                  src={"/logo.svg"}
-                  alt="Logo"
-                  width={352}
-                  height={64}
-                />
-              </Link>
-            </div>
-            <div className="md:col-span-1 col-span-3 text-start md:text-end p-6 bg-white/30">
+          <div className="">
+            <LogoCard />
+            <div className="text-center p-3 my-1 rounded-md bg-white/80">
               <p className="pb-3">7361 Coca Cola Drive Hanover, MD 21076</p>
               <p>+1.410.766.7470 | TELEPHONE</p>
               <p>+1.800.727.1085 | TOLL FREE</p>
@@ -60,7 +52,7 @@ export default function WelcomeLetter() {
               </a>
             </div>
           </div>
-          <div className="p-6 bg-white/30">
+          <div className="p-6 bg-white/80 rounded-md">
             <p className="pb-1">To: Priority Business Partner</p>
             <p className="pb-6">
               Re: Customs-Trade Partnership Against Terrorism (C-TPAT), Partners
@@ -173,7 +165,7 @@ export default function WelcomeLetter() {
                   <p>Accepted</p>
                 </div>
                 <div className="fixed bottom-9 right-9 bg-green-600/80 cursor-pointer hover:bg-green-800 px-3 py-2 font-bold text-white rounded-2xl flex">
-                  <Link href="/cargo-security-profile">
+                  <Link href="/cargo-security-program/cargo-security-profile">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -205,9 +197,13 @@ export default function WelcomeLetter() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

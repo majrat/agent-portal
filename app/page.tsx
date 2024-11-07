@@ -2,9 +2,8 @@
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
-import DefaultLayout from "components/layouts/user-default-layout";
-import CardDataStats from "components/card-data-stats";
+import DefaultLayout from "components/user/layouts/user-default-layout";
+import CardDataStats from "components/common/card-data-stats";
 import { get_vendor_welcome } from "actions/vendor-welcome";
 import { useEffect, useState } from "react";
 import { getPriorityPrinciples } from "actions/priority-principles";
@@ -12,10 +11,12 @@ import { get_cargo_security_program } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
 import { get_cargo_security_profile } from "actions/cargo-security-profile";
+import LogoCard from "../components/common/logo-card";
+import Loader from "components/common/loader";
 
 export default function Home() {
   const { status, data } = useSession();
-  
+
   const [VendorWelcomeAccepted, setVendorWelcomeAccepted] =
     useState<boolean>(false);
   const [PriorityPrincipleAccepted, setPriorityPrincipleAccepted] =
@@ -103,27 +104,8 @@ export default function Home() {
       const email = data.user.email;
       const name = data.user.name;
       return (
-        <div className="min-h-screen rounded-sm border text-black dark:text-white border-stroke bg-white/10 bg-blend-screen bg-[url('/images/home-bg.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
-          <Link className="mb-3 inline-block" href="/">
-            <Image
-              className="bg-meta-4 rounded p-2"
-              src={"/logo.svg"}
-              alt="Logo"
-              width={352}
-              height={64}
-            />
-          </Link>
-          <p className="p-2 bg-white dark:border-strokedark dark:bg-boxdark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
-            Welcome to Priority Worldwide. We are a full service logistics
-            provider operating around the globe.
-          </p>
-          <p className="p-2 bg-white dark:border-strokedark dark:bg-boxdark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
-            {'" '}Freight Forward People{' "'}
-          </p>
-          <p className="p-2 bg-white dark:border-strokedark dark:bg-boxdark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
-            {'" '}The values set our path.. The people make it happen.. Our
-            culture sets us apart..{' "'}
-          </p>
+        <div className="min-h-screen flex flex-col rounded-sm border text-black dark:text-white border-stroke bg-blend-screen bg-[url('/images/Priority-Worldwide-General-Presentation-Aug-24.jpeg')] bg-cover bg-white/80 px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
+          <LogoCard />
           {error && <p className="text-red">Error: {error}</p>}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-4 py-4">
             <CardDataStats
@@ -328,7 +310,7 @@ export default function Home() {
             </CardDataStats>
             <CardDataStats
               big_txt="Cargo Security Profile"
-              page_link="/cargo-security-profile"
+              page_link="/cargo-security-program/cargo-security-profile"
               small_txt="Status:"
               status_txt={
                 checkIfCargoSecurityProfileAnswered ? "Accepted" : "Pending"
@@ -356,9 +338,9 @@ export default function Home() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

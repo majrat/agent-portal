@@ -3,13 +3,15 @@ import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import DefaultLayout from "../../components/layouts/user-default-layout";
+import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import React, { useEffect, useState } from "react";
 import {
   acceptPriorityPrinciples,
   getPriorityPrinciples,
 } from "actions/priority-principles";
 import { useRouter } from "next/navigation";
+import LogoCard from "components/common/logo-card";
+import Loader from "components/common/loader";
 
 export default function Home() {
   const { status, data } = useSession();
@@ -40,31 +42,35 @@ export default function Home() {
             {error && <p className="text-red">{error}</p>}
             <h1 className="text-3xl pb-3"></h1>
             {/* <h1 className="text-5xl pb-4">PRIORITY WORLDWIDE</h1> */}
-            <Link className="mb-3 inline-block" href="/">
-              <Image
-                className="bg-meta-4 rounded p-2"
-                src={"/logo.svg"}
-                alt="Logo"
-                width={352}
-                height={64}
-              />
-            </Link>
-            <p className="p-6 bg-white/30">
-              Welcome to Priority Worldwide. We are a full service logistics
-              provider operating around the globe.
-            </p>
-            <h2 className="font-medium text-xl py-3">PRIORITY{"'"}S WORLD</h2>
-            <p className="pt-6 px-6 bg-white/30">
-              {'" '}Freight Forward People{' "'}
-            </p>
-            <p className="pb-6 px-6 bg-white/30">
-              {'" '}The values set our path.. The people make it happen.. Our
-              culture sets us apart..{' "'}
-            </p>
-            <h3 className="text-xl font-medium pb-2">
-              PRIORITY PRINCIPLES
-            </h3>
-            <ul className="list-disc p-6 bg-white/30">
+            <LogoCard />
+            <div className="mt-6 grid gap-3 grid-cols-2 justify-between p-3 dark:text-white text-black text-center rounded-md border border-stroke bg-white shadow-default dark:border-strokedark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
+              <Link
+                className="self-center flex justify-center md:justify-start"
+                href="/"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/compliance-compass.JPG"}
+                  alt="Logo"
+                  width={321}
+                  height={135}
+                />
+              </Link>
+              <Link
+                className="self-center flex justify-center md:justify-end"
+                href="/"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/ISO-logo.png"}
+                  alt="Logo"
+                  width={1169 / 4}
+                  height={570 / 4}
+                />
+              </Link>
+            </div>
+            <h3 className="text-xl font-medium py-3">PRIORITY PRINCIPLES</h3>
+            <ul className="list-disc p-6 bg-white/60 rounded-md">
               <li className="pb-3">
                 Principle One: <span className="font-bold">Compliance</span> -{" "}
                 Compliance in international logistics is crucial for the
@@ -72,9 +78,33 @@ export default function Home() {
                 Adhering to international regulations, trade agreements, and
                 customs requirements ensures that our operations run smoothly
                 and legally.
-                <ul className="list-disc mx-12">
-                  <li><a href="/docs/Anti-Corruption Statement and Policy.docx">Anti-Corruption Statement & Policy</a></li>
-                </ul> 
+                <ul className="list-disc">
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fdc82e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                      <path d="M7 11l5 5l5 -5" />
+                      <path d="M12 4l0 12" />
+                    </svg>
+                    <a
+                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
+                      href="/docs/Anti-Corruption Statement and Policy.docx"
+                    >
+                      Anti-Corruption Statement & Policy{" "}
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li className="pb-3">
                 Principle Two: <span className="font-bold">Humanities</span> -{" "}
@@ -85,13 +115,63 @@ export default function Home() {
                 logistics professionals are not only technically proficient but
                 also culturally aware and ethically grounded, ultimately leading
                 to more sustainable and successful global operations.
-                <ul className="list-disc mx-12">
-                  <li>
-                    Anti-slavery, Human Trafficking and Forced Labor Policy
+                <ul className="list-disc">
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fdc82e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                      <path d="M7 11l5 5l5 -5" />
+                      <path d="M12 4l0 12" />
+                    </svg>
+                    <a
+                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
+                      href="/docs/Anti-Slavery, Human Trafficking and Forced Labor Policy.docx"
+                    >
+                      Anti-slavery, Human Trafficking and Forced Labor Policy
+                    </a>
                   </li>
-                  <li>Health, Safety, Security and Environmental Policy</li>
-                  <li>Human Rights and Modern Slavery Statement</li>
-                  <li>Whistleblower Policy</li>
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fdc82e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                      <path d="M7 11l5 5l5 -5" />
+                      <path d="M12 4l0 12" />
+                    </svg>
+                    <a
+                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
+                      href="/docs/Health, Safety, Security, and Environmental (HSSE) Policy.docx"
+                    >
+                      Health, Safety, Security and Environmental Policy
+                    </a>
+                  </li>
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    Human Rights and Modern Slavery Statement
+                  </li>
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    Whistleblower Policy
+                  </li>
                 </ul>
               </li>
               <li className="pb-3">
@@ -104,9 +184,35 @@ export default function Home() {
                 innovation. By prioritizing sustainability, logistics providers
                 can contribute to a more sustainable and resilient global supply
                 chain, benefiting businesses, communities, and the planet.
-                <ul className="list-disc mx-12">
-                  <li>International standard for sustainable procurement</li>
-                  <li>Sustainable Procurement Policy</li>
+                <ul className="list-disc">
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    International standard for sustainable procurement
+                  </li>
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fdc82e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                      <path d="M7 11l5 5l5 -5" />
+                      <path d="M12 4l0 12" />
+                    </svg>
+                    <a
+                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
+                      href="/docs/Sustainable Procurement Policy.docx"
+                    >
+                      Sustainable Procurement Policy
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li className="pb-3">
@@ -119,10 +225,60 @@ export default function Home() {
                 and driving innovation. By implementing and enforcing a robust
                 code of conduct, companies can build a more resilient,
                 responsible, and successful supply chain.
-                <ul className="list-disc mx-12">
-                  <li>Supply Chain Management policy</li>
-                  <li>Supplier Code of Conduct Statement</li>
-                  <li>Supplier Code of Conduct Questionnaire</li>
+                <ul className="list-disc">
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fdc82e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                      <path d="M7 11l5 5l5 -5" />
+                      <path d="M12 4l0 12" />
+                    </svg>
+                    <a
+                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
+                      href="/docs/Supply Chain Management Policy.docx"
+                    >
+                      Supply Chain Management policy
+                    </a>
+                  </li>
+                  {/* <li className="text-meta-4 flex cursor-pointer my-3">
+                    Supplier Code of Conduct Statement
+                  </li>
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fdc82e"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                      <path d="M7 11l5 5l5 -5" />
+                      <path d="M12 4l0 12" />
+                    </svg>
+                    <a
+                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
+                      href="/docs/Supplier Code of Conduct Questions.docx"
+                    >
+                      Supplier Code of Conduct Questionnaire
+                    </a>
+                  </li> */}
                 </ul>
               </li>
               <li className="pb-3">
@@ -136,10 +292,14 @@ export default function Home() {
                 prioritizing cargo safety and security, logistics providers can
                 deliver reliable and secure services, supporting global trade
                 and economic growth.
-                <ul className="list-disc mx-12">
-                  <li>CTPAT/PIP/AEO writeup</li>
-                  <li>Supplier Security Profile Questionnaire</li>
-                </ul>
+                {/* <ul className="list-disc">
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    CTPAT/PIP/AEO writeup
+                  </li>
+                  <li className="text-meta-4 flex cursor-pointer my-3">
+                    Supplier Security Profile Questionnaire
+                  </li>
+                </ul> */}
               </li>
             </ul>
             <div className="relative">
@@ -152,7 +312,7 @@ export default function Home() {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#fdc82e"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -172,7 +332,7 @@ export default function Home() {
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="currentColor"
+                        stroke="#fdc82e"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -199,9 +359,9 @@ export default function Home() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

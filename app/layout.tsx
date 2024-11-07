@@ -7,23 +7,18 @@ import { Provider } from "./provider";
 import "./globals.css";
 import { useEffect, useState } from "react";
 import Loader from "components/common/loader";
+import { useSession } from "next-auth/react";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [loading, setLoading] = useState<boolean>(true);
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 500);
-  }, []);
   return (
     <html lang="en">
       <Provider>
         <body suppressHydrationWarning={true}>
-          <div className="dark:bg-black dark:text-neutral-300 ">
-            {loading ? <Loader /> : children}
-          </div>
+          <div className="dark:bg-black dark:text-neutral-300 ">{children}</div>
         </body>
       </Provider>
     </html>

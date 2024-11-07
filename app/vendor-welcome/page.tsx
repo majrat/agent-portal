@@ -3,13 +3,15 @@ import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import DefaultLayout from "components/layouts/user-default-layout";
+import DefaultLayout from "components/user/layouts/user-default-layout";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   add_vendor_welcome,
   get_vendor_welcome,
 } from "../../actions/vendor-welcome";
+import LogoCard from "components/common/logo-card";
+import Loader from "components/common/loader";
 
 export default function Home() {
   const { status, data } = useSession();
@@ -38,94 +40,220 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-meta-4 sm:px-7.5">
-          <Link className="mb-3 inline-block" href="/">
-            <Image
-              className="bg-meta-4 rounded p-2"
-              src={"/logo.svg"}
-              alt="Logo"
-              width={352}
-              height={64}
-            />
-          </Link>
-          {error && <p className="text-red">{error}</p>}
-          <p className="p-6 bg-white/30">
-            Welcome to Priority Worldwide. We are a full service logistics
-            provider operating around the globe.
+        <div className="min-h-screen rounded-md border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-meta-4 sm:px-7.5">
+          <LogoCard />
+          <h3 className="text-xl font-medium pt-6">MISSION STATEMENT</h3>
+          <p className="p-3 bg-white/30 rounded-md">
+            Our philosophy is to ensure the ULTIMATE customer experience and
+            facilitate the creation of new, sustainable business through
+            enhanced team cooperation and employee awareness.
           </p>
-          <h2 className="font-medium text-xl py-3">PRIORITY{"'"}S WORLD</h2>
-          <p className="pt-6 px-6 bg-white/30">
-            {'" '}Freight Forward People{' "'}
+          <h3 className="text-xl font-medium pt-6">OUR COMMITMENT</h3>
+          <p className="p-3 bg-white/30 rounded-md">
+            As a global logistics provider, Priority Worldwide recognizes that
+            we operate within a carbon intense industry. Accordingly, Priority
+            Worldwide has developed genuine, extensive initiatives designed
+            specifically to protect the environment and create a healthy
+            workplace for its team. The effect is a unique, worldwide
+            organization that’s woven sustainability initiatives into its core
+            mission whilst providing best in class service.
           </p>
-          <p className="pb-6 px-6 bg-white/30">
-            {'" '}The values set our path.. The people make it happen.. Our
-            culture sets us apart..{' "'}
-          </p>
-          <h2 className="font-medium text-xl py-3">OUR QUALITY POLICY</h2>
-          <p className="p-6 bg-white/30">
+          <h2 className="font-medium text-xl pt-6">QUALITY POLICY</h2>
+          <p className="p-3 bg-white/30 rounded-md">
             Priority Worldwide is committed to provide the ultimate customer
-            experience in global logistics. <br /> Quality service shall be
-            provided by responsive employees, on-time delivery, client education
-            and regulatory compliance.
-            <br /> We further commit to limit our impact on the fragile
-            ecosystem that we live in through concrete, measurable actions.
+            experience in global logistics. Quality service shall be provided by
+            responsive employees, on-time delivery, client education and
+            regulatory compliance. <br />
+            We further commit to limit our impact on the fragile ecosystem that
+            we live in through concrete, measurable actions.
           </p>
-          <h3 className="text-xl font-medium pt-3 pb-3">
-            OUR EFFORTS SHALL BE GUIDED BY THE FOLLOWING PRINCIPLES:
-          </h3>
-          <ul className="list-disc p-6 bg-white/30">
-            <li>
-              Protect our environment through our purchasing decisions, energy
-              conservation, waste management efforts and by being discretionary
-              about the types of business we handle.
-            </li>
-            <li>
-              Respect fellow employees and foster individual professional growth
-              through regular training and employee recognition programs.
-            </li>
-            <li>
-              Inspire individuals to continually improve operational and quality
-              processes through the routine review of quality objectives.
-            </li>
-            <li>
-              Operate with integrity 24/7 by embodying the highest standard in
-              business ethics and practices.
-            </li>
-            <li>
-              Rise to the challenges and opportunities of the complex global
-              arena that we operate in.
-            </li>
-            <li>
-              Instill a reverence within our organization for the environment
-              and its inhabitants.
-            </li>
-            <li>
-              Transcend industry standards to become a pillar of excellence
-              within our community.
-            </li>
-            <li>
-              Yield results that ensure stable growth for the company and its
-              employees without sacrificing our values.
-            </li>
-          </ul>
-          <h2 className="font-medium text-xl py-3">GOALS OF THIS PROFILE</h2>
-          <p className="p-6 bg-white/30">
-            The primary goal of our vendor supplier profile is to establish a
-            comprehensive and transparent overview of our suppliers. Strong and
-            collaborative relationships drive mutual growth and innovation. By
-            achieving these goals, we aim to build a reliable, resilient, and
-            sustainable supply chain that supports our business objectives and
-            delivers value to our customers. Sustainability is a key component
-            of our supply chain strategy. We prioritize suppliers who adhere to
-            sustainable practices, including environmentally friendly production
-            methods, ethical labor standards, and resource efficiency. By
-            fostering partnerships with such vendors, we ensure that our supply
-            chain not only meets current demands, regulatory compliance and
-            ethical issues but also contributes to a healthier planet and
-            society for future generations. We thank you in advance for your
-            participation!
-          </p>
+          <div className="p-3 grid xl:grid-cols-2 grid-cols-1 gap-3">
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/protect.png"}
+                  alt="Logo"
+                  width={914}
+                  height={765}
+                />
+              </div>
 
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">P</span>rotect our
+                environment through our purchasing decisions, energy
+                conservation, waste management efforts and by being
+                discretionary about the types of business we handle
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/rise.png"}
+                  alt="Logo"
+                  width={914}
+                  height={765}
+                />
+              </div>
+
+              <p
+                className="px-3 self-center "
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">R</span>ise to the
+                challenges and opportunities of the complex global arena that we
+                operate in
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/respect.png"}
+                  alt="Logo"
+                  layout="responsive"
+                  width={914}
+                  height={765}
+                />
+              </div>
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">R</span>espect fellow
+                employees and foster individual professional growth through
+                regular training and employee recognition programs
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/instill.png"}
+                  alt="Logo"
+                  layout="responsive"
+                  width={914}
+                  height={765}
+                />
+              </div>
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">I</span>nstill a
+                reverence within our organization for the environment and its
+                inhabitants
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/inspire.png"}
+                  alt="Logo"
+                  layout="responsive"
+                  width={914}
+                  height={765}
+                />
+              </div>
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">I</span>nspire
+                individuals to continually improve operational and quality
+                processes through the routine review of quality objectives
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/transcend.png"}
+                  alt="Logo"
+                  layout="responsive"
+                  width={914}
+                  height={765}
+                />
+              </div>
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">T</span>ranscend
+                industry standards to become a pillar of excellence within our
+                community
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/operate.png"}
+                  alt="Logo"
+                  layout="responsive"
+                  width={914}
+                  height={765}
+                />
+              </div>
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">O</span>perate with
+                integrity 24/7 by embodying the highest standard in business
+                ethics and practices
+              </p>
+            </div>
+            <div className="flex bg-white/30 rounded-md p-3">
+              <div
+                style={{ width: "10%", height: "auto" }}
+                className="self-start"
+              >
+                <Image
+                  className="rounded"
+                  src={"/images/icon/yield.png"}
+                  alt="Logo"
+                  layout="responsive"
+                  width={914}
+                  height={765}
+                />
+              </div>
+              <p
+                className="px-3 self-center"
+                style={{ width: "90%", height: "auto" }}
+              >
+                <span className="font-extrabold text-lg">Y</span>ield results
+                that ensure stable growth for the company and its employees
+                without sacrificing our values
+              </p>
+            </div>
+          </div>
           <div className="relative">
             {Accepted ? (
               <>
@@ -181,9 +309,9 @@ export default function Home() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

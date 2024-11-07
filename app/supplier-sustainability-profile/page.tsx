@@ -15,7 +15,8 @@ import {
   addSupplierSustainabilityProfile,
 } from "../../actions/supplier-sustainability-profile";
 
-import DefaultLayout from "../../components/layouts/user-default-layout";
+import DefaultLayout from "../../components/user/layouts/user-default-layout";
+import Loader from "components/common/loader";
 
 export default function Questionaire() {
   const { status } = useSession();
@@ -106,9 +107,9 @@ export default function Questionaire() {
       }
       return <Survey model={survey} />;
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
 

@@ -1,23 +1,22 @@
 "use client";
+import DefaultLayout from "components/user/layouts/user-default-layout";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import "survey-core/defaultV2.min.css";
 import "survey-core/modern.min.css";
 import { Survey } from "survey-react-ui";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-import { survey_json } from "models/code-of-conduct-form";
-import React from "react";
-import DefaultLayout from "../../components/user/layouts/user-default-layout";
+import { survey_json } from "models/cargo-security-profile-form";
 import {
-  getCodeOfConductQnA,
-  addCodeOfConductQnA,
-} from "../../actions/code-of-conduct-qna";
+  add_cargo_security_profile,
+  get_cargo_security_profile,
+} from "../../../actions/cargo-security-profile";
 import Loader from "components/common/loader";
 
-export default function CodeOfConduct() {
+export default function Assessment() {
   const { status } = useSession();
   const { data } = useSession();
   const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
@@ -26,18 +25,6 @@ export default function CodeOfConduct() {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
   }, []);
-
-  useEffect(() => {
-    async function fetchData() {
-      return await getCodeOfConductQnA(data?.user?.id);
-    }
-
-    fetchData()
-      .then((response) => {
-        setcheckIfAnswered(response?.success);
-      })
-      .catch((e) => seterror(`${e}`));
-  }, [data]);
 
   const surveyComplete = useCallback(
     (thisSurvey: { setValue: (arg0: string, arg1: any) => any; data: any }) => {
@@ -60,18 +47,25 @@ export default function CodeOfConduct() {
 
   survey.onComplete.add(surveyComplete);
 
+  useEffect(() => {
+    async function fetchData() {
+      return await get_cargo_security_profile(data?.user?.id);
+    }
+    fetchData()
+      .then((response) => setcheckIfAnswered(response?.success))
+      .catch((e) => seterror(`${e}`));
+  }, [data]);
+
   const showSession: any = () => {
     if (status === "authenticated") {
       if (checkIfAnswered) {
         return (
           <div className="min-h-screen flex flex-col items-center justify-center rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-            {error && (
-              <p className="text-red">{error}</p>
-            )}
+            {error && <p className="text-red">{error}</p>}
             <div className="max-w-full overflow-x-auto">
               <div className="border-b-4 border-slate-700 mb-9">
                 <h2 className="text-lg text-stone-900 sm:text-3xl font-semibold mb-1 text-center">
-                  Code Of Conduct
+                  Cargo Security Profile
                 </h2>
                 <p className="text-lg text-stone-900 sm:text-xl mb-8 text-center flex items-center justify-center gap-2">
                   Already Answered
@@ -100,7 +94,7 @@ export default function CodeOfConduct() {
                     Dashboard
                   </Link>
                   <Link
-                    href="/supplier-sustainability-profile"
+                    href="/code-of-conduct"
                     className="bg-slate-700 text-gray hover:bg-slate-800 px-30 py-1 text-xl"
                   >
                     Next
@@ -111,7 +105,13 @@ export default function CodeOfConduct() {
           </div>
         );
       }
-      return <Survey model={survey} />;
+
+      return (
+        <>
+          {error && <p className="text-red">Error: {error}</p>}
+          <Survey model={survey} />
+        </>
+      );
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
@@ -122,7 +122,7 @@ export default function CodeOfConduct() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addCodeOfConductQnA({
+  await add_cargo_security_profile({
     user_id: user_id,
     answers: answers,
     questions: questions,

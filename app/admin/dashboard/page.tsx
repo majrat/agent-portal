@@ -1,7 +1,8 @@
 "use client";
 import { getAllusers, userPercentageChange } from "actions/user";
-import CardDataStats from "components/card-data-stats";
-import DefaultLayout from "components/layouts/admin-default-layout";
+import DefaultLayout from "components/admin/layouts/admin-default-layout";
+import CardDataStats from "components/common/card-data-stats";
+import Loader from "components/common/loader";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -116,9 +117,9 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      return redirect("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

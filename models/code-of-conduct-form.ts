@@ -19,22 +19,26 @@ export const survey_json = {
         {
           "type": "html",
           "name": "CodeOfConductFile",
-          "html": "<p><a href='https://drive.google.com/uc?export=download&id=1vorhqtGYzWhHVtCPoqe0-n9UNeSREGnA' download><b><big>Click Here to Download</big></a> Code of Conduct document for review and sign</p></b>",
+          "html": "<p><a href='https://drive.google.com/uc?export=download&id=1vorhqtGYzWhHVtCPoqe0-n9UNeSREGnA' download><b><big>Click Here to Download</big></a> </br> Code of Conduct document for review and acknowledgement</p></b>",
         },
         {
-          "type": "file",
+          "type": "boolean",
           "name": "question1",
-          "title": "Scan and upload the signed Supplier Code of Conduct:",
+          "title":
+            "Did you read and agree to the Supplier Code of Conduct Document?",
           "isRequired": true,
+          "labelTrue": "I read & I Agree",
+          "labelFalse": "I read & I Do Not Agree",
+          "swapOrder": true,
         },
         {
           "type": "comment",
           "name": "question2",
           "title":
-            "If you are unable to upload a signed copy of the Code of Business Conduct, please upload an alternative document.",
+            "Remarks",
           "description": "Give a brief description:",
           "placeholder":
-            "The completed and signed KBR Supplier Code of Conduct from Priority Worldwide is attached.",
+            "I agree to Supplier Code of Conduct from Priority Worldwide.",
         },
         {
           "type": "text",
