@@ -2,15 +2,15 @@
 import { connectDB } from "lib/mongodb";
 import SupplierSustainabilityProfile from "models/supplier-sustainability-profile-qna";
 
-export const addSupplierSustainabilityProfile = async (values: any) => {
+export const setSupplierSustainabilityProfile = async (values: any) => {
   const { user_id, answers, questions } = values;
 
   try {
     await connectDB();
 
-    const addSupplierSustainabilityProfileData =
+    const setSupplierSustainabilityProfileData =
       await SupplierSustainabilityProfile.findOne({ user_id });
-    if (addSupplierSustainabilityProfileData) {
+    if (setSupplierSustainabilityProfileData) {
       throw new Error("questionaire already answered!");
     }
 

@@ -4,15 +4,16 @@ import { redirect } from "next/navigation";
 import Image from "next/image";
 import DefaultLayout from "components/user/layouts/user-default-layout";
 import CardDataStats from "components/common/card-data-stats";
-import { get_vendor_welcome } from "actions/vendor-welcome";
+import { getVendorWelcome } from "actions/vendor-welcome";
 import { useEffect, useState } from "react";
 import { getPriorityPrinciples } from "actions/priority-principles";
-import { get_cargo_security_program } from "actions/cargo-security-program";
+import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
-import { get_cargo_security_profile } from "actions/cargo-security-profile";
+import { getCargoSecurityProfile } from "actions/cargo-security-profile";
 import LogoCard from "../components/common/logo-card";
 import Loader from "components/common/loader";
+import formattedDate from "js/formattedDate";
 
 export default function Home() {
   const { status, data } = useSession();
@@ -37,7 +38,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchVendorWelcomeData() {
-      return await get_vendor_welcome(data?.user?.id);
+      return await getVendorWelcome(data?.user?.id);
     }
     fetchVendorWelcomeData()
       .then((response) => {
@@ -55,7 +56,7 @@ export default function Home() {
       .catch((e) => seterror(`${e}`));
 
     async function fetchCargoSecurityProgram() {
-      return await get_cargo_security_program(data?.user?.id);
+      return await getCargoSecurityProgram(data?.user?.id);
     }
     fetchCargoSecurityProgram()
       .then((response) => {
@@ -82,7 +83,7 @@ export default function Home() {
       .catch((e) => seterror(`${e}`));
 
     async function fetchCargoSecurityProfileData() {
-      return await get_cargo_security_profile(data?.user?.id);
+      return await getCargoSecurityProfile(data?.user?.id);
     }
     fetchCargoSecurityProfileData()
       .then(
@@ -99,8 +100,7 @@ export default function Home() {
   }, [data]);
   const showSession = () => {
     if (status === "authenticated") {
-      const joinedDate = new Date(data.user.joined_date);
-      const formattedDate = joinedDate.toDateString();
+      const Dateformatted = formattedDate(data.user.joined_date);
       const email = data.user.email;
       const name = data.user.name;
       return (
@@ -111,7 +111,7 @@ export default function Home() {
             <CardDataStats
               small_txt={email}
               big_txt={name}
-              status_txt={"Joined Date: " + formattedDate}
+              status_txt={"Joined Date: " + Dateformatted}
               color="blue"
             >
               <span className="h-12 w-12 rounded-full">
@@ -338,7 +338,11 @@ export default function Home() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
       return redirect("/auth/login");
     }

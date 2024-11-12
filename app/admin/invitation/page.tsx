@@ -1,5 +1,5 @@
 "use client";
-import { send_invitation } from "actions/admin/invitation";
+import { setInvitation } from "actions/admin/invitation";
 import { getAllusers, userPercentageChange } from "actions/user";
 import DefaultLayout from "components/admin/layouts/admin-default-layout";
 import CardDataStats from "components/common/card-data-stats";
@@ -16,7 +16,7 @@ export default function Dashboard() {
   const [success, setSuccess] = useState<string>("");
 
   const handleSubmit = async (formData: FormData) => {
-    const res = await send_invitation({
+    const res = await setInvitation({
       user_id: data?.user.id,
       first_name: formData.get("first_name"),
       last_name: formData.get("last_name"),

@@ -5,18 +5,18 @@ import invitation from "models/invitations";
 import nodemailer from "nodemailer";
 const { SENDER_EMAIL, SENDER_PASSWORD, NODE_ENV } = process.env;
 
-export const send_invitation = async (values: any) => {
+export const setInvitation = async (values: any) => {
   const { user_id, first_name, last_name, email, subject, message, org_code } =
     values;
 
   try {
     await connectDB();
 
-    const send_invitation_found = await invitation.findOne({
+    const setInvitation_found = await invitation.findOne({
       email,
       org_code,
     });
-    if (send_invitation_found) {
+    if (setInvitation_found) {
       throw new Error("Already Invited!");
     }
 
@@ -78,7 +78,7 @@ export const send_invitation = async (values: any) => {
   }
 };
 
-export const get_invitation = async (email: any) => {
+export const getInvitation = async (email: any) => {
   try {
     await connectDB();
     const invitation_data = await invitation.findOne({

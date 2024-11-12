@@ -108,6 +108,24 @@ const menuGroups = [
         ),
         label: "Vendor Profile",
         route: "/vendor-profile",
+        children: [
+          {
+            label: "Vendor Registration",
+            route: "/vendor-profile/vendor-registration",
+          },
+          {
+            label: "Bank details",
+            route: "/vendor-profile/bank-details",
+          },
+          {
+            label: "Agency Credit Application",
+            route: "/vendor-profile/agency-credit-application",
+          },
+          {
+            label: "NDA",
+            route: "/vendor-profile/nda",
+          },
+        ],
       },
       {
         icon: (

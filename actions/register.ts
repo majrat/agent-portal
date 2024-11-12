@@ -2,14 +2,14 @@
 import { connectDB } from "lib/mongodb";
 import user_model from "models/user";
 import bcrypt from "bcryptjs";
-import { get_invitation } from "./admin/invitation";
+import { getInvitation } from "./admin/invitation";
 
 export const register = async (values: any) => {
   const { email, password, name, org_code } = values;
 
   try {
     await connectDB();
-    const userInvitationDetails = await get_invitation(email);
+    const userInvitationDetails = await getInvitation(email);
 
     if (userInvitationDetails.success) {
       const userFound = await user_model.findOne({ email, org_code });

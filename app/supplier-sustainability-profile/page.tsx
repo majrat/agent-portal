@@ -12,7 +12,7 @@ import { surveyJson } from "../../models/supplier-sustainability-profile-form";
 import React from "react";
 import {
   getSupplierSustainabilityProfile,
-  addSupplierSustainabilityProfile,
+  setSupplierSustainabilityProfile,
 } from "../../actions/supplier-sustainability-profile";
 
 import DefaultLayout from "../../components/user/layouts/user-default-layout";
@@ -117,7 +117,7 @@ export default function Questionaire() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addSupplierSustainabilityProfile({
+  await setSupplierSustainabilityProfile({
     user_id: user_id,
     answers: answers,
     questions: questions,

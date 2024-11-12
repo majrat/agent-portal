@@ -6,8 +6,8 @@ import React from "react";
 import Image from "next/image";
 import Breadcrumb from "components/common/breadcrumbs/breadcrumb";
 import DefaultLayout from "components/user/layouts/user-default-layout";
-import { verify_email } from "actions/verify-email";
-import { resend_invitation_code } from '../../../actions/resend-invitation-code';
+import { verifyEmail } from "actions/verify-email";
+import { resetInvitationCode } from '../../../actions/resend-invitation-code';
 
 const SignUp: React.FC = () => {
   const [error, seterror] = useState<string>("");
@@ -16,7 +16,7 @@ const SignUp: React.FC = () => {
   const ref = useRef<HTMLFormElement>(null);
   // email, org_code
   const handleSubmit = async (formData: FormData) => {
-    const r = await verify_email({
+    const r = await verifyEmail({
       email: formData.get("email"),
       org_code: formData.get("org_code"),
       password: formData.get("password"),

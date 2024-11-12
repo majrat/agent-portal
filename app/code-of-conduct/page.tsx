@@ -13,7 +13,7 @@ import React from "react";
 import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import {
   getCodeOfConductQnA,
-  addCodeOfConductQnA,
+  setCodeOfConductQnA,
 } from "../../actions/code-of-conduct-qna";
 import Loader from "components/common/loader";
 
@@ -122,7 +122,7 @@ export default function CodeOfConduct() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addCodeOfConductQnA({
+  await setCodeOfConductQnA({
     user_id: user_id,
     answers: answers,
     questions: questions,

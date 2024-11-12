@@ -1,15 +1,15 @@
 "use server";
 import { connectDB } from "lib/mongodb";
 import user_model from "models/user";
-import { get_invitation } from "./admin/invitation";
+import { getInvitation } from "./admin/invitation";
 import bcrypt from "bcryptjs";
 
-export const verify_email = async (values: any) => {
+export const verifyEmail = async (values: any) => {
   const { email, org_code, password } = values;
 
   try {
     await connectDB();
-    const userInvitationDetails = await get_invitation(email);
+    const userInvitationDetails = await getInvitation(email);
 
     if (userInvitationDetails.success) {
       const user = await user_model.findOne({ email });

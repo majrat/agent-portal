@@ -8,11 +8,11 @@ import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { get_all_cargo_security_profile } from "actions/cargo-security-profile";
-import { get_cargo_security_program } from "actions/cargo-security-program";
+import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getPriorityPrinciples } from "actions/priority-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
-import { get_vendor_welcome } from "actions/vendor-welcome";
+import { getVendorWelcome } from "actions/vendor-welcome";
 import DefaultLayout from "components/admin/layouts/admin-default-layout";
 import Loader from "components/common/loader";
 
@@ -32,7 +32,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function fetchVendorWelcomeData() {
-      return await get_vendor_welcome(data?.user?.id);
+      return await getVendorWelcome(data?.user?.id);
     }
     fetchVendorWelcomeData()
       .then((response) => {
@@ -50,7 +50,7 @@ export default function Dashboard() {
       .catch((e) => seterror(`${e}`));
 
     async function fetchCargoSecurityProgram() {
-      return await get_cargo_security_program(data?.user?.id);
+      return await getCargoSecurityProgram(data?.user?.id);
     }
     fetchCargoSecurityProgram()
       .then((response) => {

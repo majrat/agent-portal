@@ -11,8 +11,8 @@ import { Model } from "survey-core";
 import { useCallback } from "react";
 import { survey_json } from "models/cargo-security-profile-form";
 import {
-  add_cargo_security_profile,
-  get_cargo_security_profile,
+  setCargoSecurityProfile,
+  getCargoSecurityProfile,
 } from "../../../actions/cargo-security-profile";
 import Loader from "components/common/loader";
 
@@ -49,7 +49,7 @@ export default function Assessment() {
 
   useEffect(() => {
     async function fetchData() {
-      return await get_cargo_security_profile(data?.user?.id);
+      return await getCargoSecurityProfile(data?.user?.id);
     }
     fetchData()
       .then((response) => setcheckIfAnswered(response?.success))
@@ -122,7 +122,7 @@ export default function Assessment() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await add_cargo_security_profile({
+  await setCargoSecurityProfile({
     user_id: user_id,
     answers: answers,
     questions: questions,

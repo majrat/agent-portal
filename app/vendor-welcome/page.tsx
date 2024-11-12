@@ -7,8 +7,8 @@ import DefaultLayout from "components/user/layouts/user-default-layout";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  add_vendor_welcome,
-  get_vendor_welcome,
+  setVendorWelcome,
+  getVendorWelcome,
 } from "../../actions/vendor-welcome";
 import LogoCard from "components/common/logo-card";
 import Loader from "components/common/loader";
@@ -19,8 +19,8 @@ export default function Home() {
   const [Accepted, setAccepted] = useState<boolean>(false);
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
-    const acceptSubmitData = { user_id: data?.user?.id };
-    await add_vendor_welcome(acceptSubmitData)
+    const userId = { user_id: data?.user?.id };
+    await setVendorWelcome(userId)
       .then(() => {
         router.push("/priority-principles");
       })
@@ -28,7 +28,7 @@ export default function Home() {
   };
   useEffect(() => {
     async function fetchData() {
-      return await get_vendor_welcome(data?.user?.id);
+      return await getVendorWelcome(data?.user?.id);
     }
     fetchData()
       .then((response) => {

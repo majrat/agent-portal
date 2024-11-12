@@ -1,33 +1,11 @@
 "use server";
 // import { connectDB } from "@/lib/mongodb";
 import code_of_conduct_qna from "models/code-of-conduct";
-import path from "path";
-import fs from "fs";
 import { connectDB } from "lib/mongodb";
 
-async function savePDFFile(params: any) {
-  // Decode the Base64 string
-  const buffer: any = Buffer.from(params.content, "base64");
-
-  // Define the file path
-  const filePath = path.join(process.cwd(), "public", "files", params.name);
-
-  // Ensure the directory exists
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-
-  // Save the file
-  fs.writeFileSync(filePath, buffer);
-
-  return filePath;
-}
-
-export const addCodeOfConductQnA = async (values: any) => {
+export const setCodeOfConductQnA = async (values: any) => {
   try {
     const { user_id, answers, questions } = values;
-    // SAVE THE FILE IN A STORAGE
-    const filePath = await savePDFFile(answers.question1[0]);
-    // REASSIGN THAT FILE PATH IN QUESTION
-    answers.question1 = filePath;
 
     await connectDB();
 

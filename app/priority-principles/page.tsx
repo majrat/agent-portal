@@ -6,7 +6,7 @@ import Link from "next/link";
 import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import React, { useEffect, useState } from "react";
 import {
-  acceptPriorityPrinciples,
+  setPriorityPrinciples,
   getPriorityPrinciples,
 } from "actions/priority-principles";
 import { useRouter } from "next/navigation";
@@ -19,8 +19,8 @@ export default function Home() {
   const [Accepted, setAccepted] = useState<boolean>(false);
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
-    const acceptSubmitData = { user_id: data?.user?.id, accepted: true };
-    await acceptPriorityPrinciples(acceptSubmitData);
+    const userId = { user_id: data?.user?.id, accepted: true };
+    await setPriorityPrinciples(userId);
     router.push("/priority-principles");
   };
   useEffect(() => {

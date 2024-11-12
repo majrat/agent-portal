@@ -4,8 +4,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import {
-  add_cargo_security_program,
-  get_cargo_security_program,
+  setCargoSecurityProgram,
+  getCargoSecurityProgram,
 } from "actions/cargo-security-program";
 import { redirect, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -18,8 +18,8 @@ export default function WelcomeLetter() {
   const [Accepted, setAccepted] = useState<boolean>(false);
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
-    const acceptSubmitData = { user_id: data?.user?.id };
-    await add_cargo_security_program(acceptSubmitData)
+    const userId = { user_id: data?.user?.id };
+    await setCargoSecurityProgram(userId)
       .then(() => {
         router.push("/cargo-security-program/cargo-security-profile");
       })
@@ -27,7 +27,7 @@ export default function WelcomeLetter() {
   };
   useEffect(() => {
     async function fetchData() {
-      return await get_cargo_security_program(data?.user?.id);
+      return await getCargoSecurityProgram(data?.user?.id);
     }
     fetchData()
       .then((response) => {
