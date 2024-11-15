@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import "survey-core/defaultV2.min.css";
 import "survey-core/modern.min.css";
@@ -20,6 +20,7 @@ import Loader from "components/common/loader";
 export default function CodeOfConduct() {
   const { status } = useSession();
   const { data } = useSession();
+  const router = useRouter();
   const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
   const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
@@ -115,7 +116,7 @@ export default function CodeOfConduct() {
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

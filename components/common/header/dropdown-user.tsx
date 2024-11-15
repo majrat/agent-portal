@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import ClickOutside from "../click-outside";
 import { signOut, useSession } from "next-auth/react";
 
@@ -133,9 +133,7 @@ const Dropdownuser = () => {
             <button
               className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out text-rose-400 hover:text-rose-800 lg:text-base"
               onClick={() => {
-                signOut({ redirect: true }).then(() => {
-                  router.push("/");
-                });
+                signOut({ redirect: true, callbackUrl: "/auth/login" });
               }}
             >
               <svg

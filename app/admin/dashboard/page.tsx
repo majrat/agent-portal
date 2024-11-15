@@ -4,11 +4,12 @@ import DefaultLayout from "components/admin/layouts/admin-default-layout";
 import CardDataStats from "components/common/card-data-stats";
 import Loader from "components/common/loader";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Dashboard() {
   const [error, seterror] = useState<string>("");
+  const router = useRouter();
   const { status, data } = useSession();
   const [users, setusers] = useState([]);
   const [userPercentageChangeData, setuserPercentageChangeData] = useState<
@@ -119,7 +120,7 @@ export default function Dashboard() {
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

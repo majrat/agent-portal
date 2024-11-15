@@ -1,7 +1,7 @@
 "use client";
 import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import Link from "next/link";
 import DefaultLayout from "components/user/layouts/user-default-layout";
 import Breadcrumb from "components/common/breadcrumbs/breadcrumb";

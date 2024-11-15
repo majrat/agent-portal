@@ -203,7 +203,7 @@ export default function WelcomeLetter() {
         </span>
       );
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

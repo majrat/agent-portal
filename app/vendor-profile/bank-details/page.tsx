@@ -12,7 +12,7 @@ export default function Home() {
   const [error, setError] = useState("");
   const router = useRouter();
   const [success, setsuccess] = useState<string>("");
-  const [vendorRegistrationData, setBankDetailsData] = useState<any>();
+  const [BankDetailsData, setBankDetailsData] = useState<any>();
   const { status, data } = useSession();
   const ref = useRef<HTMLFormElement>(null);
 
@@ -41,7 +41,7 @@ export default function Home() {
             </p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.beneficiary_payee_name || (
+                {BankDetailsData?.beneficiary_payee_name || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -54,7 +54,7 @@ export default function Home() {
             </p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.beneficiary_payee_address || (
+                {BankDetailsData?.beneficiary_payee_address || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -65,7 +65,7 @@ export default function Home() {
             <p className="col-span-1 block font-medium">Bank Account No :</p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.bank_account_no || (
+                {BankDetailsData?.bank_account_no || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -76,7 +76,7 @@ export default function Home() {
             <p className="col-span-1 block font-medium">Bank Name :</p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.bank_name || (
+                {BankDetailsData?.bank_name || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -87,7 +87,7 @@ export default function Home() {
             <p className="col-span-1 block font-medium">Bank Address :</p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.bank_address || (
+                {BankDetailsData?.bank_address || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -98,7 +98,7 @@ export default function Home() {
             <p className="col-span-1 block font-medium">Branch :</p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.branch || (
+                {BankDetailsData?.branch || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -109,7 +109,7 @@ export default function Home() {
             <p className="col-span-1 block font-medium">Swift code :</p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.swift_code || (
+                {BankDetailsData?.swift_code || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -122,7 +122,7 @@ export default function Home() {
             </p>
             <p className="md:col-span-2 col-span-1">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.iban || (
+                {BankDetailsData?.iban || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -133,7 +133,7 @@ export default function Home() {
             <p className="col-span-1 block font-medium pb-10">Currency :</p>
             <p className="md:col-span-2 col-span-1 pb-10">
               <span className="border-b-2 border-dotted border-[#fdc82e]">
-                {vendorRegistrationData?.currency || (
+                {BankDetailsData?.currency || (
                   <span className="border-b-2 border-dotted border-red text-xs">
                     NO DATA FOUND
                   </span>
@@ -195,7 +195,7 @@ export default function Home() {
         </span>
       );
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

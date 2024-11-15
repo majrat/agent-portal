@@ -19,6 +19,7 @@ import Loader from "components/common/loader";
 export default function Assessment() {
   const { status } = useSession();
   const { data } = useSession();
+  const router = useRouter();
   const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
   const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
@@ -115,7 +116,7 @@ export default function Assessment() {
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

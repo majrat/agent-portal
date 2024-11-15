@@ -32,6 +32,7 @@ type userDataType = {
 
 export default function Dashboard() {
   const { status, data } = useSession();
+  const router = useRouter();
   const [error, seterror] = useState<string>("");
   const [UserData, setUserData] = useState<userDataType[] | undefined>();
   useEffect(() => {
@@ -174,7 +175,7 @@ export default function Dashboard() {
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

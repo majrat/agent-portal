@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
 import DefaultLayout from "components/user/layouts/user-default-layout";
 import CardDataStats from "components/common/card-data-stats";
@@ -17,7 +17,8 @@ import formattedDate from "js/formattedDate";
 
 export default function Home() {
   const { status, data } = useSession();
-
+  console.log("================> ", status);
+  const router = useRouter();
   const [VendorWelcomeAccepted, setVendorWelcomeAccepted] =
     useState<boolean>(false);
   const [PriorityPrincipleAccepted, setPriorityPrincipleAccepted] =
@@ -344,7 +345,7 @@ export default function Home() {
         </span>
       );
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

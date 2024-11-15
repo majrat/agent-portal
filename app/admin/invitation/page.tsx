@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 export default function Dashboard() {
   const { status, data } = useSession();
   const [error, setError] = useState<string>("");
+  const router = useRouter();
   const [success, setSuccess] = useState<string>("");
 
   const handleSubmit = async (formData: FormData) => {
@@ -157,7 +158,7 @@ export default function Dashboard() {
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

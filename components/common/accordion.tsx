@@ -17,14 +17,14 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   }, [isOpen]);
 
   return (
-    <div className="border-b border-gray-200">
+    <div className={`border-b border-gray-200 bg-white dark:bg-meta-4 dark:text-white rounded-md mt-6 shadow-default ${!isOpen && "hover:bg-[#fdc82e]/30 ease-linear duration-300"}`}>
       <button
         className="w-full text-left py-4 flex justify-between items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-semibold text-lg">{title}</span>
+        <span className="font-semibold text-lg px-6 hover:underline ease-linear duration-300">{title}</span>
         <svg
-          className={`w-5 h-5 transform transition-transform duration-300 ${
+          className={`w-5 h-5 transform transition-transform mr-6 duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
           xmlns="http://www.w3.org/2000/svg"

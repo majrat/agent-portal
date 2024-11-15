@@ -6,27 +6,24 @@ import React, { useEffect, useRef, useState } from "react";
 import Loader from "components/common/loader";
 import LogoCard from "components/common/logo-card";
 import DefaultLayout from "components/user/layouts/user-default-layout";
-import {
-  getVendorRegistration,
-  setVendorRegistration,
-} from "actions/vendor-registration";
 import NDA from "./_nda-text/nda-text";
+import { getNDA } from "actions/nda";
 
 export default function Home() {
   const [error, setError] = useState("");
   const router = useRouter();
   const [success, setsuccess] = useState<string>("");
-  const [vendorRegistrationData, setVendorRegistrationData] = useState<any>();
+  const [NDAData, setNDAData] = useState<any>();
   const { status, data } = useSession();
   const ref = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     async function fetchData() {
-      return await getVendorRegistration(data?.user?.id);
+      return await getNDA(data?.user?.id);
     }
     fetchData()
       .then((response) => {
-        setVendorRegistrationData(response?.data);
+        setNDAData(response?.data);
       })
       .catch((e) => setError(`${e}`));
   }, [data]);
@@ -35,20 +32,20 @@ export default function Home() {
       return (
         <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/global-v1-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-white/60 sm:px-7.5">
           <LogoCard />
-          <h3 className="text-xl font-medium py-3">
-            VENDOR REGISTRATION / COMPANY DETAILS
-          </h3>
+          {/* <h3 className="text-xl font-medium py-3">
+          NON DISCLOSURE AGREEMENT
+          </h3> */}
           <div className="flex">
             {error && <span className="text-red mr-4">{error}</span>}
           </div>
-          <NDA />
+          <NDA contracted_partner={NDAData?.contracted_partner?.name} />
           <div className="mt-6 p-10 border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark dark:text-white rounded-md">
             <p className="block font-medium pb-3">Contracted Partner</p>
             <div className="grid grid-cols-2 pt-3">
               <p className="col-span-1 block">Date</p>
               <p className="md:col-span-1 col-span-1">
                 <span className="border-b-2 border-dotted border-[#fdc82e]">
-                  {vendorRegistrationData?.company_name || (
+                  {NDAData?.contracted_partner?.date || (
                     <span className="border-b-2 border-dotted border-red text-xs">
                       NO DATA FOUND
                     </span>
@@ -60,7 +57,7 @@ export default function Home() {
               <p className="col-span-1 block">Printed Name</p>
               <p className="md:col-span-1 col-span-1">
                 <span className="border-b-2 border-dotted border-[#fdc82e]">
-                  {vendorRegistrationData?.company_name || (
+                  {NDAData?.contracted_partner?.printed_name || (
                     <span className="border-b-2 border-dotted border-red text-xs">
                       NO DATA FOUND
                     </span>
@@ -72,7 +69,7 @@ export default function Home() {
               <p className="col-span-1 block">Signature</p>
               <p className="md:col-span-1 col-span-1">
                 <span className="border-b-2 border-dotted border-[#fdc82e]">
-                  {vendorRegistrationData?.company_name || (
+                  {NDAData?.contracted_partner?.signature || (
                     <span className="border-b-2 border-dotted border-red text-xs">
                       NO DATA FOUND
                     </span>
@@ -85,7 +82,7 @@ export default function Home() {
               <p className="col-span-1 block">Date</p>
               <p className="md:col-span-1 col-span-1">
                 <span className="border-b-2 border-dotted border-[#fdc82e]">
-                  {vendorRegistrationData?.company_name || (
+                  {NDAData?.priority_worldwide?.date || (
                     <span className="border-b-2 border-dotted border-red text-xs">
                       NO DATA FOUND
                     </span>
@@ -97,7 +94,7 @@ export default function Home() {
               <p className="col-span-1 block">Printed Name</p>
               <p className="md:col-span-1 col-span-1">
                 <span className="border-b-2 border-dotted border-[#fdc82e]">
-                  {vendorRegistrationData?.company_name || (
+                  {NDAData?.priority_worldwide?.printed_name || (
                     <span className="border-b-2 border-dotted border-red text-xs">
                       NO DATA FOUND
                     </span>
@@ -109,7 +106,7 @@ export default function Home() {
               <p className="col-span-1 block">Signature</p>
               <p className="md:col-span-1 col-span-1">
                 <span className="border-b-2 border-dotted border-[#fdc82e]">
-                  {vendorRegistrationData?.company_name || (
+                  {NDAData?.priority_worldwide?.signature || (
                     <span className="border-b-2 border-dotted border-red text-xs">
                       NO DATA FOUND
                     </span>
@@ -120,7 +117,7 @@ export default function Home() {
           </div>
           <>
             <Link
-              href="/vendor-profile/vendor-registration/edit"
+              href="/vendor-profile/nda/edit"
               className="fixed bottom-9 right-22 px-3 py-2 font-bold text-white rounded-2xl flex bg-red/60 cursor-pointer hover:bg-red"
             >
               <svg
@@ -172,7 +169,7 @@ export default function Home() {
         </span>
       );
     } else {
-      return redirect("/auth/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;
