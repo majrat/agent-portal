@@ -40,7 +40,7 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] bg-cover px-3 lg:px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] px-3 lg:px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           <LogoCard />
           <h2 className="text-xl font-medium py-6">
             PHYSICAL OFFICES OF PRIORITY WORLDWIDE
