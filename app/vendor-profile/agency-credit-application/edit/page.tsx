@@ -9,6 +9,10 @@ import DefaultLayout from "components/user/layouts/user-default-layout";
 import { getNDA, setNDA } from "actions/nda";
 import { type_of_agency_credit_application } from "types/agency-credit-application";
 import formattedDate from "js/formattedDate";
+import {
+  getAgencyCreditApplication,
+  setAgencyCreditApplication,
+} from "actions/agency-credit-application";
 
 export default function Home() {
   const [error, setError] = useState("");
@@ -22,7 +26,6 @@ export default function Home() {
 
   const handleSubmit = async (formData: FormData) => {
     const submit_data = {
-      user_id: data?.user?.id,
       general_information: {
         corporate_name: formData.get("corporate_name"),
         dba: formData.get("dba"),
@@ -139,29 +142,28 @@ export default function Home() {
         ),
       },
       additional_company_details: {
-        do_you_accept_you_invoices_via_email: formData.get(
-          "notes_or_additional_information"
+        current_agency_network_memberships: formData.get(
+          "current_agency_network_memberships"
+        ),
+        country_specific_requirements: formData.get(
+          "country_specific_requirements"
+        ),
+        how_were_you_referred_to_pws: formData.get(
+          "how_were_you_referred_to_pws"
         ),
       },
+      notes_or_additional_information: formData.get(
+        "notes_or_additional_information"
+      ),
+      printed_name: formData.get("printed_name"),
+      signature: formData.get("signature"),
+      title: formData.get("title"),
     };
 
-    const r = await setNDA({
-      user_id: data?.user?.id,
-      generalInformation_date: formData.get("generalInformation_date"),
-      generalInformation_printed_name: formData.get(
-        "generalInformation_printed_name"
-      ),
-      generalInformation_signature: formData.get(
-        "generalInformation_signature"
-      ),
-      priority_worldwide_date: formData.get("priority_worldwide_date"),
-      priority_worldwide_printed_name: formData.get(
-        "priority_worldwide_printed_name"
-      ),
-      priority_worldwide_signature: formData.get(
-        "priority_worldwide_signature"
-      ),
-    });
+    const r = await setAgencyCreditApplication(
+      submit_data as unknown as type_of_agency_credit_application,
+      data?.user?.id
+    );
     if (r?.success) {
       ref.current?.reset();
       setsuccess(`${r?.message}` as string);
@@ -174,7 +176,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      return await getNDA(data?.user?.id);
+      return await getAgencyCreditApplication(data?.user?.id);
     }
     fetchData()
       .then((response) => {
@@ -191,7 +193,7 @@ export default function Home() {
             Agency Credit Application
           </h3>
           <div className="p-10 rounded-md border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark dark:text-white">
-            <div className="mb-4">
+            <form action={handleSubmit} className="mb-4" autoComplete="off">
               <div className="flex">
                 {error && <span className="text-red mr-4">{error}</span>}
                 {success && (
@@ -1075,10 +1077,6 @@ export default function Home() {
                   <p className="md:col-span-1 col-span-1 "></p>
                 </div> */}
               </div>
-              <p className="block text-sm m-9 text-center font-semibold">
-                PLEASE EMAIL THE COMPLETED APPLICATION TO
-                ACCOUNTING@PRIORITYWORLDWIDE.COM
-              </p>
 
               <div className="my-6 flex justify-between items-center gap-4">
                 <input
@@ -1097,7 +1095,7 @@ export default function Home() {
                   </Link>
                 </p>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       );

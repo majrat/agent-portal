@@ -70,15 +70,18 @@ const agency_credit_application_schema =
           branch_location: {
             type: String,
             required: [true, "branch_location is required"],
+            default: "none",
           },
           accounting_contact: {
             name: {
               type: String,
               required: [true, "accounting_contact name is required"],
+              default: "none",
             },
             email: {
               type: String,
               required: [true, "accounting_contact email is required"],
+              default: "none",
             },
           },
         },
@@ -88,10 +91,12 @@ const agency_credit_application_schema =
           name: {
             type: String,
             required: [true, "trade_reference_information name is required"],
+            default: "none",
           },
           address: {
             type: String,
             required: [true, "trade_reference_information address is required"],
+            default: "none",
           },
           telephone: {
             type: String,
@@ -99,14 +104,17 @@ const agency_credit_application_schema =
               true,
               "trade_reference_information telephone is required",
             ],
+            default: "none",
           },
           fax: {
             type: String,
             required: [true, "trade_reference_information fax is required"],
+            default: "none",
           },
           email: {
             type: String,
             required: [true, "trade_reference_information email is required"],
+            default: "none",
           },
           account_number: {
             type: String,
@@ -114,6 +122,7 @@ const agency_credit_application_schema =
               true,
               "trade_reference_information account_number is required",
             ],
+            default: "none",
           },
         },
       ],
@@ -146,6 +155,7 @@ const agency_credit_application_schema =
             true,
             "do_you_have_any_invoicing_requirements is required",
           ],
+          default: "none",
         },
         do_you_accept_you_invoices_via_email: {
           type: String,

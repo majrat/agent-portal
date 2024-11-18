@@ -1,9 +1,10 @@
+const site_url = "http://localhost:3000";
 export const survey_json = {
   "title": "Supplier Code of Conduct",
   "description":
     "Please complete the Supplier Code of Conduct. Use the link below to download the document for review and sign.",
   "completedHtml":
-    "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/supplier-sustainability-profile'>Continue to Next Form</a></h3>",
+    `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href=${site_url}/supplier-sustainability-profile'>Continue to Next Form</a></h3>`,
   "completedHtmlOnCondition": [
     {
       "html": "<h3>Thank you for your participation</h3> <h4>We are glad that you love our product and service. Your ideas and suggestions will help us make it even better.</h4>",

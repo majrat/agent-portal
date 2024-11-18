@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
 
 export interface type_of_agency_credit_application {
-    _id: String;
+    _id?: String;
     general_information: {
       corporate_name: String;
       dba: String;
@@ -59,8 +59,8 @@ export interface type_of_agency_credit_application {
     printed_name: String;
     signature: String;
     title: String;
-    user_id: Schema.Types.ObjectId;
-    status: Number;
-    created_at: Date;
-    updated_at: Date;
+    user_id?: Schema.Types.ObjectId;
+    status?: Number;
+    created_at?: Date;
+    updated_at?: Date;
   }

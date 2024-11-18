@@ -9,6 +9,7 @@ import DefaultLayout from "components/user/layouts/user-default-layout";
 import { getNDA, setNDA } from "actions/nda";
 import { type_of_agency_credit_application } from "types/agency-credit-application";
 import formattedDate from "js/formattedDate";
+import { getAgencyCreditApplication } from "actions/agency-credit-application";
 
 export default function Home() {
   const [error, setError] = useState("");
@@ -19,36 +20,9 @@ export default function Home() {
   const { status, data } = useSession();
   const ref = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = async (formData: FormData) => {
-    const r = await setNDA({
-      user_id: data?.user?.id,
-      generalInformation_date: formData.get("generalInformation_date"),
-      generalInformation_printed_name: formData.get(
-        "generalInformation_printed_name"
-      ),
-      generalInformation_signature: formData.get(
-        "generalInformation_signature"
-      ),
-      priority_worldwide_date: formData.get("priority_worldwide_date"),
-      priority_worldwide_printed_name: formData.get(
-        "priority_worldwide_printed_name"
-      ),
-      priority_worldwide_signature: formData.get(
-        "priority_worldwide_signature"
-      ),
-    });
-    if (r?.success) {
-      ref.current?.reset();
-      setsuccess(`${r?.message}` as string);
-      await new Promise((resolve) => setTimeout(resolve, 2500));
-      return router.push("/vendor-profile/vendor-registration");
-    } else {
-      setError(`${r?.message}` as string);
-    }
-  };
   useEffect(() => {
     async function fetchData() {
-      return await getNDA(data?.user?.id);
+      return await getAgencyCreditApplication(data?.user?.id);
     }
     fetchData()
       .then((response) => {
@@ -258,14 +232,14 @@ export default function Home() {
                       agencyCreditApplicationData?.branch_info?.map(
                         (branchInfo, index) => (
                           <tr key={index}>
-                            <td className="align-top">
+                            <td className="align-top pt-6">
                               {branchInfo.branch_location || (
                                 <span className="border-b-2 border-dotted border-red text-xs p-3">
                                   NO DATA FOUND
                                 </span>
                               )}
                             </td>
-                            <td>
+                            <td className="align-top pt-6">
                               {"Name: " +
                                 branchInfo.accounting_contact.name || (
                                 <span className="border-b-2 border-dotted border-red text-xs p-3">
@@ -535,7 +509,41 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
+              <div className="border-b-2 py-6">
+                <p className="block font-medium text-xl mt-6">
+                  ADDITIONAL COMPANY DETAILS
+                </p>
+                <div className="grid grid-cols-2 p-3">
+                  <p className="col-span-1 block">
+                    Current Agency Network Memberships
+                  </p>
+                  <p>
+                    {(agencyCreditApplicationData?.additional_company_details
+                      ?.current_agency_network_memberships as string) ||
+                      "Enter Current Agency Network Memberships"}
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 p-3">
+                  <p className="col-span-1 block">
+                    Country Specific Requirements
+                  </p>
+                  <p>
+                    {(agencyCreditApplicationData?.additional_company_details
+                      ?.country_specific_requirements as string) ||
+                      "Enter Country Specific Requirements"}
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 p-3">
+                  <p className="col-span-1 block">
+                    How Were You Referred To PWS?
+                  </p>
+                  <p>
+                    {(agencyCreditApplicationData?.additional_company_details
+                      ?.how_were_you_referred_to_pws as string) ||
+                      "How Were You Referred To PWS?"}
+                  </p>
+                </div>
+              </div>
               <div className="border-b-2 py-6">
                 <p className="block font-medium text-xl mt-6">
                   NOTES OR ADDITIONAL INFORMATION
@@ -613,11 +621,6 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <p className="block text-sm m-9 text-center font-semibold">
-                PLEASE EMAIL THE COMPLETED APPLICATION TO
-                ACCOUNTING@PRIORITYWORLDWIDE.COM
-              </p>
-
               <>
                 <Link
                   href="/vendor-profile/agency-credit-application/edit"
