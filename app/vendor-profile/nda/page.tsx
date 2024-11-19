@@ -38,7 +38,7 @@ export default function Home() {
           <div className="flex">
             {error && <span className="text-red mr-4">{error}</span>}
           </div>
-          <NDA contracted_partner={NDAData?.contracted_partner?.name} />
+          <NDA contracted_partner={NDAData?.contracted_partner?.name} isOpenValue={false} />
           <div className="mt-6 p-10 border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark dark:text-white rounded-md">
             <p className="block font-medium pb-3">Contracted Partner</p>
             <div className="grid grid-cols-2 pt-3">

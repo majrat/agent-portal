@@ -2,9 +2,10 @@ import { useState, useRef, useEffect } from "react";
 interface AccordionProps {
   title: any;
   content: any;
+  isOpenValue: Boolean;
 }
-const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Accordion: React.FC<AccordionProps> = ({ title, content, isOpenValue }) => {
+  const [isOpen, setIsOpen] = useState(isOpenValue);
   const [height, setHeight] = useState(0);
   const contentRef = useRef<any>(null);
 

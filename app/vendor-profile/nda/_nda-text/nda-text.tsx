@@ -1,11 +1,13 @@
 import Accordion from "components/common/accordion";
 interface NDAProps {
   contracted_partner: any;
+  isOpenValue: boolean;
 }
-const NDA: React.FC<NDAProps> = ({ contracted_partner }) => {
+const NDA: React.FC<NDAProps> = ({ contracted_partner, isOpenValue }) => {
   return (
     <Accordion
       title="NON DISCLOSURE AGREEMENT"
+      isOpenValue={isOpenValue}
       content=<div className="p-3 dark:text-white text-black text-center border-t-2 bg-white dark:bg-meta-4">
         <div className="p-6">
           <h3 className="text-xl font-medium py-3 col-span-2">
