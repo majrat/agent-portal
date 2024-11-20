@@ -1,6 +1,6 @@
 "use server";
 import { connectDB } from "lib/mongodb";
-import vendor_details from "models/vendor-details";
+import vendor_registration from "models/vendor-registration";
 
 export const setVendorRegistration = async (values: any) => {
   const {
@@ -19,11 +19,11 @@ export const setVendorRegistration = async (values: any) => {
   try {
     await connectDB();
 
-    const addVendorRegistrationFound = await vendor_details.findOne({
+    const addVendorRegistrationFound = await vendor_registration.findOne({
       user_id,
     });
     if (addVendorRegistrationFound) {
-      await vendor_details.updateOne(
+      await vendor_registration.updateOne(
         { user_id },
         {
           $set: {
@@ -43,7 +43,7 @@ export const setVendorRegistration = async (values: any) => {
       );
     }
 
-    const newVendorRegistration = new vendor_details({
+    const newVendorRegistration = new vendor_registration({
       company_name,
       head_office_address,
       city,
@@ -59,19 +59,19 @@ export const setVendorRegistration = async (values: any) => {
 
     await newVendorRegistration.save();
     return {
-      success: true,
+      success: "success",
       message: "Vendor Registration saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
 export const getVendorRegistration = async (id: any) => {
   try {
     await connectDB();
-    const VendorRegistrationFounds = await vendor_details.findOne({
+    const VendorRegistrationFounds = await vendor_registration.findOne({
       user_id: id,
     });
     if (VendorRegistrationFounds) {
@@ -79,7 +79,7 @@ export const getVendorRegistration = async (id: any) => {
         JSON.stringify(VendorRegistrationFounds)
       );
       return {
-        success: true,
+        success: "success",
         message: "Vendor Registration saved",
         data: VendorRegistrationFound,
       };
@@ -87,6 +87,6 @@ export const getVendorRegistration = async (id: any) => {
     throw new Error("Vendor Registration Data Not Found");
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

@@ -28,7 +28,7 @@ export const register = async (values: any) => {
         });
         await user.save();
         return {
-          success: true,
+          success: "success",
           message: "New agent registeration successfull",
         };
       }
@@ -37,6 +37,6 @@ export const register = async (values: any) => {
     throw new Error(userInvitationDetails.message);
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

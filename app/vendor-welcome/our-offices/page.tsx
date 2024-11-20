@@ -16,7 +16,7 @@ import Loader from "components/common/loader";
 export default function Home() {
   const { status, data } = useSession();
   const router = useRouter();
-  const [Accepted, setAccepted] = useState<boolean>(false);
+  const [Accepted, setAccepted] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const userId = { user_id: data?.user?.id };

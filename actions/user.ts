@@ -15,13 +15,13 @@ export const getAllusers = async () => {
 
     console.log("allusersFound====>", allusersFound);
     return {
-      success: true,
+      success: "success",
       message: "User data found",
       data: allusersFound,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -73,12 +73,12 @@ export const userPercentageChange = async () => {
     // Calculate the percentage change
     const percentageChange = (change / previousMonthCount) * 100 || 0; // Handle division by zero
     return {
-      success: true,
+      success: "success",
       message: "Calculated the percentage change",
       data: percentageChange.toFixed(2) + "",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

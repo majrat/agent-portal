@@ -21,12 +21,12 @@ export const setCargoSecurityProgram = async (values: any) => {
 
     await save_cargo_security_program.save();
     return {
-      success: true,
+      success: "success",
       message: "Cargo security program form saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -43,12 +43,12 @@ export const getCargoSecurityProgram = async (user_id: any) => {
       JSON.stringify(cargo_security_program_data)
     );
     return {
-      success: true,
+      success: "success",
       message: "Cargo security program form found",
       data: cargo_security_program_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

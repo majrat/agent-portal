@@ -22,12 +22,12 @@ export const setSupplierSustainabilityProfile = async (values: any) => {
 
     await newSupplierSustainabilityProfile.save();
     return {
-      success: true,
+      success: "success",
       message: "Supplier sustainability profile saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -43,12 +43,12 @@ export const getSupplierSustainabilityProfile = async (id: any) => {
       JSON.stringify(SupplierSustainabilityProfileData)
     );
     return {
-      success: true,
+      success: "success",
       message: "Supplier sustainability profile found",
       data: SupplierSustainabilityProfileJson,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

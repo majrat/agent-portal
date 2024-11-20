@@ -27,7 +27,7 @@ export const verifyEmail = async (values: any) => {
         )
         .then(() => {
           return {
-            success: true,
+            success: "success",
             message: "Email Verification successfull",
           };
         })
@@ -39,6 +39,6 @@ export const verifyEmail = async (values: any) => {
     throw new Error(userInvitationDetails.message);
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

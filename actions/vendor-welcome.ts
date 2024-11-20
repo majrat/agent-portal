@@ -19,12 +19,12 @@ export const setVendorWelcome = async (values: any) => {
 
     await user.save();
     return {
-      success: true,
+      success: "success",
       message: "vendor welcome saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -39,12 +39,12 @@ export const getVendorWelcome = async (user_id: any) => {
       JSON.stringify(vendor_welcome_found)
     );
     return {
-      success: true,
+      success: "success",
       message: "vendor welcome found",
       data: vendor_welcome_founds,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

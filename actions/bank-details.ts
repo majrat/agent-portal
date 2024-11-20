@@ -59,12 +59,12 @@ export const setBankDetails = async (values: any) => {
 
     await newBankDetails.save();
     return {
-      success: true,
+      success: "success",
       message: "BankDetails saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -77,7 +77,7 @@ export const getBankDetails = async (id: any) => {
     if (BankDetailsFounds) {
       const BankDetailsFound = JSON.parse(JSON.stringify(BankDetailsFounds));
       return {
-        success: true,
+        success: "success",
         message: "BankDetails saved",
         data: BankDetailsFound,
       };
@@ -85,6 +85,6 @@ export const getBankDetails = async (id: any) => {
     throw new Error("BankDetails Data Not Found");
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

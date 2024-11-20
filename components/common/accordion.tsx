@@ -4,7 +4,11 @@ interface AccordionProps {
   content: any;
   isOpenValue: Boolean;
 }
-const Accordion: React.FC<AccordionProps> = ({ title, content, isOpenValue }) => {
+const Accordion: React.FC<AccordionProps> = ({
+  title,
+  content,
+  isOpenValue,
+}) => {
   const [isOpen, setIsOpen] = useState(isOpenValue);
   const [height, setHeight] = useState(0);
   const contentRef = useRef<any>(null);
@@ -18,28 +22,37 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, isOpenValue }) =>
   }, [isOpen]);
 
   return (
-    <div className={`border-b border-gray-200 bg-white dark:bg-meta-4 dark:text-white rounded-md mt-6 shadow-default ${!isOpen && "hover:bg-[#fdc82e]/30 ease-linear duration-300"}`}>
+    <div
+      className={`border-b border-gray-200 bg-white dark:bg-meta-4 dark:text-white text-meta-4 rounded-md mt-6 shadow-default ${
+        !isOpen && "hover:border-[#fdc82e] ease-linear duration-100"
+      }`}
+    >
       <button
-        className="w-full text-left py-4 flex justify-between items-center"
+        className="w-full text-left py-4 flex justify-between items-center hover:text-[#fdc82e]"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-semibold text-lg px-6 hover:underline ease-linear duration-300">{title}</span>
-        <svg
-          className={`w-5 h-5 transform transition-transform mr-6 duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        <span className="font-semibold text-lg px-6 hover:underline ease-linear duration-300">
+          {title}
+        </span>
+        <div className="flex ">
+          <span className="mx-3">{isOpen ? "Close" : "Open"}</span>
+          <svg
+            className={`w-5 h-5 transform transition-transform mr-6 duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
       </button>
       <div
         ref={contentRef}

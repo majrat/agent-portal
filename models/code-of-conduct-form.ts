@@ -1,10 +1,11 @@
-const site_url = "http://localhost:3000";
+const { SITE_BASE_URL } = process.env;
+
 export const survey_json = {
   "title": "Supplier Code of Conduct",
   "description":
     "Please complete the Supplier Code of Conduct. Use the link below to download the document for review and sign.",
   "completedHtml":
-    `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href=${site_url}/supplier-sustainability-profile'>Continue to Next Form</a></h3>`,
+    `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/supplier-sustainability-profile'>Continue to Next Form</a></h3>`,
   "completedHtmlOnCondition": [
     {
       "html": "<h3>Thank you for your participation</h3> <h4>We are glad that you love our product and service. Your ideas and suggestions will help us make it even better.</h4>",
@@ -18,13 +19,8 @@ export const survey_json = {
       "name": "CodeOfConduct",
       "elements": [
         {
-          "type": "html",
-          "name": "CodeOfConductFile",
-          "html": "<p><a href='https://drive.google.com/uc?export=download&id=1vorhqtGYzWhHVtCPoqe0-n9UNeSREGnA' download><b><big>Click Here to Download</big></a> </br> Code of Conduct document for review and acknowledgement</p></b>",
-        },
-        {
           "type": "boolean",
-          "name": "question1",
+          "name": "read_and_agree",
           "title":
             "Did you read and agree to the Supplier Code of Conduct Document?",
           "isRequired": true,
@@ -34,7 +30,7 @@ export const survey_json = {
         },
         {
           "type": "comment",
-          "name": "question2",
+          "name": "remarks",
           "title":
             "Remarks",
           "description": "Give a brief description:",
@@ -43,21 +39,21 @@ export const survey_json = {
         },
         {
           "type": "text",
-          "name": "question3",
+          "name": "signed_by",
           "title": "Signed By:",
           "isRequired": true,
           "placeholder": "Lauren Priddy",
         },
         {
           "type": "text",
-          "name": "question4",
+          "name": "title",
           "title": "Title:",
           "isRequired": true,
           "placeholder": "Director of Compliance/Corporate Secretary",
         },
         {
           "type": "text",
-          "name": "question5",
+          "name": "date",
           "title": "Date: (MM/DD/YYYY)",
           "isRequired": true,
           "inputType": "date",

@@ -1,9 +1,11 @@
+const { SITE_BASE_URL } = process.env;
+
 export const survey_json = {
   "title": "CTPAT/PIP/AEO",
-  "completedHtml": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",
+  "completedHtml": `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/code-of-conduct'>Continue to Next Form</a></h3>`,
   "completedHtmlOnCondition": [
     {
-      "html": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",
+      "html": `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/code-of-conduct'>Continue to Next Form</a></h3>`,
     },
     {
       "html": "<h3>Thank you for your participation</h3> <h4>We are glad that you shared your ideas with us. They will help us make our product and service better.</h4>",

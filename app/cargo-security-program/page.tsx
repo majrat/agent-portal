@@ -15,7 +15,7 @@ import LogoCard from "components/common/logo-card";
 export default function WelcomeLetter() {
   const { status, data } = useSession();
   const router = useRouter();
-  const [Accepted, setAccepted] = useState<boolean>(false);
+  const [Accepted, setAccepted] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const userId = { user_id: data?.user?.id };
@@ -143,7 +143,7 @@ export default function WelcomeLetter() {
             </a>
           </div>
           <div className="relative">
-            {Accepted ? (
+            {Accepted === "success" ? (
               <>
                 <div className="fixed bottom-9 right-22 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
                   <svg

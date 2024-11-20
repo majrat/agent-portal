@@ -8,15 +8,14 @@ import "survey-core/modern.min.css";
 import { Survey } from "survey-react-ui";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-import { survey_json } from "../../models/code-of-conduct-form";
+import { survey_json } from "models/code-of-conduct-form";
 import React from "react";
-import DefaultLayout from "../../components/user/layouts/user-default-layout";
+import DefaultLayout from "../../../components/user/layouts/user-default-layout";
 import {
   getCodeOfConductQnA,
   setCodeOfConductQnA,
-} from "../../actions/code-of-conduct-qna";
-import Loader from "../../components/common/loader";
-import CodeOfConductText from "./_code-of-conduct-text/code-of-conduct-text";
+} from "../../../actions/code-of-conduct-qna";
+import Loader from "components/common/loader";
 
 export default function CodeOfConduct() {
   const { status } = useSession();
@@ -111,12 +110,7 @@ export default function CodeOfConduct() {
           </div>
         );
       }
-      return (
-        <div className="">
-          <CodeOfConductText contracted_partner={""} isOpenValue />
-          <Survey model={survey} />
-        </div>
-      );
+      return <Survey model={survey} />;
     } else if (status === "loading") {
       return (
         <span className="text-[#888] text-sm mt-7">

@@ -24,7 +24,7 @@ export default function Home() {
   const [success, setsuccess] = useState<string>("");
   const [NDAData, setNDAData] = useState<any>();
   const { status, data } = useSession();
-  const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
+  const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");
   const ref = useRef<HTMLFormElement>(null);
   const survey = useMemo(() => {
     const thisSurvey = new Model(survey_json);

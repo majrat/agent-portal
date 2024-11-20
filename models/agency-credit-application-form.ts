@@ -1,8 +1,9 @@
-const site_url = "http://localhost:3000";
+const { SITE_BASE_URL } = process.env;
+
 export const survey_json = {
   "title": "AGENCY CREDIT APPLICATION",
   "completedHtml":
-    `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href=${site_url}/vendor-profile/nda'>Continue to Next Form</a></h3>`,
+    `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/vendor-profile/nda'>Continue to Next Form</a></h3>`,
   "completedHtmlOnCondition": [
     {
       "html": "<h3>Thank you for your feedback</h3> <h4>We are glad that you love our product. Your ideas and suggestions will help us make it even better.</h4>"

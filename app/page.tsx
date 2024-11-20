@@ -17,24 +17,23 @@ import formattedDate from "js/formattedDate";
 
 export default function Home() {
   const { status, data } = useSession();
-  console.log("================> ", status);
   const router = useRouter();
   const [VendorWelcomeAccepted, setVendorWelcomeAccepted] =
-    useState<boolean>(false);
+    useState<string>("loading");
   const [PriorityPrincipleAccepted, setPriorityPrincipleAccepted] =
-    useState<boolean>(false);
+    useState<string>("loading");
   const [CargoSecurityProgramAccepted, setCargoSecurityProgramAccepted] =
-    useState<boolean>(false);
+    useState<string>("loading");
   const [checkIfCodeOfConductAnswered, setcheckIfCodeOfConductAnswered] =
-    useState<boolean | undefined>(false);
+    useState<string>("loading");
   const [
     checkIfSupplierSustainabilityProfileAnswered,
     setcheckIfSupplierSustainabilityProfileAnswered,
-  ] = useState<boolean | undefined>(false);
+  ] = useState<string>("loading");
   const [
     checkIfCargoSecurityProfileAnswered,
     setcheckIfCargoSecurityProfileAnswered,
-  ] = useState<boolean | undefined>(false);
+  ] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
 
   useEffect(() => {
@@ -87,16 +86,9 @@ export default function Home() {
       return await getCargoSecurityProfile(data?.user?.id);
     }
     fetchCargoSecurityProfileData()
-      .then(
-        (response: {
-          success:
-            | boolean
-            | ((prevState: boolean | undefined) => boolean | undefined)
-            | undefined;
-        }) => {
-          setcheckIfCargoSecurityProfileAnswered(response?.success);
-        }
-      )
+      .then((response) => {
+        setcheckIfCargoSecurityProfileAnswered(response?.success);
+      })
       .catch((e) => seterror(`${e}`));
   }, [data]);
   const showSession = () => {
@@ -158,8 +150,10 @@ export default function Home() {
               big_txt="Vendor Welcome"
               page_link="/vendor-welcome"
               small_txt="Status:"
-              status_txt={VendorWelcomeAccepted ? "Accepted" : "Pending"}
-              color={VendorWelcomeAccepted ? "green" : "red"}
+              status_txt={
+                VendorWelcomeAccepted === "success" ? "Accepted" : "Pending"
+              }
+              color={VendorWelcomeAccepted === "success" ? "green" : "red"}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -182,8 +176,10 @@ export default function Home() {
               big_txt="Priority Principles"
               page_link="/priority-principles"
               small_txt="Status:"
-              status_txt={PriorityPrincipleAccepted ? "Accepted" : "Pending"}
-              color={PriorityPrincipleAccepted ? "green" : "red"}
+              status_txt={
+                PriorityPrincipleAccepted === "success" ? "Accepted" : "Pending"
+              }
+              color={PriorityPrincipleAccepted === "success" ? "green" : "red"}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -230,8 +226,14 @@ export default function Home() {
               big_txt="Cargo Security Program"
               page_link="/cargo-security-program"
               small_txt="Status:"
-              status_txt={CargoSecurityProgramAccepted ? "Accepted" : "Pending"}
-              color={CargoSecurityProgramAccepted ? "green" : "red"}
+              status_txt={
+                CargoSecurityProgramAccepted === "success"
+                  ? "Accepted"
+                  : "Pending"
+              }
+              color={
+                CargoSecurityProgramAccepted === "success" ? "green" : "red"
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -255,8 +257,14 @@ export default function Home() {
               big_txt="Code Of Conduct"
               page_link="/code-of-conduct"
               small_txt="Status:"
-              status_txt={checkIfCodeOfConductAnswered ? "Accepted" : "Pending"}
-              color={checkIfCodeOfConductAnswered ? "green" : "red"}
+              status_txt={
+                checkIfCodeOfConductAnswered === "success"
+                  ? "Accepted"
+                  : "Pending"
+              }
+              color={
+                checkIfCodeOfConductAnswered === "success" ? "green" : "red"
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -283,12 +291,14 @@ export default function Home() {
               page_link="/supplier-sustainability-profile"
               small_txt="Status:"
               status_txt={
-                checkIfSupplierSustainabilityProfileAnswered
+                checkIfSupplierSustainabilityProfileAnswered === "success"
                   ? "Accepted"
                   : "Pending"
               }
               color={
-                checkIfSupplierSustainabilityProfileAnswered ? "green" : "red"
+                checkIfSupplierSustainabilityProfileAnswered === "success"
+                  ? "green"
+                  : "red"
               }
             >
               <svg
@@ -314,9 +324,15 @@ export default function Home() {
               page_link="/cargo-security-program/cargo-security-profile"
               small_txt="Status:"
               status_txt={
-                checkIfCargoSecurityProfileAnswered ? "Accepted" : "Pending"
+                checkIfCargoSecurityProfileAnswered === "success"
+                  ? "Accepted"
+                  : "Pending"
               }
-              color={checkIfCargoSecurityProfileAnswered ? "green" : "red"}
+              color={
+                checkIfCargoSecurityProfileAnswered === "success"
+                  ? "green"
+                  : "red"
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

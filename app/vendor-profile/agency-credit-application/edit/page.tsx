@@ -21,7 +21,7 @@ export default function CodeOfConduct() {
   const { status } = useSession();
   const { data } = useSession();
   const router = useRouter();
-  const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
+  const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
     const thisSurvey = new Model(survey_json);
@@ -63,7 +63,7 @@ export default function CodeOfConduct() {
 
   const showSession: any = () => {
     if (status === "authenticated") {
-      if (checkIfAnswered) {
+      if (checkIfAnswered === "success") {
         return (
           <div className="min-h-screen flex flex-col items-center justify-center rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
             {error && <p className="text-red">{error}</p>}

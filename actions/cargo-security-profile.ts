@@ -25,12 +25,12 @@ export const setCargoSecurityProfile = async (values: any) => {
 
     await new_cargo_security_profile.save();
     return {
-      success: true,
+      success: "success",
       message: "Cargo security profile form saved successfully",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -47,13 +47,13 @@ export const getCargoSecurityProfile = async (id: any) => {
       JSON.stringify(cargo_security_profile_data)
     );
     return {
-      success: true,
+      success: "success",
       message: "Cargo security profile form found",
       data: cargo_security_profile_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -71,12 +71,12 @@ export const get_all_cargo_security_profile = async (user_role: any) => {
       JSON.stringify(cargo_security_profile_data)
     );
     return {
-      success: true,
+      success: "success",
       message: "Cargo security profile forms found",
       data: all_cargo_security_profile_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

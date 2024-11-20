@@ -58,12 +58,12 @@ export const setNDA = async (values: any) => {
 
     await newNDA.save();
     return {
-      success: true,
+      success: "success",
       message: "NDA saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -76,7 +76,7 @@ export const getNDA = async (id: any) => {
     if (NDAFounds) {
       const NDAFound = JSON.parse(JSON.stringify(NDAFounds));
       return {
-        success: true,
+        success: "success",
         message: "NDA found",
         data: NDAFound,
       };
@@ -84,6 +84,6 @@ export const getNDA = async (id: any) => {
     throw new Error("NDA Data Not Found");
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

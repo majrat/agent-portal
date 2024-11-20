@@ -24,12 +24,12 @@ export const setCodeOfConductQnA = async (values: any) => {
 
     await new_code_of_conduct_qna.save();
     return {
-      success: true,
+      success: "success",
       message: "Code of conduct saved successfully",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -46,12 +46,12 @@ export const getCodeOfConductQnA = async (id: any) => {
       JSON.stringify(codeOfConductQnAFounds)
     );
     return {
-      success: true,
+      success: "success",
       message: "Code of conduct form found",
       data: codeOfConductQnAFound,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

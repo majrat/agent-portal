@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
 import mongoose, { Schema, model } from "mongoose";
 
-export interface type_of_vendor_details {
+export interface type_of_vendor_registration {
   _id: String;
   company_name: String;
   head_office_address: String;
@@ -18,7 +18,7 @@ export interface type_of_vendor_details {
   updated_at: Date;
 }
 
-const vendor_details_schema = new Schema<type_of_vendor_details>(
+const vendor_registration_schema = new Schema<type_of_vendor_registration>(
   {
     company_name: {
       type: String,
@@ -73,7 +73,7 @@ const vendor_details_schema = new Schema<type_of_vendor_details>(
   }
 );
 
-const vendor_details =
-  mongoose.models?.vendor_details ||
-  model<type_of_vendor_details>("vendor_details", vendor_details_schema);
-export default vendor_details;
+const vendor_registration =
+  mongoose.models?.vendor_registration ||
+  model<type_of_vendor_registration>("vendor_registration", vendor_registration_schema);
+export default vendor_registration;

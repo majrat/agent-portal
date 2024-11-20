@@ -19,15 +19,13 @@ import Loader from "components/common/loader";
 export default function Dashboard() {
   const { status, data } = useSession();
   const router = useRouter();
-  const [VendorWelcome, setVendorWelcome] = useState<boolean>(false);
-  const [PriorityPrinciple, setPriorityPrinciple] = useState<boolean>(false);
+  const [VendorWelcome, setVendorWelcome] = useState<string>("loading");
+  const [PriorityPrinciple, setPriorityPrinciple] = useState<string>("loading");
   const [CargoSecurityProgram, setCargoSecurityProgram] =
-    useState<boolean>(false);
-  const [CodeOfConduct, setCodeOfConduct] = useState<boolean | undefined>(
-    false
-  );
+    useState<string>("loading");
+  const [CodeOfConduct, setCodeOfConduct] = useState<string>("loading");
   const [SupplierSustainabilityProfile, setSupplierSustainabilityProfile] =
-    useState<boolean | undefined>(false);
+    useState<string>("loading");
   const [CargoSecurityProfile, setCargoSecurityProfile] = useState([]);
   const [error, seterror] = useState<string>("");
 
@@ -260,7 +258,11 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
       router.push("/auth/login");
     }

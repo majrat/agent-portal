@@ -22,12 +22,12 @@ export const setPriorityPrinciples = async (values: any) => {
 
     await newPriorityPrinciples.save();
     return {
-      success: true,
+      success: "success",
       message: "Priority principles saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -42,7 +42,7 @@ export const getPriorityPrinciples = async (id: any) => {
         JSON.stringify(PriorityPrinciplesFounds)
       );
       return {
-        success: true,
+        success: "success",
         message: "Priority principles saved",
         data: PriorityPrinciplesFound,
       };
@@ -50,6 +50,6 @@ export const getPriorityPrinciples = async (id: any) => {
     throw new Error("Not Agreed to Priority Principles")
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

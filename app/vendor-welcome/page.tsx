@@ -16,7 +16,7 @@ import Loader from "components/common/loader";
 export default function Home() {
   const { status, data } = useSession();
   const router = useRouter();
-  const [Accepted, setAccepted] = useState<boolean>(false);
+  const [Accepted, setAccepted] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
   const handleAcceptSubmit = async () => {
     const userId = { user_id: data?.user?.id };
@@ -255,7 +255,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            {Accepted ? (
+            {Accepted === "success" ? (
               <>
                 <div className="fixed bottom-9 right-22 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
                   <svg
@@ -309,7 +309,11 @@ export default function Home() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
       router.push("/auth/login");
     }

@@ -36,12 +36,12 @@ export const setAgencyCreditApplication = async (
 
     await newAgencyCreditApplication.save();
     return {
-      success: true,
+      success: "success",
       message: "AgencyCreditApplication saved",
     };
   } catch (error) {
     // console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -58,7 +58,7 @@ export const getAgencyCreditApplication = async (id: any) => {
         JSON.stringify(AgencyCreditApplicationFounds)
       );
       return {
-        success: true,
+        success: "success",
         message: "AgencyCreditApplication found",
         data: AgencyCreditApplicationFound,
       };
@@ -66,6 +66,6 @@ export const getAgencyCreditApplication = async (id: any) => {
     throw new Error("AgencyCreditApplication Data Not Found");
   } catch (error) {
     // console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

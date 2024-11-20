@@ -69,12 +69,12 @@ export const setInvitation = async (values: any) => {
     });
     await new_invitation.save();
     return {
-      success: true,
+      success: "success",
       message: "Invitation sent successfully",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -89,13 +89,13 @@ export const getInvitation = async (email: any) => {
     }
     const invitation_json = JSON.parse(JSON.stringify(invitation_data));
     return {
-      success: true,
+      success: "success",
       message:
         "Please enter the Unique Code we send in our invitation email to continue.",
       data: invitation_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

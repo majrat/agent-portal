@@ -55,13 +55,13 @@ export const resetInvitationCode = async (values: any) => {
       console.log("Email sent: " + info.response);
 
       return {
-        success: true,
+        success: "success",
         message: "RESEND invitation Code sent successfully",
       };
     }
     throw new Error(invitation_code_found.message);
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
