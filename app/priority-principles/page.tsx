@@ -12,6 +12,7 @@ import {
 import { useRouter } from "next/navigation";
 import LogoCard from "components/common/logo-card";
 import Loader from "components/common/loader";
+import AntiCorruptionStatementPolicyText from "./_principle-texts/principle-one-compliance/anti-corruption-statement-policy";
 
 export default function Home() {
   const { status, data } = useSession();
@@ -56,7 +57,9 @@ export default function Home() {
                   height={135}
                 />
               </Link>
-              <h3 className="text-xl font-medium self-center md:block hidden">PRIORITY PRINCIPLES</h3>
+              <h3 className="text-xl font-medium self-center md:block hidden">
+                PRIORITY PRINCIPLES
+              </h3>
               <Link
                 className="self-center flex justify-center md:justify-end"
                 href="/"
@@ -69,7 +72,9 @@ export default function Home() {
                   height={570 / 4}
                 />
               </Link>
-              <h3 className="text-xl font-medium self-center block md:hidden">PRIORITY PRINCIPLES</h3>
+              <h3 className="text-xl font-medium self-center block md:hidden">
+                PRIORITY PRINCIPLES
+              </h3>
             </div>
             <ul className="list-disc p-6 bg-white/60 rounded-md">
               <li className="pb-3">
@@ -81,29 +86,13 @@ export default function Home() {
                 and legally.
                 <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#fdc82e"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                      <path d="M7 11l5 5l5 -5" />
-                      <path d="M12 4l0 12" />
-                    </svg>
-                    <a
+                    {/* <a
                       className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
                       href="/docs/Anti-Corruption Statement and Policy.docx"
                     >
                       Anti-Corruption Statement & Policy{" "}
-                    </a>
+                    </a> */}
+                    <AntiCorruptionStatementPolicyText />
                   </li>
                 </ul>
               </li>
