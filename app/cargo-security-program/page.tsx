@@ -12,7 +12,7 @@ import { useSession } from "next-auth/react";
 import Loader from "components/common/loader";
 import LogoCard from "components/common/logo-card";
 
-export default function WelcomeLetter() {
+export default function CargoSecurityProgram() {
   const { status, data } = useSession();
   const router = useRouter();
   const [Accepted, setAccepted] = useState<string>("loading");
@@ -40,24 +40,28 @@ export default function WelcomeLetter() {
       return (
         <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/air-international-transport-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           {error && <p className="text-red">{error}</p>}
-          <div className="">
-            <LogoCard />
-            <div className="text-center p-3 my-1 rounded-md bg-white/80">
-              <p className="pb-3">7361 Coca Cola Drive Hanover, MD 21076</p>
-              <p>+1.410.766.7470 | TELEPHONE</p>
-              <p>+1.800.727.1085 | TOLL FREE</p>
-              <p className="pb-3">+1.718.947.3702 | 24/7 AOG HOTLINE</p>
-              <a href="mailto:sales@priorityworldwide.com">
-                sales@priorityworldwide.com
-              </a>
-            </div>
-          </div>
+          <LogoCard />
+          <h2 className="text-xl font-medium py-6">CARGO SECURITY PROGRAM</h2>
           <div className="p-6 bg-white/80 rounded-md">
-            <p className="pb-1">To: Priority Business Partner</p>
-            <p className="pb-6">
-              Re: Customs-Trade Partnership Against Terrorism (C-TPAT), Partners
-              in Protection (PIP), Authorized Economic Operator (AEO)
-            </p>
+            <div className="grid md:grid-cols-2">
+              <div>
+                <p className="pb-1">To: Priority Business Partner</p>
+                <p className="pb-6">
+                  Re: Customs-Trade Partnership Against Terrorism (C-TPAT),
+                  Partners in Protection (PIP), Authorized Economic Operator
+                  (AEO)
+                </p>
+              </div>
+              <div className="md:text-end">
+                <p className="pb-3">7361 Coca Cola Drive Hanover, MD 21076</p>
+                <p>+1.410.766.7470 | TELEPHONE</p>
+                <p>+1.800.727.1085 | TOLL FREE</p>
+                <p className="pb-3">+1.718.947.3702 | 24/7 AOG HOTLINE</p>
+                <a href="mailto:sales@priorityworldwide.com">
+                  sales@priorityworldwide.com
+                </a>
+              </div>
+            </div>
             <p className="pb-6">Dear Sir/Madam;</p>
             <p className="pb-6">
               Since 2007, Priority Worldwide has been a certified participant of
@@ -145,7 +149,7 @@ export default function WelcomeLetter() {
           <div className="relative">
             {Accepted === "success" ? (
               <>
-                <div className="fixed bottom-9 right-22 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
+                <div className="fixed bottom-9 right-22 bg-slate-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -162,9 +166,8 @@ export default function WelcomeLetter() {
                     <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
                     <path d="M9 12l2 2l4 -4" />
                   </svg>
-                  <p>Accepted</p>
                 </div>
-                <div className="fixed bottom-9 right-9 bg-green-600/80 cursor-pointer hover:bg-green-800 px-3 py-2 font-bold text-white rounded-2xl flex">
+                <div className="fixed bottom-9 right-9 bg-[#FFBF3C]/80 cursor-pointer hover:bg-[#FFBF3C] px-3 py-2 font-bold text-white rounded-2xl flex">
                   <Link href="/cargo-security-program/cargo-security-profile">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -188,9 +191,24 @@ export default function WelcomeLetter() {
             ) : (
               <a
                 onClick={handleAcceptSubmit}
-                className="fixed bottom-9 right-9 bg-slate-600/80 px-3 py-2 font-extrabold cursor-pointer text-white rounded-2xl"
+                className="fixed bottom-9 right-9 bg-[#FFBF3C]/80 hover:bg-[#FFBF3C] px-3 py-2 font-extrabold cursor-pointer text-white rounded-2xl"
               >
-                Accept & Continue
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 7l5 5l-5 5" />
+                  <path d="M13 7l5 5l-5 5" />
+                </svg>
               </a>
             )}
           </div>

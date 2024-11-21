@@ -15,6 +15,7 @@ export const setVendorWelcome = async (values: any) => {
     const user = new vendor_welcome({
       user_id,
       accepted: true,
+      status: 1,
     });
 
     await user.save();

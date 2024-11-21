@@ -149,8 +149,8 @@ export default function Home() {
           </p>
 
           <div className="relative">
-            <div className="fixed bottom-9 right-9 bg-green-600/80 cursor-pointer hover:bg-green-800 px-3 py-2 font-bold text-white rounded-2xl flex">
-              <Link href="/priority-principles">
+            <div className="fixed z-20 bottom-9 right-9 bg-[#FFBF3C]/80 cursor-pointer hover:bg-[#FFBF3C] px-3 py-2 font-bold text-white rounded-2xl flex">
+              <Link href="/vendor-welcome/our-offices">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

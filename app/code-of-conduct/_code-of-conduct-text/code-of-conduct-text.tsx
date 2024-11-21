@@ -1,182 +1,176 @@
 import Accordion from "components/common/accordion";
 interface CodeOfConductProps {
-  contracted_partner: any;
   isOpenValue: boolean;
 }
-const CodeOfConductText: React.FC<CodeOfConductProps> = ({
-  contracted_partner,
-  isOpenValue,
-}) => {
+const CodeOfConductText: React.FC<CodeOfConductProps> = ({ isOpenValue }) => {
   return (
     <Accordion
-      title="NON DISCLOSURE AGREEMENT"
+      title="SUPPLIER CODE OF CONDUCT"
       isOpenValue={isOpenValue}
-      content=<div className="p-3 dark:text-white text-black text-center border-t-2 bg-white dark:bg-meta-4">
+      content=<div className="p-3 dark:text-white text-black border-t-2 bg-white dark:bg-meta-4">
         <div className="p-6">
-          <h3 className="text-xl font-medium py-3 col-span-2">
-            NON DISCLOSURE AGREEMENT
-          </h3>
-          <p className="pt-6 font-semibold text-start">between</p>
-          <p className="pt-6 text-start">{contracted_partner}</p>
-          <p className="pt-6 font-semibold text-start">and</p>
-          <p className="pt-6 text-start">
-            Priority Worldwide <br /> 7361 Coca Cola <br /> Hanover, MD 21076
+          <h2 className="text-title-md pb-3">Introduction</h2>
+          <p>
+            At Priority Worldwide, we are committed to conducting our business
+            in an ethical, sustainable, and socially responsible manner. We
+            expect our suppliers to share this commitment and adhere to the
+            principles outlined in this Supplier Code of Conduct.
           </p>
-          <p className="pt-9 text-start">
-            - hereinafter referred to as “contract partner”–
+          <h2 className="text-title-md pb-3 pt-6">Scope</h2>
+          <p>
+            This Supplier Code of Conduct applies to all suppliers, contractors,
+            and business partners who provide goods or services to [Your Company
+            Name]. It sets out the minimum standards and expectations for
+            ethical behavior, environmental sustainability, and social
+            responsibility.
           </p>
-          <p className="pt-6 text-start">
-            - hereinafter collectively referred to as “the Parties“-
+          <h2 className="text-title-md pb-3 pt-6">
+            Compliance with Laws and Regulations
+          </h2>
+          <p>
+            Suppliers must comply with all applicable laws, regulations, and
+            industry standards in the countries where they operate. This
+            includes, but is not limited to:
           </p>
-          <p className="pt-6 text-start text-blue-400">Preamble</p>
-          <p className="pt-9 text-start">
-            In this context the Parties wish to disclose to each other
-            proprietary and sensitive commercial or technical information. In
-            order to protect any such confidential or proprietary information,
-            the Parties are concluding the following agreement. In addition, the
-            aim of this agreement is to prevent the unauthorised dissemination,
-            use or reproduction of documents, data and other information of
-            Carrier which the contract partner has already received or will
-            receive in future.
+          <ul className="ms-9 list-disc">
+            <li className="my-1">Labor laws and regulations</li>
+            <li className="my-1">Environmental regulations</li>
+            <li className="my-1">Health and safety standards</li>
+            <li className="my-1">Anti-corruption and anti-bribery laws</li>
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">
+            Human Rights and Labor Practices
+          </h2>
+          <p>
+            Suppliers are expected to uphold and respect internationally
+            recognized human rights and labor standards. This includes:
           </p>
-          <p className="pt-9 text-start">
-            Therefore the Parties agree as follows:
+          <ul className="ms-9 list-disc">
+            <li className="my-1">
+              Prohibition of Forced Labor: Suppliers must not use any form of
+              forced, bonded, or involuntary labor.
+            </li>
+            <li className="my-1">
+              Prohibition of Child Labor: Suppliers must not employ children
+              under the legal working age in their country or any child labor as
+              defined by the International Labor Organization (ILO) standards.
+            </li>
+            <li className="my-1">
+              Non-Discrimination: Suppliers must provide a workplace free of
+              discrimination based on race, gender, age, sexual orientation,
+              disability, religion, or any other characteristic protected by
+              law.
+            </li>
+            <li className="my-1">
+              Freedom of Association: Suppliers must respect the rights of
+              workers to freely associate, join trade unions, and bargain
+              collectively.
+            </li>
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">Health and Safety</h2>
+          <p>
+            Suppliers must provide a safe and healthy working environment for
+            their employees. This includes:
           </p>
-          <ol className="ps-6 pt-9 text-start list-decimal">
-            <li className="pt-3">
-              The Parties agree to treat information of the other Party as
-              strictly confidential. All information about
-              <ul className="ps-3 list-disc">
-                <li className="pt-3">customers and companies</li>
-                <li className="pt-3">
-                  key indicators as well as, but not exclusively, prices and
-                  payment terms
-                </li>
-                <li className="pt-3">processes and work methods</li>
-                <li className="pt-3">personal data</li>
-                <li className="pt-3">
-                  sources of supply and services of the Parties and information
-                  regarding the Parties’ cooperation, shall be deemed strictly
-                  confidential.
-                </li>
-                <p className="pt-3">
-                  Moreover, information shall be classed as confidential,
-                </p>
-                <li className="pt-3">
-                  if the Party expressly designates it as confidential;
-                </li>
-                <li className="pt-3">
-                  if it would usually be recognised as confidential in the
-                  business world; or
-                </li>
-                <li className="pt-3">
-                  if it must be deemed confidential due to the circumstances of
-                  its communication.
-                </li>
-              </ul>
+          <ul className="ms-9 list-disc">
+            <li className="my-1">
+              Ensuring compliance with health and safety laws and regulations
             </li>
-            <li className="pt-9">
-              Information shall not be classed as confidential according to
-              clause 1, if
-              <ul className="ps-3 list-disc">
-                <li className="pt-3">
-                  the disclosing Party has given its prior written consent to
-                  its release;
-                </li>
-                <li className="pt-3">
-                  it was demonstrably in the public domain before being passed
-                  on to the receiving Party;
-                </li>
-                <li className="pt-3">
-                  it becomes public domain through no fault of the receiving
-                  Party;
-                </li>
-                <li className="pt-3">
-                  the receiving Party has demonstrably received the information
-                  from a third party without violating an obligation towards the
-                  disclosing Party; or
-                </li>
-                <li className="pt-3">
-                  such information was developed independently by the receiving
-                  Party.
-                </li>
-              </ul>
+            <li className="my-1">
+              Implementing effective health and safety policies and procedures
             </li>
-            <li className="pt-9">
-              The receiving Party shall use the confidential information solely
-              within the context of its business relationship with the
-              disclosing Party and shall not disseminate it to third parties
-              unless the disclosing Party has given its express prior consent to
-              use of the information for other purposes in written form.
+            <li className="my-1">
+              Providing appropriate safety training and protective equipment
             </li>
-            <li className="pt-9">
-              As far as the receiving Party is obliged to disclose confidential
-              information of the disclosing Party for legal reasons, it shall
-              immediately notify the disclosing Party thereof so that the
-              disclosing Party may take necessary protection measures or declare
-              its written consent.
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">
+            Environmental Responsibility
+          </h2>
+          <p>
+            Suppliers are expected to minimize their environmental impact and
+            promote sustainability. This includes:
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-1">
+              Complying with all applicable environmental laws and regulations
             </li>
-            <li className="pt-9">
-              Confidential information may only be provided to persons whom the
-              receiving Party has entrusted with preparing or handling the
-              assignment. The receiving Party shall do everything within its
-              powers and with the necessary care to ensure that these persons
-              comply with the applicable legal data protection regulations and
-              do not disclose information obtained from the disclosing Party’s
-              surroundings to third parties, or reproduce or otherwise exploit
-              such information.
+            <li className="my-1">
+              Implementing practices to reduce waste, emissions, and resource
+              consumption
             </li>
-            <li className="pt-9">
-              In the event of a violation of this agreement the violating Party
-              shall be held liable according to legal regulations.
+            <li className="my-1">
+              Promoting the use of sustainable materials and energy-efficient
+              processes
             </li>
-            <li className="pt-9">
-              After the expiry hereof the receiving Party shall immediately
-              surrender to the disclosing Party on first demand all records,
-              data, notes, and other written and printed material or electronic
-              data in its possession that contains confidential information or
-              shall destroy it at the disclosing Party’s request, except for one
-              (1) copy which may be retained as necessary to comply with
-              applicable record keeping laws and procedures.
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">
+            Ethical Business Practices
+          </h2>
+          <p>
+            Suppliers must conduct their business with integrity and
+            transparency. This includes:
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-1">
+              Prohibiting all forms of corruption, bribery, and fraudulent
+              practices
             </li>
-            <li className="pt-9">
-              If any current or future provision of this agreement should be or
-              become ineffective, invalid or unfeasible in whole or in part,
-              this shall not affect the validity of the remaining provisions.
-              The same shall apply, if a gap that requires amendment should
-              arise after conclusion hereof. The Parties shall replace or amend
-              any ineffective, invalid or incomplete provision by an effective
-              provision that corresponds to the ineffective or invalid provision
-              and the overall purpose of this agreement in its legal and
-              economic content.
+            <li className="my-1">
+              Ensuring accurate and transparent record-keeping
             </li>
-            <li className="pt-9">
-              The assignment of this agreement or any rights and obligations
-              hereunder shall not be admissible without the prior written
-              consent of the other Party.
+            <li className="my-1">
+              Respecting intellectual property rights and confidentiality
+              agreements
             </li>
-            <li className="pt-9">
-              Any changes or additions to this agreement and other declarations
-              of the contracting Parties concerning the contractual relationship
-              shall require written form and shall be sent to the address last
-              known to the contract partner. Any waiver of the stipulation
-              requiring written form shall also be in writing.
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">Supply Chain Transparency</h2>
+          <p>
+            Suppliers are expected to promote the principles of this code
+            throughout their own supply chains. This includes:
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-1">
+              Communicating these standards to their own suppliers and
+              subcontractors
             </li>
-            <li className="pt-9">
-              This agreement shall be governed solely by the law of the US
-              Government excluding private international law (conflict-of-laws
-              rules) and the provisions of the United Nations Convention on
-              Contracts for the International Sale of Goods. Any disputes under
-              or in connection with this agreement shall be subject to the
-              exclusive jurisdiction of the courts of Baltimore, MD USA.
+            <li className="my-1">
+              Ensuring compliance with these standards at all levels of their
+              supply chain
             </li>
-            <li className="pt-9">
-              This agreement shall become effective on execution by both Parties
-              and shall end on expiry of their cooperation. The secrecy
-              obligations specified herein shall continue to apply for a term of
-              two years after the expiry of their cooperation.
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">Monitoring and Compliance</h2>
+          <p>
+            Priority Worldwide reserves the right to monitor and assess supplier
+            compliance with this code. This may include:
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-1">
+              Conducting audits and assessments of supplier facilities and
+              practices
             </li>
-          </ol>
+            <li className="my-1">
+              Requiring suppliers to provide documentation and information
+              related to their compliance
+            </li>
+            <li className="my-1">
+              Working with suppliers to address any identified non-compliance
+              issues
+            </li>
+          </ul>
+          <h2 className="text-title-md pb-3 pt-6">Continuous Improvement</h2>
+          <p>
+            Suppliers are encouraged to continuously improve their practices and
+            performance in line with the principles of this code. Priority
+            Worldwide will support suppliers in their efforts to enhance their
+            social, environmental, and ethical practices.
+          </p>
+          <h2 className="text-title-md pb-3 pt-6">Reporting Concerns</h2>
+          <p>
+            Suppliers and their employees are encouraged to report any concerns
+            or violations of this code. Reports can be made confidentially and
+            without fear of retaliation through Priority Worldwide’ s designated
+            reporting channels.
+          </p>
         </div>
       </div>
     />

@@ -237,7 +237,7 @@ export default function Home() {
               </table>
             </div>
           </div>
-          <h2 className="font-medium text-xl py-3">
+          {/* <h2 className="font-medium text-xl py-3">
             Vendor Registration/Company details
           </h2>
           <h2 className="pb-3">International Agency Agreement</h2>
@@ -247,9 +247,9 @@ export default function Home() {
           <h2 className="pb-3">
             Other – place for agents to upload any additional info they want to
             share like marketing materials
-          </h2>
-          <>
-            <div className="fixed bottom-9 right-22 bg-slate-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
+          </h2> */}
+          <div className="fixed bottom-9 right-9 bg-[#fdc82e]/80 cursor-pointer hover:bg-[#fdc82e] px-3 py-2 font-bold text-white rounded-2xl flex">
+            <Link href="/cargo-security-program">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -260,35 +260,14 @@ export default function Home() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check"
+                className="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-                <path d="M9 12l2 2l4 -4" />
+                <path d="M7 7l5 5l-5 5" />
+                <path d="M13 7l5 5l-5 5" />
               </svg>
-              <p>Pending</p>
-            </div>
-            <div className="fixed bottom-9 right-9 bg-green-600/80 cursor-pointer hover:bg-green-800 px-3 py-2 font-bold text-white rounded-2xl flex">
-              <Link href="/cargo-security-program">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M7 7l5 5l-5 5" />
-                  <path d="M13 7l5 5l-5 5" />
-                </svg>
-              </Link>
-            </div>
-          </>
+            </Link>
+          </div>
         </div>
       );
     } else if (status === "loading") {

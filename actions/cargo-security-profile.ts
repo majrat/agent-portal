@@ -21,6 +21,7 @@ export const setCargoSecurityProfile = async (values: any) => {
       user_id,
       answers,
       questions,
+      status: 1,
     });
 
     await new_cargo_security_profile.save();

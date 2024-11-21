@@ -18,6 +18,7 @@ export const setSupplierSustainabilityProfile = async (values: any) => {
       user_id,
       answers,
       questions,
+      status: 1,
     });
 
     await newSupplierSustainabilityProfile.save();

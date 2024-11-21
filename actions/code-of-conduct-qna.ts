@@ -20,6 +20,7 @@ export const setCodeOfConductQnA = async (values: any) => {
       user_id,
       answers,
       questions,
+      status: 1,
     });
 
     await new_code_of_conduct_qna.save();

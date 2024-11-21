@@ -1,46 +1,35 @@
 "use server";
 import { connectDB } from "lib/mongodb";
 import AgencyCreditApplication from "models/agency-credit-application";
-import { type_of_agency_credit_application } from "types/agency-credit-application";
 
-export const setAgencyCreditApplication = async (
-  submit_data: type_of_agency_credit_application,
-  user_id: any
-) => {
-  console.log("=========================================================================================================>", submit_data)
+export const setAgencyCreditApplication = async (values: any) => {
   try {
+    const { user_id, answers, questions } = values;
+
+    console.log("user_id, answers, questions ==========>", values);
     await connectDB();
 
-    const addAgencyCreditApplicationFound =
-      await AgencyCreditApplication.findOne({
-        user_id,
-      });
-    if (addAgencyCreditApplicationFound) {
-      await AgencyCreditApplication.updateOne(
-        { user_id },
-        {
-          $set: {
-            ...submit_data,
-            status: 1,
-          },
-        },
-        { upsert: true }
-      );
+    const AgencyCreditApplicationData = await AgencyCreditApplication.findOne({
+      user_id,
+    });
+    if (AgencyCreditApplicationData) {
+      throw new Error("Agency Credit Application already answered!");
     }
 
-    const newAgencyCreditApplication = new AgencyCreditApplication({
-      ...submit_data,
+    const new_AgencyCreditApplication = new AgencyCreditApplication({
       user_id,
+      answers,
+      questions,
       status: 1,
     });
 
-    await newAgencyCreditApplication.save();
+    await new_AgencyCreditApplication.save();
     return {
       success: "success",
-      message: "AgencyCreditApplication saved",
+      message: "Agency Credit Application saved successfully",
     };
   } catch (error) {
-    // console.error(error);
+    console.error(error);
     return { success: "failed", message: `${error}` };
   }
 };
@@ -65,7 +54,7 @@ export const getAgencyCreditApplication = async (id: any) => {
     }
     throw new Error("AgencyCreditApplication Data Not Found");
   } catch (error) {
-    // console.error(error);
+    console.error(error);
     return { success: "failed", message: `${error}` };
   }
 };

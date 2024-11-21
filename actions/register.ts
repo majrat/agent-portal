@@ -25,6 +25,7 @@ export const register = async (values: any) => {
           email,
           password: hashedPassword,
           email_verified: true,
+          status: 1,
         });
         await user.save();
         return {

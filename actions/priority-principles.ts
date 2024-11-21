@@ -18,6 +18,7 @@ export const setPriorityPrinciples = async (values: any) => {
     const newPriorityPrinciples = new priority_principles({
       user_id,
       accepted,
+      status: 1,
     });
 
     await newPriorityPrinciples.save();

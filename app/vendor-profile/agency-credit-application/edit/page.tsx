@@ -17,7 +17,7 @@ import {
   setAgencyCreditApplication,
 } from "actions/agency-credit-application";
 
-export default function CodeOfConduct() {
+export default function AgencyCreditApplication() {
   const { status } = useSession();
   const { data } = useSession();
   const router = useRouter();
@@ -125,11 +125,9 @@ export default function CodeOfConduct() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  console.log("answers===============>", answers);
-  console.log("questions===============>", questions);
-  // await setAgencyCreditApplication({
-  //   user_id: user_id,
-  //   answers: answers,
-  //   questions: questions,
-  // });
+  await setAgencyCreditApplication({
+    user_id: user_id,
+    answers: answers,
+    questions: questions,
+  });
 }

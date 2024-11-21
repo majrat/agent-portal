@@ -172,32 +172,37 @@ export default function Home() {
                 <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
               </svg>
             </CardDataStats>
-            <CardDataStats
-              big_txt="Priority Principles"
-              page_link="/priority-principles"
-              small_txt="Status:"
-              status_txt={
-                PriorityPrincipleAccepted === "success" ? "Accepted" : "Pending"
-              }
-              color={PriorityPrincipleAccepted === "success" ? "green" : "red"}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-golf"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M12 18v-15l7 4l-7 4" />
-                <path d="M9 17.67c-.62 .36 -1 .82 -1 1.33c0 1.1 1.8 2 4 2s4 -.9 4 -2c0 -.5 -.38 -.97 -1 -1.33" />
-              </svg>
-            </CardDataStats>
+            <div className="col-span-2 bg-white rounded-md">
+              <div className="flex justify-center p-3">
+                <div className="bg-slate-200 rounded-full p-2 w-10 self-center flex justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-golf"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 18v-15l7 4l-7 4" />
+                    <path d="M9 17.67c-.62 .36 -1 .82 -1 1.33c0 1.1 1.8 2 4 2s4 -.9 4 -2c0 -.5 -.38 -.97 -1 -1.33" />
+                  </svg>
+                </div>
+                <h2 className="p-3">Priority Principles</h2>
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {/* <p>Principle One: Compliance</p>
+                <p>Principle Two: Humanities</p>
+                <p>Principle Three: Sustainability</p>
+                <p>Principle Four: Supplier code of conduct</p>
+                <p>Principle Five: Cargo Safety and Security</p> */}
+              </div>
+            </div>
+
             <CardDataStats
               big_txt="Vendor Profile"
               page_link="/vendor-profile"

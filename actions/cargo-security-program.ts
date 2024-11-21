@@ -17,6 +17,7 @@ export const setCargoSecurityProgram = async (values: any) => {
     const save_cargo_security_program = new cargo_security_program({
       user_id,
       accepted: true,
+      status: 1,
     });
 
     await save_cargo_security_program.save();

@@ -113,7 +113,7 @@ export default function CodeOfConduct() {
       }
       return (
         <div className="">
-          <CodeOfConductText contracted_partner={""} isOpenValue />
+          <CodeOfConductText isOpenValue />
           <Survey model={survey} />
         </div>
       );

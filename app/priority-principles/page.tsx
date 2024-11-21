@@ -21,7 +21,7 @@ export default function Home() {
   const handleAcceptSubmit = async () => {
     const userId = { user_id: data?.user?.id, accepted: true };
     await setPriorityPrinciples(userId);
-    router.push("/priority-principles");
+    router.push("/vendor-profile");
   };
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +43,7 @@ export default function Home() {
             <h1 className="text-3xl pb-3"></h1>
             {/* <h1 className="text-5xl pb-4">PRIORITY WORLDWIDE</h1> */}
             <LogoCard />
-            <div className="mt-6 grid gap-3 grid-cols-2 justify-between p-3 dark:text-white text-black text-center rounded-md border border-stroke bg-white shadow-default dark:border-strokedark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
+            <div className="my-6 grid gap-3 grid-cols-1 md:grid-cols-3 justify-between p-3 dark:text-white text-black text-center rounded-md border border-stroke bg-white shadow-default dark:border-strokedark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
               <Link
                 className="self-center flex justify-center md:justify-start"
                 href="/"
@@ -56,6 +56,7 @@ export default function Home() {
                   height={135}
                 />
               </Link>
+              <h3 className="text-xl font-medium self-center md:block hidden">PRIORITY PRINCIPLES</h3>
               <Link
                 className="self-center flex justify-center md:justify-end"
                 href="/"
@@ -68,8 +69,8 @@ export default function Home() {
                   height={570 / 4}
                 />
               </Link>
+              <h3 className="text-xl font-medium self-center block md:hidden">PRIORITY PRINCIPLES</h3>
             </div>
-            <h3 className="text-xl font-medium py-3">PRIORITY PRINCIPLES</h3>
             <ul className="list-disc p-6 bg-white/60 rounded-md">
               <li className="pb-3">
                 Principle One: <span className="font-bold">Compliance</span> -{" "}
@@ -305,14 +306,14 @@ export default function Home() {
             <div className="relative">
               {Accepted === "success" ? (
                 <>
-                  <div className="fixed bottom-9 right-22 bg-green-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
+                  <div className="fixed bottom-9 right-22 bg-slate-600/80 px-3 py-2 font-bold text-white rounded-2xl flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#fdc82e"
+                      stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -322,9 +323,8 @@ export default function Home() {
                       <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
                       <path d="M9 12l2 2l4 -4" />
                     </svg>
-                    <p>Accepted</p>
                   </div>
-                  <div className="fixed bottom-9 right-9 bg-green-600/80 cursor-pointer hover:bg-green-800 px-3 py-2 font-bold text-white rounded-2xl flex">
+                  <div className="fixed bottom-9 right-9 bg-[#FFBF3C]/80 cursor-pointer hover:bg-[#FFBF3C] px-3 py-2 font-bold text-white rounded-2xl flex">
                     <Link href="/vendor-profile">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -332,7 +332,7 @@ export default function Home() {
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#fdc82e"
+                        stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -346,13 +346,27 @@ export default function Home() {
                   </div>
                 </>
               ) : (
-                <Link
-                  href="/vendor-profile"
+                <a
                   onClick={handleAcceptSubmit}
-                  className="fixed bottom-9 right-9 bg-slate-600/80 px-3 py-2 font-extrabold text-white rounded-2xl"
+                  className="fixed z-20 bottom-9 right-9 bg-[#FFBF3C]/80 cursor-pointer hover:bg-[#FFBF3C] px-3 py-2 font-bold text-white rounded-2xl flex"
                 >
-                  Accept & Continue
-                </Link>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-right"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M7 7l5 5l-5 5" />
+                    <path d="M13 7l5 5l-5 5" />
+                  </svg>
+                </a>
               )}
             </div>
           </div>
