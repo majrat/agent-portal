@@ -13,6 +13,13 @@ import { useRouter } from "next/navigation";
 import LogoCard from "components/common/logo-card";
 import Loader from "components/common/loader";
 import AntiCorruptionStatementPolicyText from "./_principle-texts/principle-one-compliance/anti-corruption-statement-policy";
+import AntiSlaveryHumanTraffickingAndForcedLaborPolicyText from "./_principle-texts/principle-two-humanities/anti-slavery-human-trafficking-and-forced-labor-policy";
+import HealthSafetySecurityAndEnvironmentalPolicyText from "./_principle-texts/principle-two-humanities/health-safety-security-and-environmental-policy";
+import SustainableProcurementPolicyText from "./_principle-texts/principle-three-sustainability/sustainable-procurement-policy";
+import InternationalStandardForSustainableProcurementText from "./_principle-texts/principle-three-sustainability/international-standard-for-sustainable-procurement";
+import HumanRightsAndModernSlaveryStatementText from "./_principle-texts/principle-two-humanities/human-rights-and-modern-slavery-statement";
+import WhistleblowerPolicyText from "./_principle-texts/principle-two-humanities/whistleblower-policy";
+import SupplyChainManagementPolicyText from "./_principle-texts/principle-four-supplier-code-of-conduct/supply-chain-management-policy";
 
 export default function Home() {
   const { status, data } = useSession();
@@ -76,7 +83,7 @@ export default function Home() {
                 PRIORITY PRINCIPLES
               </h3>
             </div>
-            <ul className="list-disc p-6 bg-white/60 rounded-md">
+            <ul className="relative list-disc p-6 bg-white/60 rounded-md">
               <li className="pb-3">
                 Principle One: <span className="font-bold">Compliance</span> -{" "}
                 Compliance in international logistics is crucial for the
@@ -86,12 +93,6 @@ export default function Home() {
                 and legally.
                 <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    {/* <a
-                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
-                      href="/docs/Anti-Corruption Statement and Policy.docx"
-                    >
-                      Anti-Corruption Statement & Policy{" "}
-                    </a> */}
                     <AntiCorruptionStatementPolicyText />
                   </li>
                 </ul>
@@ -107,60 +108,16 @@ export default function Home() {
                 to more sustainable and successful global operations.
                 <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#fdc82e"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                      <path d="M7 11l5 5l5 -5" />
-                      <path d="M12 4l0 12" />
-                    </svg>
-                    <a
-                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
-                      href="/docs/Anti-Slavery, Human Trafficking and Forced Labor Policy.docx"
-                    >
-                      Anti-slavery, Human Trafficking and Forced Labor Policy
-                    </a>
+                    <AntiSlaveryHumanTraffickingAndForcedLaborPolicyText />
                   </li>
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#fdc82e"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                      <path d="M7 11l5 5l5 -5" />
-                      <path d="M12 4l0 12" />
-                    </svg>
-                    <a
-                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
-                      href="/docs/Health, Safety, Security, and Environmental (HSSE) Policy.docx"
-                    >
-                      Health, Safety, Security and Environmental Policy
-                    </a>
+                    <HealthSafetySecurityAndEnvironmentalPolicyText />
                   </li>
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    Human Rights and Modern Slavery Statement
+                    <HumanRightsAndModernSlaveryStatementText />
                   </li>
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    Whistleblower Policy
+                    <WhistleblowerPolicyText />
                   </li>
                 </ul>
               </li>
@@ -176,32 +133,10 @@ export default function Home() {
                 chain, benefiting businesses, communities, and the planet.
                 <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    International standard for sustainable procurement
+                    <InternationalStandardForSustainableProcurementText />
                   </li>
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#fdc82e"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                      <path d="M7 11l5 5l5 -5" />
-                      <path d="M12 4l0 12" />
-                    </svg>
-                    <a
-                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
-                      href="/docs/Sustainable Procurement Policy.docx"
-                    >
-                      Sustainable Procurement Policy
-                    </a>
+                    <SustainableProcurementPolicyText />
                   </li>
                 </ul>
               </li>
@@ -217,29 +152,7 @@ export default function Home() {
                 responsible, and successful supply chain.
                 <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#fdc82e"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-download mx-3 hover:animate-bounce duration-300 ease-linear"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                      <path d="M7 11l5 5l5 -5" />
-                      <path d="M12 4l0 12" />
-                    </svg>
-                    <a
-                      className="border-b-2 border-[#fdc82e] duration-300 ease-linear hover:bg-[#fdc82e] px-1 rounded"
-                      href="/docs/Supply Chain Management Policy.docx"
-                    >
-                      Supply Chain Management policy
-                    </a>
+                    <SupplyChainManagementPolicyText />
                   </li>
                   {/* <li className="text-meta-4 flex cursor-pointer my-3">
                     Supplier Code of Conduct Statement
