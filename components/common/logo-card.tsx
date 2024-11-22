@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LogoCard = () => {
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 justify-between p-3 dark:text-white text-black text-center rounded-md border border-stroke bg-white shadow-default dark:border-strokedark hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
+    <div className="grid md:grid-cols-2 grid-cols-1 justify-between p-3 dark:text-white text-black text-center rounded-md border border-stroke bg-white shadow-default dark:border-strokedark hover:border-[#FFBF3C] duration-300 ease-linear dark:hover:border-[#FFBF3C]">
       <Link
         className="self-center flex justify-center md:justify-start md:pl-3 pl-14 pt-4"
         href="/"

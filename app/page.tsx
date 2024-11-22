@@ -14,6 +14,7 @@ import { getCargoSecurityProfile } from "actions/cargo-security-profile";
 import LogoCard from "../components/common/logo-card";
 import Loader from "components/common/loader";
 import formattedDate from "js/formattedDate";
+import Link from "next/link";
 
 export default function Home() {
   const { status, data } = useSession();
@@ -146,7 +147,7 @@ export default function Home() {
             </CardDataStats>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-4 xl:grid-cols-4">
-            <CardDataStats
+            {/* <CardDataStats
               big_txt="Vendor Welcome"
               page_link="/vendor-welcome"
               small_txt="Status:"
@@ -171,10 +172,48 @@ export default function Home() {
                 <path d="M19.95 11a8 8 0 1 0 -.5 4m.5 5v-5h-5" />
                 <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
               </svg>
-            </CardDataStats>
-            <div className="col-span-2 bg-white rounded-md">
-              <div className="flex justify-center p-3">
-                <div className="bg-slate-200 rounded-full p-2 w-10 self-center flex justify-center">
+            </CardDataStats> */}
+            <Link
+              href={"/priority-principles"}
+              className=" cursor-pointer group col-span-2 border text-meta-4 dark:text-white border-stroke bg-white dark:bg-meta-4/30 rounded-md hover:border-[#FFBF3C] duration-300 ease-linear p-6"
+            >
+              <div className="flex justify-between">
+                <div className="flex justify-center w-55 pb-3 group-hover:text-[#FFBF3C] duration-300 ease-linear rounded-ss-md rounded-ee-md">
+                  <div className="bg-meta-9 rounded-full p-2 w-10 self-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-golf text-meta-4"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 18v-15l7 4l-7 4" />
+                      <path d="M9 17.67c-.62 .36 -1 .82 -1 1.33c0 1.1 1.8 2 4 2s4 -.9 4 -2c0 -.5 -.38 -.97 -1 -1.33" />
+                    </svg>
+                  </div>
+                  <h2 className="ps-3 font-medium self-center">
+                    Priority Principles
+                  </h2>
+                </div>
+                {true ? (
+                  <p className="self-center px-6 font-medium text-meta-3">
+                    completed
+                  </p>
+                ) : (
+                  <p className="self-center px-6 font-medium text-meta-1">
+                    Pending
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-col justify-center items-center gap-3">
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p> Principle One: Compliance</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -185,55 +224,241 @@ export default function Home() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-golf"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M12 18v-15l7 4l-7 4" />
-                    <path d="M9 17.67c-.62 .36 -1 .82 -1 1.33c0 1.1 1.8 2 4 2s4 -.9 4 -2c0 -.5 -.38 -.97 -1 -1.33" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
                   </svg>
                 </div>
-                <h2 className="p-3">Priority Principles</h2>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p> Principle Two: Humanities</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p> Principle Three: Sustainability</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p>Principle Four: Supplier code of conduct</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p>Principle Five: Cargo Safety and Security</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-3">
-                {/* <p>Principle One: Compliance</p>
-                <p>Principle Two: Humanities</p>
-                <p>Principle Three: Sustainability</p>
-                <p>Principle Four: Supplier code of conduct</p>
-                <p>Principle Five: Cargo Safety and Security</p> */}
-              </div>
-            </div>
-
-            <CardDataStats
-              big_txt="Vendor Profile"
-              page_link="/vendor-profile"
-              small_txt="Status:"
-              status_txt="pending"
-              color={false ? "green" : "red"}
+            </Link>
+            <Link
+              href={"/priority-principles"}
+              className=" cursor-pointer group col-span-2 border text-meta-4 dark:text-white border-stroke bg-white dark:bg-meta-4/30 rounded-md hover:border-[#FFBF3C] duration-300 ease-linear p-6"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-user"
+              <div className="flex justify-between">
+                <div className="flex justify-center w-55 pb-3 group-hover:text-[#FFBF3C] duration-300 ease-linear rounded-ss-md rounded-ee-md">
+                  <div className="bg-meta-9 rounded-full p-2 w-10 self-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-user text-meta-4"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                      <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                  </div>
+                  <h2 className="ps-3 font-medium self-center">
+                    Vendor Profile
+                  </h2>
+                </div>
+                {true ? (
+                  <p className="self-center px-6 font-medium text-meta-3">
+                    completed
+                  </p>
+                ) : (
+                  <p className="self-center px-6 font-medium text-meta-1">
+                    Pending
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-col justify-center items-center gap-3">
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p>Vendor Registration</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p>Bank details</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p>Agency Credit Application</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+                <div className="flex justify-between text-start items-start w-full p-1">
+                  <p>NDA</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+            {/* <div className="col-span-2">
+              <CardDataStats
+                big_txt="Vendor Profile"
+                page_link="/vendor-profile"
+                small_txt="Status:"
+                status_txt="pending"
+                color={false ? "green" : "red"}
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-              </svg>
-            </CardDataStats>
-            <CardDataStats
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-user"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                </svg>
+              </CardDataStats>
+            </div> */}
+            {/* <CardDataStats
               big_txt="Cargo Security Program"
               page_link="/cargo-security-program"
               small_txt="Status:"
               status_txt={
                 CargoSecurityProgramAccepted === "success"
-                  ? "Accepted"
+                  ? "Completed"
                   : "Pending"
               }
               color={
@@ -257,14 +482,14 @@ export default function Home() {
                 <path d="M12 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                 <path d="M12 12l0 2.5" />
               </svg>
-            </CardDataStats>
+            </CardDataStats> */}
             <CardDataStats
               big_txt="Code Of Conduct"
               page_link="/code-of-conduct"
               small_txt="Status:"
               status_txt={
                 checkIfCodeOfConductAnswered === "success"
-                  ? "Accepted"
+                  ? "Completed"
                   : "Pending"
               }
               color={
@@ -297,7 +522,7 @@ export default function Home() {
               small_txt="Status:"
               status_txt={
                 checkIfSupplierSustainabilityProfileAnswered === "success"
-                  ? "Accepted"
+                  ? "Completed"
                   : "Pending"
               }
               color={
@@ -330,7 +555,7 @@ export default function Home() {
               small_txt="Status:"
               status_txt={
                 checkIfCargoSecurityProfileAnswered === "success"
-                  ? "Accepted"
+                  ? "Completed"
                   : "Pending"
               }
               color={

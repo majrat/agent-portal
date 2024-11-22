@@ -25,18 +25,19 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
   return (
     <>
       <li>
-        <Link
-          href={item.route}
+        <div
           onClick={handleClick}
           className={`${
             isItemActive ? "bg-graydark dark:bg-meta-4" : ""
           } group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4`}
         >
-          {item.icon}
-          {item.label}
+          <Link href={item.route} className="flex w-11/12">
+            <span className="pr-3">{item.icon}</span>
+            <span>{item.label}</span>
+          </Link>
           {item.children && (
             <svg
-              className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
+              className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current cursor-pointer hover:fill-[#FFBF3C] ${
                 pageName === item.label.toLowerCase() && "rotate-180"
               }`}
               width="20"
@@ -53,8 +54,7 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
               />
             </svg>
           )}
-        </Link>
-
+        </div>
         {item.children && (
           <div
             className={`translate transform overflow-hidden ${

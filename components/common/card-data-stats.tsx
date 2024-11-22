@@ -19,7 +19,7 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   page_link,
 }) => {
   return (
-    <div className="rounded-md border border-stroke bg-white/90 px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-meta-4/90 hover:border-strokedark duration-300 ease-linear dark:hover:border-stroke">
+    <div className="rounded-md border border-stroke bg-white/90 px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-meta-4/90 hover:border-[#FFBF3C] duration-300 ease-linear dark:hover:border-[#FFBF3C]">
       <div className="flex h-11.5 w-11.5 items-center justify-center rounded-full bg-meta-2 dark:bg-meta-4">
         {children}
       </div>

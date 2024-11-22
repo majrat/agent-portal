@@ -142,7 +142,7 @@ export default function Home() {
               </li>
               <li className="pb-3">
                 Principle Four:{" "}
-                <span className="font-bold">Supplier code of conduct</span> - A
+                <span className="font-bold">Supplier Code Of Conduct</span> - A
                 supplier code of conduct is essential in international logistics
                 for upholding ethical standards, ensuring regulatory compliance,
                 maintaining quality, promoting sustainability, enhancing
