@@ -41,23 +41,22 @@ export const setBankDetails = async (values: any) => {
         },
         { upsert: true }
       );
+    } else {
+      const newBankDetails = new bank_details({
+        beneficiary_payee_name,
+        beneficiary_payee_address,
+        bank_account_no,
+        bank_name,
+        bank_address,
+        branch,
+        swift_code,
+        iban,
+        currency,
+        user_id,
+        status: 1,
+      });
+      await newBankDetails.save();
     }
-
-    const newBankDetails = new bank_details({
-      beneficiary_payee_name,
-      beneficiary_payee_address,
-      bank_account_no,
-      bank_name,
-      bank_address,
-      branch,
-      swift_code,
-      iban,
-      currency,
-      user_id,
-      status: 1,
-    });
-
-    await newBankDetails.save();
     return {
       success: "success",
       message: "BankDetails saved",

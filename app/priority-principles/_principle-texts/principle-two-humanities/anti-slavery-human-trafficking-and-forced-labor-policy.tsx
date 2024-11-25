@@ -1,8 +1,32 @@
 import Modal from "components/common/modal";
+import { setAntiSlaveryHumanTraffickingAndForcedLaborPolicy } from "actions/priority-principles";
+import { useSession } from "next-auth/react";
+import { useState } from "react";
 
-const AntiSlaveryHumanTraffickingAndForcedLaborPolicyText = () => {
+interface AntiSlaveryHumanTraffickingAndForcedLaborPolicyProps {
+  accepted: boolean;
+  onClickFunc: any;
+  isOpen: any;
+}
+const AntiSlaveryHumanTraffickingAndForcedLaborPolicyText: React.FC<
+  AntiSlaveryHumanTraffickingAndForcedLaborPolicyProps
+> = ({ accepted, onClickFunc, isOpen }) => {
+  const { data } = useSession();
+  const [error, seterror] = useState<string>("");
+  const [success, setsuccess] = useState<string>("");
+
+  const handleAcceptSubmit = async () => {
+    const userId = { user_id: data?.user?.id };
+    await setAntiSlaveryHumanTraffickingAndForcedLaborPolicy(userId)
+      .then((e) => {
+        setsuccess(e.message);
+      })
+      .catch((e) => seterror(`${e.message}`));
+  };
   return (
     <Modal
+      isOpen={isOpen}
+      onClickFunc={onClickFunc}
       svg={
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -120,16 +144,16 @@ const AntiSlaveryHumanTraffickingAndForcedLaborPolicyText = () => {
             <b>Human trafficking</b> refers to the illegal and exploitative
             trade of human beings for various purposes, often involving force,
             fraud, or coercion. The United Nations defines human trafficking as:
-            "The recruitment, transportation, transfer, harboring, or receipt of
-            persons by means of threat, use of force or other forms of coercion,
-            of abduction, of fraud, of deception, of the abuse of power or of a
-            position of vulnerability or of the giving or receiving of payments
-            or benefits to achieve the consent of a person having control over
-            another person, for the purpose of exploitation. Exploitation shall
-            include, at a minimum, the exploitation of the prostitution of
-            others or other forms of sexual exploitation, forced labor or
-            services, slavery or practices similar to slavery, servitude or the
-            removal of organs."
+            &quot;The recruitment, transportation, transfer, harboring, or
+            receipt of persons by means of threat, use of force or other forms
+            of coercion, of abduction, of fraud, of deception, of the abuse of
+            power or of a position of vulnerability or of the giving or
+            receiving of payments or benefits to achieve the consent of a person
+            having control over another person, for the purpose of exploitation.
+            Exploitation shall include, at a minimum, the exploitation of the
+            prostitution of others or other forms of sexual exploitation, forced
+            labor or services, slavery or practices similar to slavery,
+            servitude or the removal of organs.&quot;
           </p>
           <p className="py-3">
             <b>Forced labor,</b> also known as involuntary labor or unfree
@@ -183,17 +207,28 @@ const AntiSlaveryHumanTraffickingAndForcedLaborPolicyText = () => {
             please contact the Director of Compliance or the Global Human
             Trafficking Hotline at 1-844-888-FREE and its email address at
             <a href="mailto:help@befree.org" className="text-primary">
-              {" "}help@befree.org.
+              {" "}
+              help@befree.org.
             </a>
           </p>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-end gap-4">
-          <button
-            // onClick={() => setIsOpen(false)}
-            className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black dark:bg-white/70 dark:hover:bg-white dark:text-black text-base font-medium hover:text-white text-white/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
-          >
-            I Read and Agree
-          </button>
+          {error && <p className="text-red">{error}</p>}
+          {accepted || success ? (
+            <div className="flex justify-between">
+              <p className="text-meta-3 text-center self-center">{success}</p>
+              <p className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-meta-4 dark:text-meta-9 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                Agreed
+              </p>
+            </div>
+          ) : (
+            <button
+              onClick={handleAcceptSubmit}
+              className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black dark:bg-white/70 dark:hover:bg-white dark:text-black text-base font-medium hover:text-white text-white/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+            >
+              I Read and Agree
+            </button>
+          )}
         </div>
       </div>
     />

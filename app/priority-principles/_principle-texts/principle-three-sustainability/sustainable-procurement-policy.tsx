@@ -1,8 +1,33 @@
 import Modal from "components/common/modal";
+import { setSustainableProcurementPolicy } from "actions/priority-principles";
+import { useSession } from "next-auth/react";
+import { useState } from "react";
 
-const SustainableProcurementPolicyText = () => {
+interface SustainableProcurementPolicyProps {
+  accepted: boolean;
+  onClickFunc: any;
+  isOpen: any;
+}
+const SustainableProcurementPolicyText: React.FC<
+  SustainableProcurementPolicyProps
+> = ({ accepted, onClickFunc, isOpen }) => {
+  const { data } = useSession();
+  const [error, seterror] = useState<string>("");
+  const [success, setsuccess] = useState<string>("");
+
+  const handleAcceptSubmit = async () => {
+    const userId = { user_id: data?.user?.id };
+    await setSustainableProcurementPolicy(userId)
+      .then((e) => {
+        setsuccess(e.message);
+      })
+      .catch((e) => seterror(`${e.message}`));
+  };
+
   return (
     <Modal
+      isOpen={isOpen}
+      onClickFunc={onClickFunc}
       svg={
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -151,12 +176,22 @@ const SustainableProcurementPolicyText = () => {
           </p>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-end gap-4">
-          <button
-            // onClick={() => setIsOpen(false)}
-            className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black dark:bg-white/70 dark:hover:bg-white dark:text-black text-base font-medium hover:text-white text-white/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
-          >
-            I Read and Agree
-          </button>
+          {error && <p className="text-red">{error}</p>}
+          {accepted || success ? (
+            <div className="flex justify-between">
+              <p className="text-meta-3 text-center self-center">{success}</p>
+              <p className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-meta-4 dark:text-meta-9 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                Agreed
+              </p>
+            </div>
+          ) : (
+            <button
+              onClick={handleAcceptSubmit}
+              className="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-black dark:bg-white/70 dark:hover:bg-white dark:text-black text-base font-medium hover:text-white text-white/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+            >
+              I Read and Agree
+            </button>
+          )}
         </div>
       </div>
     />
