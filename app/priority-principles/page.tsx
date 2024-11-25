@@ -224,8 +224,10 @@ export default function Home() {
               </div>
               <ul className="relative list-disc p-6 bg-white/60 rounded-md">
                 <li className="pb-3">
-                  Principle One: <span className="font-bold">Compliance</span> -{" "}
-                  Compliance in international logistics is crucial for the
+                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                    Principle One: Compliance
+                  </span>{" "}
+                  - Compliance in international logistics is crucial for the
                   seamless and efficient movement of goods across borders.
                   Adhering to international regulations, trade agreements, and
                   customs requirements ensures that our operations run smoothly
@@ -286,8 +288,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  Principle Two: <span className="font-bold">Humanities</span> -{" "}
-                  Humanities enrich international logistics by providing the
+                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                    Principle Two: Humanities
+                  </span>{" "}
+                  - Humanities enrich international logistics by providing the
                   cultural insight, ethical foundation, communication skills,
                   and global perspective necessary for effective and responsible
                   supply chain management. Embracing the humanities ensures that
@@ -417,7 +421,7 @@ export default function Home() {
                         }
                         isOpen={IsOpenHumanRightsAndModernSlaveryStatement}
                       />
-                      {HumanRightsAndModernSlaveryStatement ? (
+                      {/* {HumanRightsAndModernSlaveryStatement ? (
                         <>
                           &nbsp;
                           <svg
@@ -459,7 +463,28 @@ export default function Home() {
                           </svg>
                           <sub className="text-meta-1">Pending</sub>
                         </>
-                      )}
+                      )} */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M12 17v.01" />
+                        <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
+                      </svg>
+                      <sub className="text-meta-1">
+                        Awaiting Content: Please provide details
+                      </sub>
                     </li>
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <WhistleblowerPolicyText
@@ -467,7 +492,7 @@ export default function Home() {
                         onClickFunc={handleCloseIsOpenWhistleblowerPolicy}
                         isOpen={IsOpenWhistleblowerPolicy}
                       />
-                      {WhistleblowerPolicy ? (
+                      {/* {WhistleblowerPolicy ? (
                         <>
                           &nbsp;
                           <svg
@@ -509,14 +534,36 @@ export default function Home() {
                           </svg>
                           <sub className="text-meta-1">Pending</sub>
                         </>
-                      )}
+                      )} */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M12 17v.01" />
+                        <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
+                      </svg>
+                      <sub className="text-meta-1">
+                        Awaiting Content: Please provide details
+                      </sub>
                     </li>
                   </ul>
                 </li>
                 <li className="pb-3">
-                  Principle Three:{" "}
-                  <span className="font-bold">Sustainability</span> -
-                  Sustainability in international logistics is essential for
+                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                    Principle Three: Sustainability
+                  </span>{" "}
+                  - Sustainability in international logistics is essential for
                   protecting the environment, ensuring regulatory compliance,
                   achieving economic efficiency, meeting market demands,
                   managing risks, fulfilling corporate social responsibility,
@@ -537,7 +584,7 @@ export default function Home() {
                           IsOpenInternationalStandardForSustainableProcurement
                         }
                       />
-                      {InternationalStandardForSustainableProcurement ? (
+                      {/* {InternationalStandardForSustainableProcurement ? (
                         <>
                           &nbsp;
                           <svg
@@ -579,7 +626,28 @@ export default function Home() {
                           </svg>
                           <sub className="text-meta-1">Pending</sub>
                         </>
-                      )}
+                      )} */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M12 17v.01" />
+                        <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
+                      </svg>
+                      <sub className="text-meta-1">
+                        Awaiting Content: Please provide details
+                      </sub>
                     </li>
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <SustainableProcurementPolicyText
@@ -636,9 +704,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  Principle Four:{" "}
-                  <span className="font-bold">Supplier Code Of Conduct</span> -
-                  A supplier code of conduct is essential in international
+                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                    Principle Four: Supplier Code Of Conduct
+                  </span>{" "}
+                  - A supplier code of conduct is essential in international
                   logistics for upholding ethical standards, ensuring regulatory
                   compliance, maintaining quality, promoting sustainability,
                   enhancing reputation, mitigating risks, fulfilling social
@@ -729,9 +798,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  Principle Five:{" "}
-                  <span className="font-bold">Cargo Safety and Security</span> -
-                  Cargo safety and security are fundamental to the success of
+                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                    Principle Five: Cargo Safety and Security
+                  </span>{" "}
+                  - Cargo safety and security are fundamental to the success of
                   international logistics. They protect goods, ensure regulatory
                   compliance, mitigate risks, build customer trust, reduce
                   liability, enhance operational efficiency, bolster brand
@@ -739,6 +809,29 @@ export default function Home() {
                   prioritizing cargo safety and security, logistics providers
                   can deliver reliable and secure services, supporting global
                   trade and economic growth.
+                  <span className="flex pt-6">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                      <path d="M12 17v.01" />
+                      <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg>
+                    <sub className="text-meta-1">
+                      Awaiting Content: Please provide details
+                    </sub>
+                  </span>
                   {/* <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
                     CTPAT/PIP/AEO writeup
