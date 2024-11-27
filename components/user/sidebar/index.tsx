@@ -248,6 +248,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               width={176}
               height={32}
               src={"/logo.svg"}
+              className="w-full h-auto"
               alt="Logo"
               priority
             />

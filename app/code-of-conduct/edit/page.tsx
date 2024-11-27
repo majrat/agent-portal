@@ -16,8 +16,10 @@ import {
   setCodeOfConductQnA,
 } from "../../../actions/code-of-conduct-qna";
 import Loader from "components/common/loader";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
-export default function CodeOfConduct() {
+export default function CodeOfConductEdit() {
   const { status } = useSession();
   const { data } = useSession();
   const router = useRouter();
@@ -27,6 +29,7 @@ export default function CodeOfConduct() {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   useEffect(() => {
     async function fetchData() {

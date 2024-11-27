@@ -1,7 +1,6 @@
 const { SITE_BASE_URL } = process.env;
 
 export const survey_json = {
-  "title": "",
   "completedHtml":
     `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/vendor-profile/nda'>Continue to Next Form</a></h3>`,
   "completedHtmlOnCondition": [
@@ -14,36 +13,29 @@ export const survey_json = {
   ],
   "pages": [
     {
-      "name": "page1",
-      "title": "",
+      "name": "NDA",
+      "title": "Contracted Partner",
+
       "elements": [
         {
-          "type": "panel",
-          "name": "contracted_partner",
-          "title": "Contracted Partner",
+          "type": "text",
+          "name": "date",
+          "title": "Date",
           "isRequired": true,
-          "elements": [
-            {
-              "type": "text",
-              "name": "date",
-              "title": "Date",
-              "isRequired": true,
-              "inputType": "date"
-            },
-            {
-              "type": "text",
-              "name": "printed_name",
-              "title": "Printed Name",
-              "isRequired": true
-            },
-            {
-              "type": "signaturepad",
-              "name": "signature",
-              "title": "Signature",
-              "isRequired": true
-            }
-          ]
+          "inputType": "date"
         },
+        {
+          "type": "text",
+          "name": "printed_name",
+          "title": "Printed Name",
+          "isRequired": true
+        },
+        {
+          "type": "signaturepad",
+          "name": "signature",
+          "title": "Signature",
+          "isRequired": true
+        }
       ]
     }
   ],

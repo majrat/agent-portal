@@ -17,6 +17,8 @@ import {
 
 import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import Loader from "components/common/loader";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
 export default function Questionaire() {
   const { status } = useSession();
@@ -28,6 +30,7 @@ export default function Questionaire() {
     const thisSurvey = new Model(surveyJson);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   const surveyComplete = useCallback(
     (thisSurvey: { setValue: (arg0: string, arg1: any) => any; data: any }) => {

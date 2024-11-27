@@ -18,21 +18,26 @@ const Dropdownuser = () => {
           className="flex items-center gap-4"
           href="#"
         >
-          <span className="hidden text-right lg:block">
-            <span className="block text-sm font-medium text-black dark:text-white">
+          <span className="hidden text-right lg:block text-black dark:text-white">
+            <span className="block text-sm font-medium">
               {data?.user?.name} {data?.user.role === "ADMIN" && "(Admin)"}
             </span>
             <span className="block text-xs">{data?.user?.email}</span>
           </span>
 
           <span className="h-12 w-12 rounded-full">
-            <Image
-              width={90}
-              height={90}
-              // src={data?.user?.image || "/images/user/user-svgrepo-com.svg"}
-              src={"/images/user/user-svgrepo-com.svg"}
-              alt="user"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="45"
+              height="45"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="icon icon-tabler icons-tabler-filled icon-tabler-user text-meta-4 text-center bg-meta-9 rounded-full p-1"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+              <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+            </svg>
           </span>
 
           <svg

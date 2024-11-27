@@ -7,7 +7,7 @@ import Loader from "components/common/loader";
 import LogoCard from "components/common/logo-card";
 import DefaultLayout from "components/user/layouts/user-default-layout";
 import { getNDA, setNDA } from "actions/nda";
-import { type_of_agency_credit_application } from "types/survey_js_form_data";
+import { type_of_survey_js_form_data } from "types/survey_js_form_data";
 import formattedDate from "js/formattedDate";
 import { getAgencyCreditApplication } from "actions/agency-credit-application";
 
@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
   const [success, setsuccess] = useState<string>("");
   const [agencyCreditApplicationData, setAgencyCreditApplicationData] =
-    useState<type_of_agency_credit_application>();
+    useState<type_of_survey_js_form_data>();
   const { status, data } = useSession();
   const ref = useRef<HTMLFormElement>(null);
   const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");

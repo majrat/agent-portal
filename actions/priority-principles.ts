@@ -13,11 +13,7 @@ export const setAntiCorruptionStatementAndPolicy = async (values: any) => {
       },
       {
         $set: {
-          principle: {
-            one_compliance: {
-              anti_corruption_statement_and_policy: true,
-            },
-          },
+          "principle.one_compliance.anti_corruption_statement_and_policy": true,
         },
       },
       { upsert: true }

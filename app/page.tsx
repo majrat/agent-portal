@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import DefaultLayout from "components/user/layouts/user-default-layout";
 import CardDataStats from "components/common/card-data-stats";
@@ -16,12 +16,22 @@ import Loader from "components/common/loader";
 import formattedDate from "js/formattedDate";
 import Link from "next/link";
 import { type_of_priority_principles } from "types/priority_principles";
+import { getVendorRegistration } from "actions/vendor-registration";
+import { getBankDetails } from "actions/bank-details";
+import { getAgencyCreditApplication } from "actions/agency-credit-application";
+import { getNDA } from "actions/nda";
 
 export default function Home() {
   const { status, data } = useSession();
   const router = useRouter();
   const [VendorWelcomeAccepted, setVendorWelcomeAccepted] =
     useState<string>("loading");
+  const [VendorRegistrationData, setVendorRegistrationData] =
+    useState<string>("loading");
+  const [BankDetailsData, setBankDetailsData] = useState<string>("loading");
+  const [AgencyCreditApplicationData, setAgencyCreditApplicationData] =
+    useState<string>("loading");
+  const [NDAData, setNDAData] = useState<string>("loading");
   const [PriorityPrincipleData, setPriorityPrincipleData] =
     useState<type_of_priority_principles>();
   const [CargoSecurityProgramAccepted, setCargoSecurityProgramAccepted] =
@@ -45,6 +55,42 @@ export default function Home() {
     fetchVendorWelcomeData()
       .then((response) => {
         setVendorWelcomeAccepted(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchVendorRegistrationData() {
+      return await getVendorRegistration(data?.user?.id);
+    }
+    fetchVendorRegistrationData()
+      .then((response) => {
+        setVendorRegistrationData(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchBankDetailsData() {
+      return await getBankDetails(data?.user?.id);
+    }
+    fetchBankDetailsData()
+      .then((response) => {
+        setBankDetailsData(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchAgencyCreditApplicationData() {
+      return await getAgencyCreditApplication(data?.user?.id);
+    }
+    fetchAgencyCreditApplicationData()
+      .then((response) => {
+        setAgencyCreditApplicationData(response?.success);
+      })
+      .catch((e) => seterror(`${e}`));
+
+    async function fetchNDAData() {
+      return await getNDA(data?.user?.id);
+    }
+    fetchNDAData()
+      .then((response) => {
+        setNDAData(response?.success);
       })
       .catch((e) => seterror(`${e}`));
 
@@ -93,6 +139,7 @@ export default function Home() {
       })
       .catch((e) => seterror(`${e}`));
   }, [data]);
+
   const showSession = () => {
     if (status === "authenticated") {
       const Dateformatted = formattedDate(data.user.joined_date);
@@ -174,12 +221,9 @@ export default function Home() {
                 <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
               </svg>
             </CardDataStats> */}
-            <Link
-              href={"/priority-principles"}
-              className=" cursor-pointer group col-span-2 border text-meta-4 dark:text-white border-stroke bg-white dark:bg-meta-4/30 rounded-md hover:border-[#FFBF3C] duration-300 ease-linear p-6"
-            >
+            <div className="group cursor-default col-span-2 border text-meta-4 dark:text-white border-stroke bg-white dark:bg-meta-4/30 rounded-md hover:border-[#FFBF3C] duration-300 ease-linear p-6">
               <div className="flex justify-between">
-                <div className="flex justify-center w-55 pb-3 group-hover:text-[#FFBF3C] duration-300 ease-linear rounded-ss-md rounded-ee-md">
+                <div className="flex justify-center w-55 pb-3 duration-300 ease-linear rounded-ss-md rounded-ee-md">
                   <div className="bg-meta-9 rounded-full p-2 w-10 self-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -198,9 +242,12 @@ export default function Home() {
                       <path d="M9 17.67c-.62 .36 -1 .82 -1 1.33c0 1.1 1.8 2 4 2s4 -.9 4 -2c0 -.5 -.38 -.97 -1 -1.33" />
                     </svg>
                   </div>
-                  <h2 className="ps-3 font-medium self-center">
+                  <Link
+                    className="hover:text-[#FFBF3C] ps-3 font-medium self-center"
+                    href={"/priority-principles"}
+                  >
                     Priority Principles
-                  </h2>
+                  </Link>
                 </div>
                 {PriorityPrincipleData?.principle?.one_compliance
                   ?.anti_corruption_statement_and_policy &&
@@ -229,7 +276,12 @@ export default function Home() {
               </div>
               <div className="flex flex-col justify-center items-center gap-3">
                 <div className="flex justify-between text-start items-start w-full p-1">
-                  <p> Principle One: Compliance</p>
+                  <Link
+                    className="hover:text-[#FFBF3C]"
+                    href={"/priority-principles/#principle-one-compliance"}
+                  >
+                    Principle One: Compliance
+                  </Link>
                   {PriorityPrincipleData?.principle?.one_compliance
                     ?.anti_corruption_statement_and_policy ? (
                     <svg
@@ -268,7 +320,12 @@ export default function Home() {
                   )}
                 </div>
                 <div className="flex justify-between text-start items-start w-full p-1">
-                  <p> Principle Two: Humanities</p>
+                  <Link
+                    className="hover:text-[#FFBF3C]"
+                    href={"/priority-principles/#principle-two-humanities"}
+                  >
+                    Principle Two: Humanities
+                  </Link>
                   {PriorityPrincipleData?.principle?.two_humanities
                     ?.anti_slavery_human_trafficking_and_forced_labor_policy &&
                   PriorityPrincipleData?.principle?.two_humanities
@@ -313,7 +370,14 @@ export default function Home() {
                   )}
                 </div>
                 <div className="flex justify-between text-start items-start w-full p-1">
-                  <p> Principle Three: Sustainability</p>
+                  <Link
+                    className="hover:text-[#FFBF3C]"
+                    href={
+                      "/priority-principles/#principle-three-sustainability"
+                    }
+                  >
+                    Principle Three: Sustainability
+                  </Link>
                   {PriorityPrincipleData?.principle?.three_sustainability
                     ?.international_standard_for_sustainable_procurement &&
                   PriorityPrincipleData?.principle?.three_sustainability
@@ -354,7 +418,14 @@ export default function Home() {
                   )}
                 </div>
                 <div className="flex justify-between text-start items-start w-full p-1">
-                  <p>Principle Four: Supplier code of conduct</p>
+                  <Link
+                    className="hover:text-[#FFBF3C]"
+                    href={
+                      "/priority-principles/#principle-four-supplier-code-of-conduct"
+                    }
+                  >
+                    Principle Four: Supplier code of conduct
+                  </Link>
                   {PriorityPrincipleData?.principle
                     ?.four_supplier_code_of_conduct
                     ?.supply_chain_management_policy ? (
@@ -394,34 +465,43 @@ export default function Home() {
                   )}
                 </div>
                 <div className="flex justify-between text-start items-start w-full p-1">
-                  <p>Principle Five: Cargo Safety and Security</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
+                  <Link
+                    className="hover:text-[#FFBF3C]"
+                    href={
+                      "/priority-principles/#principle-five-cargo-safety-and-security"
+                    }
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                    <path d="M12 17v.01" />
-                    <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
-                  </svg>
+                    Principle Five: Cargo Safety and Security
+                  </Link>
+                  <div className="flex">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                      <path d="M12 17v.01" />
+                      <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg>
+                    <sub className="text-meta-1">
+                      Awaiting Content: Please provide details
+                    </sub>
+                  </div>
                 </div>
               </div>
-            </Link>
-            <Link
-              href={"/priority-principles"}
-              className=" cursor-pointer group col-span-2 border text-meta-4 dark:text-white border-stroke bg-white dark:bg-meta-4/30 rounded-md hover:border-[#FFBF3C] duration-300 ease-linear p-6"
-            >
+            </div>
+            <div className="cursor-default group hover:border-[#FFBF3C] col-span-2 border text-meta-4 dark:text-white border-stroke bg-white dark:bg-meta-4/30 rounded-md duration-300 ease-linear p-6">
               <div className="flex justify-between">
-                <div className="flex justify-center w-55 pb-3 group-hover:text-[#FFBF3C] duration-300 ease-linear rounded-ss-md rounded-ee-md">
+                <div className="flex justify-center w-55 pb-3 duration-300 ease-linear rounded-ss-md rounded-ee-md">
                   <div className="bg-meta-9 rounded-full p-2 w-10 self-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -440,11 +520,17 @@ export default function Home() {
                       <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                     </svg>
                   </div>
-                  <h2 className="ps-3 font-medium self-center">
+                  <Link
+                    href={"/vendor-profile"}
+                    className="ps-3 font-medium self-center hover:text-[#FFBF3C]"
+                  >
                     Vendor Profile
-                  </h2>
+                  </Link>
                 </div>
-                {true ? (
+                {VendorRegistrationData === "success" &&
+                BankDetailsData === "success" &&
+                AgencyCreditApplicationData === "success" &&
+                NDAData === "success" ? (
                   <p className="self-center px-6 font-medium text-meta-3">
                     completed
                   </p>
@@ -455,84 +541,172 @@ export default function Home() {
                 )}
               </div>
               <div className="flex flex-col justify-center items-center gap-3">
-                <div className="flex justify-between text-start items-start w-full p-1">
+                <Link
+                  href={"/vendor-profile/vendor-registration"}
+                  className="flex justify-between text-start items-start w-full p-1 cursor-pointer hover:text-[#FFBF3C]"
+                >
                   <p>Vendor Registration</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-                    <path d="M9 12l2 2l4 -4" />
-                  </svg>
-                </div>
-                <div className="flex justify-between text-start items-start w-full p-1">
+                  {VendorRegistrationData === "success" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-check text-meta-3"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 12l2 2l4 -4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-x text-meta-1"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M10 10l4 4m0 -4l-4 4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  )}
+                </Link>
+                <Link
+                  href={"/vendor-profile/bank-details"}
+                  className="flex justify-between text-start items-start w-full p-1 cursor-pointer hover:text-[#FFBF3C]"
+                >
                   <p>Bank details</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-                    <path d="M9 12l2 2l4 -4" />
-                  </svg>
-                </div>
-                <div className="flex justify-between text-start items-start w-full p-1">
+                  {BankDetailsData === "success" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-check text-meta-3"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 12l2 2l4 -4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-x text-meta-1"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M10 10l4 4m0 -4l-4 4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  )}
+                </Link>
+                <Link
+                  href={"/vendor-profile/agency-credit-application"}
+                  className="flex justify-between text-start items-start w-full p-1 cursor-pointer hover:text-[#FFBF3C]"
+                >
                   <p>Agency Credit Application</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-                    <path d="M9 12l2 2l4 -4" />
-                  </svg>
-                </div>
-                <div className="flex justify-between text-start items-start w-full p-1">
+                  {AgencyCreditApplicationData === "success" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-check text-meta-3"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 12l2 2l4 -4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-x text-meta-1"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M10 10l4 4m0 -4l-4 4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  )}
+                </Link>
+                <Link
+                  href={"/vendor-profile/nda"}
+                  className="flex justify-between text-start items-start w-full p-1 cursor-pointer hover:text-[#FFBF3C]"
+                >
                   <p>NDA</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check text-meta-3"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
-                    <path d="M9 12l2 2l4 -4" />
-                  </svg>
-                </div>
+                  {NDAData === "success" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-check text-meta-3"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 12l2 2l4 -4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-x text-meta-1"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M10 10l4 4m0 -4l-4 4" />
+                      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    </svg>
+                  )}
+                </Link>
               </div>
-            </Link>
+            </div>
             {/* <div className="col-span-2">
               <CardDataStats
                 big_txt="Vendor Profile"

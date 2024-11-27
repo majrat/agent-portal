@@ -15,6 +15,8 @@ import {
   getCargoSecurityProfile,
 } from "../../../actions/cargo-security-profile";
 import Loader from "components/common/loader";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
 export default function Assessment() {
   const { status } = useSession();
@@ -26,6 +28,7 @@ export default function Assessment() {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   const surveyComplete = useCallback(
     (thisSurvey: { setValue: (arg0: string, arg1: any) => any; data: any }) => {
@@ -114,7 +117,11 @@ export default function Assessment() {
         </>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
       router.push("/auth/login");
     }

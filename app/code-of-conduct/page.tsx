@@ -17,6 +17,8 @@ import {
 } from "../../actions/code-of-conduct-qna";
 import Loader from "../../components/common/loader";
 import CodeOfConductText from "./_code-of-conduct-text/code-of-conduct-text";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
 export default function CodeOfConduct() {
   const { status } = useSession();
@@ -28,6 +30,7 @@ export default function CodeOfConduct() {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   useEffect(() => {
     async function fetchData() {

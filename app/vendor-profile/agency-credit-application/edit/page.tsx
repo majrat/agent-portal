@@ -16,6 +16,8 @@ import {
   getAgencyCreditApplication,
   setAgencyCreditApplication,
 } from "actions/agency-credit-application";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
 export default function AgencyCreditApplication() {
   const { status } = useSession();
@@ -27,6 +29,7 @@ export default function AgencyCreditApplication() {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   useEffect(() => {
     async function fetchData() {
@@ -109,8 +112,15 @@ export default function AgencyCreditApplication() {
             </div>
           </div>
         );
+      } else if (checkIfAnswered === "loading") {
+        return (
+          <span className="text-[#888] text-sm mt-7">
+            <Loader />
+          </span>
+        );
+      } else {
+        return <Survey model={survey} />;
       }
-      return <Survey model={survey} />;
     } else if (status === "loading") {
       return (
         <span className="text-[#888] text-sm mt-7">

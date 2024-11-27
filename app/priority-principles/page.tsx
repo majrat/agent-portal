@@ -224,7 +224,10 @@ export default function Home() {
               </div>
               <ul className="relative list-disc p-6 bg-white/60 rounded-md">
                 <li className="pb-3">
-                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                  <span
+                    className="font-bold border-b-2 border-[#fdc82e]"
+                    id="principle-one-compliance"
+                  >
                     Principle One: Compliance
                   </span>{" "}
                   - Compliance in international logistics is crucial for the
@@ -288,7 +291,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                  <span
+                    className="font-bold border-b-2 border-[#fdc82e]"
+                    id="principle-two-humanities"
+                  >
                     Principle Two: Humanities
                   </span>{" "}
                   - Humanities enrich international logistics by providing the
@@ -560,7 +566,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                  <span
+                    className="font-bold border-b-2 border-[#fdc82e]"
+                    id="principle-three-sustainability"
+                  >
                     Principle Three: Sustainability
                   </span>{" "}
                   - Sustainability in international logistics is essential for
@@ -704,7 +713,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                  <span
+                    className="font-bold border-b-2 border-[#fdc82e]"
+                    id="principle-four-supplier-code-of-conduct"
+                  >
                     Principle Four: Supplier Code Of Conduct
                   </span>{" "}
                   - A supplier code of conduct is essential in international
@@ -798,7 +810,10 @@ export default function Home() {
                   </ul>
                 </li>
                 <li className="pb-3">
-                  <span className="font-bold border-b-2 border-[#fdc82e]">
+                  <span
+                    className="font-bold border-b-2 border-[#fdc82e]"
+                    id="principle-five-cargo-safety-and-security"
+                  >
                     Principle Five: Cargo Safety and Security
                   </span>{" "}
                   - Cargo safety and security are fundamental to the success of

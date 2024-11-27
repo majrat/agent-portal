@@ -1,6 +1,5 @@
 "use server";
 
-import sgMail from "@sendgrid/mail";
 import { getInvitation } from "./admin/invitation";
 import user_model from "models/user";
 import bcrypt from "bcryptjs";

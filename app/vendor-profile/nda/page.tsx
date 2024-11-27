@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import Loader from "components/common/loader";
@@ -8,6 +8,7 @@ import LogoCard from "components/common/logo-card";
 import DefaultLayout from "components/user/layouts/user-default-layout";
 import NDA from "./_nda-text/nda-text";
 import { getNDA } from "actions/nda";
+import Image from "next/image";
 
 export default function Home() {
   const [error, setError] = useState("");
@@ -15,7 +16,6 @@ export default function Home() {
   const [success, setsuccess] = useState<string>("");
   const [NDAData, setNDAData] = useState<any>();
   const { status, data } = useSession();
-  const ref = useRef<HTMLFormElement>(null);
   const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");
 
   useEffect(() => {
@@ -29,9 +29,6 @@ export default function Home() {
       })
       .catch((e) => setError(`${e}`));
   }, [data]);
-  if (!checkIfAnswered) {
-    router.push("/vendor-profile/nda/edit");
-  }
   const showSession = () => {
     if (status === "authenticated") {
       if (checkIfAnswered === "success") {
@@ -45,16 +42,18 @@ export default function Home() {
               {error && <span className="text-red mr-4">{error}</span>}
             </div>
             <NDA
-              contracted_partner={NDAData?.contracted_partner?.name}
+              contracted_partner={NDAData?.answers?.printed_name}
               isOpenValue={false}
             />
             <div className="mt-6 p-10 border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark dark:text-white rounded-md">
               <p className="block font-medium pb-3">Contracted Partner</p>
               <div className="grid grid-cols-2 pt-3">
-                <p className="col-span-1 block">Date</p>
+                <p className="col-span-1 self-center">
+                  {NDAData?.questions?.date}:
+                </p>
                 <p className="md:col-span-1 col-span-1">
-                  <span className="border-b-2 border-dotted border-[#fdc82e]">
-                    {NDAData?.contracted_partner?.date || (
+                  <span className="border-b-2 self-center border-dotted border-[#fdc82e]">
+                    {NDAData?.answers?.date || (
                       <span className="border-b-2 border-dotted border-red text-xs">
                         NO DATA FOUND
                       </span>
@@ -63,10 +62,12 @@ export default function Home() {
                 </p>
               </div>
               <div className="grid grid-cols-2 pt-3">
-                <p className="col-span-1 block">Printed Name</p>
+                <p className="col-span-1 self-center">
+                  {NDAData?.questions?.printed_name}:
+                </p>
                 <p className="md:col-span-1 col-span-1">
                   <span className="border-b-2 border-dotted border-[#fdc82e]">
-                    {NDAData?.contracted_partner?.printed_name || (
+                    {NDAData?.answers?.printed_name || (
                       <span className="border-b-2 border-dotted border-red text-xs">
                         NO DATA FOUND
                       </span>
@@ -75,10 +76,20 @@ export default function Home() {
                 </p>
               </div>
               <div className="grid grid-cols-2 pt-3">
-                <p className="col-span-1 block">Signature</p>
+                <p className="col-span-1 self-center">
+                  {NDAData?.questions?.signature}:
+                </p>
                 <p className="md:col-span-1 col-span-1">
-                  <span className="border-b-2 border-dotted border-[#fdc82e]">
-                    {NDAData?.contracted_partner?.signature || (
+                  <span className="border-b-2 self-center border-dotted border-[#fdc82e]">
+                    {NDAData?.answers?.signature ? (
+                      <Image
+                        width={120}
+                        height={120}
+                        className="w-1/4 h-auto"
+                        src={NDAData?.answers?.signature}
+                        alt="user"
+                      />
+                    ) : (
                       <span className="border-b-2 border-dotted border-red text-xs">
                         NO DATA FOUND
                       </span>
