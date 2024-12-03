@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
   const [success, setsuccess] = useState<string>("");
   const [agencyCreditApplicationData, setAgencyCreditApplicationData] =
-    useState<type_of_survey_js_form_data>();
+    useState<any>();
   const { status, data } = useSession();
   const ref = useRef<HTMLFormElement>(null);
   const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");
@@ -236,7 +236,7 @@ export default function Home() {
                       {agencyCreditApplicationData?.branch_info !==
                       undefined ? (
                         agencyCreditApplicationData?.branch_info?.map(
-                          (branchInfo, index) => (
+                          (branchInfo: { branch_location: any; accounting_contact: { name: string; email: string; }; }, index: React.Key | null | undefined) => (
                             <tr key={index}>
                               <td className="align-top pt-6">
                                 {branchInfo.branch_location || (
@@ -297,7 +297,7 @@ export default function Home() {
                 {agencyCreditApplicationData?.trade_reference_information !==
                 undefined ? (
                   agencyCreditApplicationData?.trade_reference_information?.map(
-                    (data, index) => (
+                    (data: { name: any; address: any; telephone: any; fax: any; email: any; account_number: any; }, index: React.Key | null | undefined) => (
                       <div key={index} className="border-b-2">
                         <div className="grid grid-cols-2 p-3">
                           <p className="col-span-1 block">Name</p>
