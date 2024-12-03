@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import "survey-core/defaultV2.min.css";
 import "survey-core/modern.min.css";
@@ -12,21 +12,25 @@ import { surveyJson } from "../../models/supplier-sustainability-profile-form";
 import React from "react";
 import {
   getSupplierSustainabilityProfile,
-  addSupplierSustainabilityProfile,
+  setSupplierSustainabilityProfile,
 } from "../../actions/supplier-sustainability-profile";
 
-import DefaultLayout from "../../components/layouts/user-default-layout";
+import DefaultLayout from "../../components/user/layouts/user-default-layout";
+import Loader from "components/common/loader";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
 export default function Questionaire() {
   const { status } = useSession();
   const { data } = useSession();
-
-  const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
+  const router = useRouter();
+  const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
     const thisSurvey = new Model(surveyJson);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   const surveyComplete = useCallback(
     (thisSurvey: { setValue: (arg0: string, arg1: any) => any; data: any }) => {
@@ -65,7 +69,7 @@ export default function Questionaire() {
 
   const showSession: any = () => {
     if (status === "authenticated") {
-      if (checkIfAnswered) {
+      if (checkIfAnswered === "success") {
         return (
           <div className="min-h-screen flex flex-col items-center justify-center rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
             {error && <p className="text-red">{error}</p>}
@@ -106,9 +110,13 @@ export default function Questionaire() {
       }
       return <Survey model={survey} />;
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
-      return redirect("/login");
+      router.push("/auth/login");
     }
   };
 
@@ -116,7 +124,7 @@ export default function Questionaire() {
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addSupplierSustainabilityProfile({
+  await setSupplierSustainabilityProfile({
     user_id: user_id,
     answers: answers,
     questions: questions,

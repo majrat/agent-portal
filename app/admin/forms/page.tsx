@@ -1,7 +1,6 @@
 "use client";
 import { getAllusers } from "actions/user";
-import CardDataStats from "components/card-data-stats";
-import DefaultLayout from "components/layouts/admin-default-layout";
+import CardDataStats from "components/common/card-data-stats";
 import { Agent } from "types/package";
 import { Metadata } from "next";
 import { signOut, useSession } from "next-auth/react";
@@ -9,11 +8,13 @@ import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { get_all_cargo_security_profile } from "actions/cargo-security-profile";
-import { get_cargo_security_program } from "actions/cargo-security-program";
+import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getPriorityPrinciples } from "actions/priority-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
-import { get_vendor_welcome } from "actions/vendor-welcome";
+import { getVendorWelcome } from "actions/vendor-welcome";
+import DefaultLayout from "components/admin/layouts/admin-default-layout";
+import Loader from "components/common/loader";
 
 type userDataType = {
   status: number;
@@ -31,6 +32,7 @@ type userDataType = {
 
 export default function Dashboard() {
   const { status, data } = useSession();
+  const router = useRouter();
   const [error, seterror] = useState<string>("");
   const [UserData, setUserData] = useState<userDataType[] | undefined>();
   useEffect(() => {
@@ -171,9 +173,9 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

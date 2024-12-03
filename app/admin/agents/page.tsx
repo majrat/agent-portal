@@ -9,11 +9,13 @@ import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import DefaultLayout from "components/layouts/user-default-layout";
 import { Agent } from "../../../types/package";
+import DefaultLayout from "components/admin/layouts/admin-default-layout";
+import Loader from "components/common/loader";
 
 export default function Dashboard() {
   const { status, data } = useSession();
+  const router = useRouter();
   const agentData: Agent[] = [
     
   ];
@@ -90,9 +92,9 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

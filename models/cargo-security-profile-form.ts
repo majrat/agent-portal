@@ -1,9 +1,11 @@
+const { SITE_BASE_URL } = process.env;
+
 export const survey_json = {
-  "title": "CTPAT/PIP BUSINESS PARTNER ASSESSMENT",
-  "completedHtml": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",
+  "title": "CTPAT/PIP/AEO",
+  "completedHtml": `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/code-of-conduct'>Continue to Next Form</a></h3>`,
   "completedHtmlOnCondition": [
     {
-      "html": "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/code-of-conduct'>Continue to Next Form</a></h3>",
+      "html": `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/code-of-conduct'>Continue to Next Form</a></h3>`,
     },
     {
       "html": "<h3>Thank you for your participation</h3> <h4>We are glad that you shared your ideas with us. They will help us make our product and service better.</h4>",
@@ -13,70 +15,6 @@ export const survey_json = {
     {
       "name": "assessmentQuesions",
       "elements": [
-        {
-          "type": "text",
-          "name": "question1",
-          "title": "Company Name",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
-        {
-          "type": "comment",
-          "name": "question2",
-          "title": "Head Office Address",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
-        {
-          "type": "text",
-          "name": "question3",
-          "title": "City",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
-        {
-          "type": "text",
-          "name": "question4",
-          "title": "Country",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
-        {
-          "type": "text",
-          "name": "question5",
-          "title": "Telephone",
-          "isRequired": true,
-          "inputType": "tel",
-          "placeholder": "The Value must be number",
-        },
-        {
-          "type": "text",
-          "name": "question6",
-          "title": "Fax",
-          "inputType": "number",
-          "placeholder": "Please enter a number greater than or equal to 0",
-        },
-        {
-          "type": "text",
-          "name": "question7",
-          "title": "Agent Name",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
-        {
-          "type": "text",
-          "name": "question8",
-          "title": "Title",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
-        {
-          "type": "text",
-          "name": "question9",
-          "title": "Email Address",
-          "isRequired": true,
-          "placeholder": "Enter your answer",
-        },
         {
           "type": "boolean",
           "name": "question10",

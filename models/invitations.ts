@@ -8,6 +8,7 @@ export interface type_of_invitation {
   admin_id: Schema.Types.ObjectId;
   subject: String;
   message: String;
+  status: Number;
   created_at: Date;
   updated_at: Date;
 }
@@ -35,6 +36,7 @@ const invitation_schema = new Schema<type_of_invitation>(
       type: String,
       required: [true, "message is Required"],
     },
+    status: { type: Number, required: true, default: 0 },
   },
   {
     timestamps: true,

@@ -1,18 +1,9 @@
 /* eslint-disable quote-props */
 import mongoose, { Schema, model } from "mongoose";
-
-export interface type_of_cargo_security_profile {
-  _id: String;
-  user_id: Schema.Types.ObjectId;
-  questions: Map<string, string>;
-  answers: Map<string, string>;
-  status: Number;
-  created_at: Date;
-  updated_at: Date;
-}
+import { type_of_survey_js_form_data } from "types/survey_js_form_data";
 
 const cargo_security_profile_schema =
-  new Schema<type_of_cargo_security_profile>(
+  new Schema<type_of_survey_js_form_data>(
     {
       user_id: {
         type: Schema.Types.ObjectId,
@@ -30,7 +21,7 @@ const cargo_security_profile_schema =
 
 const cargo_security_profile =
   mongoose.models?.cargo_security_profile ||
-  model<type_of_cargo_security_profile>(
+  model<type_of_survey_js_form_data>(
     "cargo_security_profile",
     cargo_security_profile_schema
   );

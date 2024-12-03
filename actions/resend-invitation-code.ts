@@ -1,14 +1,13 @@
 "use server";
 
-import sgMail from "@sendgrid/mail";
-import { get_invitation } from "./admin/invitation";
+import { getInvitation } from "./admin/invitation";
 import user_model from "models/user";
 import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 
 const { SENDER_EMAIL, SENDER_PASSWORD, NODE_ENV } = process.env;
 
-export const resend_invitation_code = async (values: any) => {
+export const resetInvitationCode = async (values: any) => {
   const { password, email } = values;
 
   try {
@@ -16,7 +15,7 @@ export const resend_invitation_code = async (values: any) => {
     const password_match = await bcrypt.compare(password, user.password);
     if (!password_match) throw new Error("Wrong Password");
 
-    const invitation_code_found = await get_invitation(email);
+    const invitation_code_found = await getInvitation(email);
     if (invitation_code_found.success) {
       let transporter =
         NODE_ENV === "development"
@@ -55,13 +54,13 @@ export const resend_invitation_code = async (values: any) => {
       console.log("Email sent: " + info.response);
 
       return {
-        success: true,
+        success: "success",
         message: "RESEND invitation Code sent successfully",
       };
     }
     throw new Error(invitation_code_found.message);
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

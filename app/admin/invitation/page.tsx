@@ -1,8 +1,9 @@
 "use client";
-import { send_invitation } from "actions/admin/invitation";
+import { setInvitation } from "actions/admin/invitation";
 import { getAllusers, userPercentageChange } from "actions/user";
-import CardDataStats from "components/card-data-stats";
-import DefaultLayout from "components/layouts/admin-default-layout";
+import DefaultLayout from "components/admin/layouts/admin-default-layout";
+import CardDataStats from "components/common/card-data-stats";
+import Loader from "components/common/loader";
 import { Metadata } from "next";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
@@ -12,10 +13,11 @@ import { useEffect, useState } from "react";
 export default function Dashboard() {
   const { status, data } = useSession();
   const [error, setError] = useState<string>("");
+  const router = useRouter();
   const [success, setSuccess] = useState<string>("");
 
   const handleSubmit = async (formData: FormData) => {
-    const res = await send_invitation({
+    const res = await setInvitation({
       user_id: data?.user.id,
       first_name: formData.get("first_name"),
       last_name: formData.get("last_name"),
@@ -154,9 +156,9 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return <span className="text-[#888] text-sm mt-7"><Loader /></span>;
     } else {
-      return redirect("/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

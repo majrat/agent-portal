@@ -2,15 +2,15 @@
 import { connectDB } from "lib/mongodb";
 import SupplierSustainabilityProfile from "models/supplier-sustainability-profile-qna";
 
-export const addSupplierSustainabilityProfile = async (values: any) => {
+export const setSupplierSustainabilityProfile = async (values: any) => {
   const { user_id, answers, questions } = values;
 
   try {
     await connectDB();
 
-    const addSupplierSustainabilityProfileData =
+    const setSupplierSustainabilityProfileData =
       await SupplierSustainabilityProfile.findOne({ user_id });
-    if (addSupplierSustainabilityProfileData) {
+    if (setSupplierSustainabilityProfileData) {
       throw new Error("questionaire already answered!");
     }
 
@@ -18,16 +18,17 @@ export const addSupplierSustainabilityProfile = async (values: any) => {
       user_id,
       answers,
       questions,
+      status: 1,
     });
 
     await newSupplierSustainabilityProfile.save();
     return {
-      success: true,
+      success: "success",
       message: "Supplier sustainability profile saved",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -43,12 +44,12 @@ export const getSupplierSustainabilityProfile = async (id: any) => {
       JSON.stringify(SupplierSustainabilityProfileData)
     );
     return {
-      success: true,
+      success: "success",
       message: "Supplier sustainability profile found",
       data: SupplierSustainabilityProfileJson,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

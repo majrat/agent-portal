@@ -1,9 +1,11 @@
+const { SITE_BASE_URL } = process.env;
+
 export const surveyJson = {
   "title": "Sustainability Questionnaire - Environment",
   "description":
     "This sectlon focuses on questlons related to management of environmental Impacts, Including energy",
   "completedHtml":
-    "<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='http://pws-vendorportal-cra3fuh0hvh8bvgu.centralus-01.azurewebsites.net/'>Continue to Dashboard</a></h3>",
+    `<h5>Thank you for your feedback</h5> <h3 style='padding: 10px;'><a href='${SITE_BASE_URL}/'>Continue to Dashboard</a></h3>`,
   "logoPosition": "right",
   "pages": [
     {

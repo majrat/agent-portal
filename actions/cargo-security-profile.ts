@@ -3,17 +3,17 @@
 import { connectDB } from "lib/mongodb";
 import cargo_security_profile from "models/cargo-security-profile";
 
-export const add_cargo_security_profile = async (values: any) => {
+export const setCargoSecurityProfile = async (values: any) => {
   const { user_id, answers, questions } = values;
 
   try {
     await connectDB();
 
-    const add_cargo_security_profile_found =
+    const setCargoSecurityProfile_found =
       await cargo_security_profile.findOne({
         user_id,
       });
-    if (add_cargo_security_profile_found) {
+    if (setCargoSecurityProfile_found) {
       throw new Error("Already answered!");
     }
 
@@ -21,20 +21,21 @@ export const add_cargo_security_profile = async (values: any) => {
       user_id,
       answers,
       questions,
+      status: 1,
     });
 
     await new_cargo_security_profile.save();
     return {
-      success: true,
+      success: "success",
       message: "Cargo security profile form saved successfully",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
-export const get_cargo_security_profile = async (id: any) => {
+export const getCargoSecurityProfile = async (id: any) => {
   try {
     await connectDB();
     const cargo_security_profile_data = await cargo_security_profile.findOne({
@@ -47,13 +48,13 @@ export const get_cargo_security_profile = async (id: any) => {
       JSON.stringify(cargo_security_profile_data)
     );
     return {
-      success: true,
+      success: "success",
       message: "Cargo security profile form found",
       data: cargo_security_profile_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -71,12 +72,12 @@ export const get_all_cargo_security_profile = async (user_role: any) => {
       JSON.stringify(cargo_security_profile_data)
     );
     return {
-      success: true,
+      success: "success",
       message: "Cargo security profile forms found",
       data: all_cargo_security_profile_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

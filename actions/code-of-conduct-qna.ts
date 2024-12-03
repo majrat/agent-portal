@@ -1,33 +1,11 @@
 "use server";
 // import { connectDB } from "@/lib/mongodb";
 import code_of_conduct_qna from "models/code-of-conduct";
-import path from "path";
-import fs from "fs";
 import { connectDB } from "lib/mongodb";
 
-async function savePDFFile(params: any) {
-  // Decode the Base64 string
-  const buffer: any = Buffer.from(params.content, "base64");
-
-  // Define the file path
-  const filePath = path.join(process.cwd(), "public", "files", params.name);
-
-  // Ensure the directory exists
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-
-  // Save the file
-  fs.writeFileSync(filePath, buffer);
-
-  return filePath;
-}
-
-export const addCodeOfConductQnA = async (values: any) => {
+export const setCodeOfConductQnA = async (values: any) => {
   try {
     const { user_id, answers, questions } = values;
-    // SAVE THE FILE IN A STORAGE
-    const filePath = await savePDFFile(answers.question1[0]);
-    // REASSIGN THAT FILE PATH IN QUESTION
-    answers.question1 = filePath;
 
     await connectDB();
 
@@ -42,16 +20,17 @@ export const addCodeOfConductQnA = async (values: any) => {
       user_id,
       answers,
       questions,
+      status: 1,
     });
 
     await new_code_of_conduct_qna.save();
     return {
-      success: true,
+      success: "success",
       message: "Code of conduct saved successfully",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
@@ -68,12 +47,12 @@ export const getCodeOfConductQnA = async (id: any) => {
       JSON.stringify(codeOfConductQnAFounds)
     );
     return {
-      success: true,
+      success: "success",
       message: "Code of conduct form found",
       data: codeOfConductQnAFound,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

@@ -1,30 +1,36 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import "survey-core/defaultV2.min.css";
 import "survey-core/modern.min.css";
 import { Survey } from "survey-react-ui";
 import { Model } from "survey-core";
 import { useCallback } from "react";
-import { survey_json } from "models/code-of-conduct-form";
+import { survey_json } from "../../models/code-of-conduct-form";
 import React from "react";
-import DefaultLayout from "../../components/layouts/user-default-layout";
+import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import {
   getCodeOfConductQnA,
-  addCodeOfConductQnA,
+  setCodeOfConductQnA,
 } from "../../actions/code-of-conduct-qna";
+import Loader from "../../components/common/loader";
+import CodeOfConductText from "./_code-of-conduct-text/code-of-conduct-text";
+import "survey-core/defaultV2.min.css";
+import { DoubleBorderLight } from "survey-core/themes";
 
 export default function CodeOfConduct() {
   const { status } = useSession();
   const { data } = useSession();
-  const [checkIfAnswered, setcheckIfAnswered] = useState<boolean | undefined>();
+  const router = useRouter();
+  const [checkIfAnswered, setcheckIfAnswered] = useState<string>("loading");
   const [error, seterror] = useState<string>("");
   const survey = useMemo(() => {
     const thisSurvey = new Model(survey_json);
     return thisSurvey;
   }, []);
+  survey.applyTheme(DoubleBorderLight);
 
   useEffect(() => {
     async function fetchData() {
@@ -61,12 +67,10 @@ export default function CodeOfConduct() {
 
   const showSession: any = () => {
     if (status === "authenticated") {
-      if (checkIfAnswered) {
+      if (checkIfAnswered === "success") {
         return (
           <div className="min-h-screen flex flex-col items-center justify-center rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-            {error && (
-              <p className="text-red">{error}</p>
-            )}
+            {error && <p className="text-red">{error}</p>}
             <div className="max-w-full overflow-x-auto">
               <div className="border-b-4 border-slate-700 mb-9">
                 <h2 className="text-lg text-stone-900 sm:text-3xl font-semibold mb-1 text-center">
@@ -110,18 +114,27 @@ export default function CodeOfConduct() {
           </div>
         );
       }
-      return <Survey model={survey} />;
+      return (
+        <div className="">
+          <CodeOfConductText isOpenValue />
+          <Survey model={survey} />
+        </div>
+      );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
-      return redirect("/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;
 }
 
 async function saveSurveyResults(user_id: any, answers: any, questions: any) {
-  await addCodeOfConductQnA({
+  await setCodeOfConductQnA({
     user_id: user_id,
     answers: answers,
     questions: questions,

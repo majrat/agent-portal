@@ -5,18 +5,18 @@ import invitation from "models/invitations";
 import nodemailer from "nodemailer";
 const { SENDER_EMAIL, SENDER_PASSWORD, NODE_ENV } = process.env;
 
-export const send_invitation = async (values: any) => {
+export const setInvitation = async (values: any) => {
   const { user_id, first_name, last_name, email, subject, message, org_code } =
     values;
 
   try {
     await connectDB();
 
-    const send_invitation_found = await invitation.findOne({
+    const setInvitation_found = await invitation.findOne({
       email,
       org_code,
     });
-    if (send_invitation_found) {
+    if (setInvitation_found) {
       throw new Error("Already Invited!");
     }
 
@@ -69,16 +69,16 @@ export const send_invitation = async (values: any) => {
     });
     await new_invitation.save();
     return {
-      success: true,
+      success: "success",
       message: "Invitation sent successfully",
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };
 
-export const get_invitation = async (email: any) => {
+export const getInvitation = async (email: any) => {
   try {
     await connectDB();
     const invitation_data = await invitation.findOne({
@@ -89,13 +89,13 @@ export const get_invitation = async (email: any) => {
     }
     const invitation_json = JSON.parse(JSON.stringify(invitation_data));
     return {
-      success: true,
+      success: "success",
       message:
         "Please enter the Unique Code we send in our invitation email to continue.",
       data: invitation_json,
     };
   } catch (error) {
     console.error(error);
-    return { success: false, message: `${error}` };
+    return { success: "failed", message: `${error}` };
   }
 };

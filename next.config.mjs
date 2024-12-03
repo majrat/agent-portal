@@ -3,6 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   distDir: "build",
   output: "standalone",
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
   experimental: {
     serverActions: {
       bodySizeLimit: "2mb",

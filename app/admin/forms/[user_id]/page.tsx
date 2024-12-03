@@ -1,7 +1,6 @@
 "use client";
 import { getAllusers, userPercentageChange } from "actions/user";
-import CardDataStats from "components/card-data-stats";
-import DefaultLayout from "components/layouts/admin-default-layout";
+import CardDataStats from "components/common/card-data-stats";
 import { Agent } from "types/package";
 import { Metadata } from "next";
 import { signOut, useSession } from "next-auth/react";
@@ -9,29 +8,30 @@ import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { get_all_cargo_security_profile } from "actions/cargo-security-profile";
-import { get_cargo_security_program } from "actions/cargo-security-program";
+import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getPriorityPrinciples } from "actions/priority-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
-import { get_vendor_welcome } from "actions/vendor-welcome";
+import { getVendorWelcome } from "actions/vendor-welcome";
+import DefaultLayout from "components/admin/layouts/admin-default-layout";
+import Loader from "components/common/loader";
 
 export default function Dashboard() {
   const { status, data } = useSession();
-  const [VendorWelcome, setVendorWelcome] = useState<boolean>(false);
-  const [PriorityPrinciple, setPriorityPrinciple] = useState<boolean>(false);
+  const router = useRouter();
+  const [VendorWelcome, setVendorWelcome] = useState<string>("loading");
+  const [PriorityPrinciple, setPriorityPrinciple] = useState<string>("loading");
   const [CargoSecurityProgram, setCargoSecurityProgram] =
-    useState<boolean>(false);
-  const [CodeOfConduct, setCodeOfConduct] = useState<boolean | undefined>(
-    false
-  );
+    useState<string>("loading");
+  const [CodeOfConduct, setCodeOfConduct] = useState<string>("loading");
   const [SupplierSustainabilityProfile, setSupplierSustainabilityProfile] =
-    useState<boolean | undefined>(false);
+    useState<string>("loading");
   const [CargoSecurityProfile, setCargoSecurityProfile] = useState([]);
   const [error, seterror] = useState<string>("");
 
   useEffect(() => {
     async function fetchVendorWelcomeData() {
-      return await get_vendor_welcome(data?.user?.id);
+      return await getVendorWelcome(data?.user?.id);
     }
     fetchVendorWelcomeData()
       .then((response) => {
@@ -49,7 +49,7 @@ export default function Dashboard() {
       .catch((e) => seterror(`${e}`));
 
     async function fetchCargoSecurityProgram() {
-      return await get_cargo_security_program(data?.user?.id);
+      return await getCargoSecurityProgram(data?.user?.id);
     }
     fetchCargoSecurityProgram()
       .then((response) => {
@@ -258,9 +258,13 @@ export default function Dashboard() {
         </div>
       );
     } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
+      return (
+        <span className="text-[#888] text-sm mt-7">
+          <Loader />
+        </span>
+      );
     } else {
-      return redirect("/login");
+      router.push("/auth/login");
     }
   };
   return <DefaultLayout>{showSession()}</DefaultLayout>;

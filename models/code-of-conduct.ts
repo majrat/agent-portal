@@ -1,17 +1,8 @@
 /* eslint-disable quote-props */
 import mongoose, { Schema, model } from "mongoose";
+import { type_of_survey_js_form_data } from "types/survey_js_form_data";
 
-export interface type_of_code_of_conduct {
-  _id: String;
-  user_id: Schema.Types.ObjectId;
-  questions: Map<string, string>;
-  answers: Map<string, string>;
-  status: Number;
-  created_at: Date;
-  updated_at: Date;
-}
-
-const code_of_conduct_schema = new Schema<type_of_code_of_conduct>(
+const code_of_conduct_schema = new Schema<type_of_survey_js_form_data>(
   {
     user_id: {
       type: Schema.Types.ObjectId,
@@ -29,5 +20,5 @@ const code_of_conduct_schema = new Schema<type_of_code_of_conduct>(
 
 const code_of_conduct =
   mongoose.models?.code_of_conduct ||
-  model<type_of_code_of_conduct>("code_of_conduct", code_of_conduct_schema);
+  model<type_of_survey_js_form_data>("code_of_conduct", code_of_conduct_schema);
 export default code_of_conduct;
