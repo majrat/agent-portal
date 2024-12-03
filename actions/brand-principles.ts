@@ -1,13 +1,13 @@
 "use server";
 import { connectDB } from "lib/mongodb";
-import priority_principles from "models/priority-principles";
+import brand_principles from "models/brand-principles";
 
 export const setAntiCorruptionStatementAndPolicy = async (values: any) => {
   const { user_id } = values;
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -35,7 +35,7 @@ export const setAntiSlaveryHumanTraffickingAndForcedLaborPolicy = async (
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -64,7 +64,7 @@ export const setHealthSafetySecurityAndEnvironmentalPolicy = async (
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -91,7 +91,7 @@ export const setHumanRightsAndModernSlaveryStatement = async (values: any) => {
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -118,7 +118,7 @@ export const setWhistleblowerPolicy = async (values: any) => {
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -146,7 +146,7 @@ export const setInternationalStandardForSustainableProcurement = async (
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -173,7 +173,7 @@ export const setSustainableProcurementPolicy = async (values: any) => {
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -199,7 +199,7 @@ export const setSupplyChainManagementPolicy = async (values: any) => {
 
   try {
     await connectDB();
-    await priority_principles.updateOne(
+    await brand_principles.updateOne(
       {
         user_id,
       },
@@ -221,23 +221,23 @@ export const setSupplyChainManagementPolicy = async (values: any) => {
   }
 };
 
-export const getPriorityPrinciples = async (id: any) => {
+export const getbrandPrinciples = async (id: any) => {
   try {
     await connectDB();
-    const PriorityPrinciplesFounds = await priority_principles.findOne({
+    const brandPrinciplesFounds = await brand_principles.findOne({
       user_id: id,
     });
-    if (PriorityPrinciplesFounds) {
-      const PriorityPrinciplesFound = JSON.parse(
-        JSON.stringify(PriorityPrinciplesFounds)
+    if (brandPrinciplesFounds) {
+      const brandPrinciplesFound = JSON.parse(
+        JSON.stringify(brandPrinciplesFounds)
       );
       return {
         success: "success",
-        message: "Priority principles saved",
-        data: PriorityPrinciplesFound,
+        message: "brand principles saved",
+        data: brandPrinciplesFound,
       };
     }
-    throw new Error("Not Agreed to Priority Principles");
+    throw new Error("Not Agreed to brand Principles");
   } catch (error) {
     console.error(error);
     return { success: "failed", message: `${error}` };

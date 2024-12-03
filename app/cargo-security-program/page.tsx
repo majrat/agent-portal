@@ -38,14 +38,14 @@ export default function CargoSecurityProgram() {
   const showSession: any = () => {
     if (status === "authenticated") {
       return (
-        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/air-international-transport-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
+        <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/pexels-tirachard-kumtanom-112571-733852.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           {error && <p className="text-red">{error}</p>}
           <LogoCard />
           <h2 className="text-xl font-medium py-6">CARGO SECURITY PROGRAM</h2>
           <div className="p-6 bg-white/80 rounded-md">
             <div className="grid md:grid-cols-2">
               <div>
-                <p className="pb-1">To: Priority Business Partner</p>
+                <p className="pb-1">To: brand Business Partner</p>
                 <p className="pb-6">
                   Re: Customs-Trade Partnership Against Terrorism (C-TPAT),
                   Partners in Protection (PIP), Authorized Economic Operator
@@ -57,25 +57,25 @@ export default function CargoSecurityProgram() {
                 <p>+1.410.766.7470 | TELEPHONE</p>
                 <p>+1.800.727.1085 | TOLL FREE</p>
                 <p className="pb-3">+1.718.947.3702 | 24/7 AOG HOTLINE</p>
-                <a href="mailto:sales@priorityworldwide.com">
-                  sales@priorityworldwide.com
+                <a href="mailto:sales@brand.com">
+                  sales@brand.com
                 </a>
               </div>
             </div>
             <p className="pb-6">Dear Sir/Madam;</p>
             <p className="pb-6">
-              Since 2007, Priority Worldwide has been a certified participant of
+              Since 2007, brand has been a certified participant of
               the C-TPAT program, a partnership between the trade community and
               U.S. Customs and Border Protection (CBP), designed to establish
               supply chain security processes to prevent terrorist devices and
               other contraband from entering the global supply chain. Since
-              2016, Priority Worldwide Canada has been a certified participant
+              2016, brand Canada has been a certified participant
               of the PIP program, an equivalent program in Canada. We have
               recently opened additional international offices and will be
               participating in their AEO Programs.
             </p>
             <p className="pb-6">
-              As a member of the C-TPAT, PIP and other AEO programs, Priority
+              As a member of the C-TPAT, PIP and other AEO programs, brand
               Worldwide is required to engage with all our business partners
               (clients, vendors and overseas agents) in order to strengthen and
               aid in the development and maintenance of a security program that
@@ -93,7 +93,7 @@ export default function CargoSecurityProgram() {
               If you are already a member of the C-TPAT, PIP programs, please
               email your Status Verification Interface (SVI) number or
               certificate of membership to our Director of Compliance, Lauren
-              Priddy, at lpriddy@priorityworldwide.com. In concert with U.S.
+              Priddy, at lpriddy@brand.com. In concert with U.S.
               CBP, CBSA and the World Customs Organization, several other
               countries have developed similar, equivalent programs designated
               Authorized Economic Operator programs. If you are a member of one
@@ -120,7 +120,7 @@ export default function CargoSecurityProgram() {
               personnel and access control security and security awareness
               training is requested. Inspection of containers should be
               documents, and a copy of the completed inspection forwarded to
-              Priority Worldwide along with the other documents associated with
+              brand along with the other documents associated with
               the shipment(s). All loaded U.S.-bound or Canada-bound
               containers/trailers must be secured with an ISO PAS 17712 high
               security seal. You must also have written procedures within your
@@ -141,9 +141,9 @@ export default function CargoSecurityProgram() {
 
             <p className="pb-1">Lauren Priddy, CHB, CCS</p>
             <p className="pb-1">Director of Compliance</p>
-            <p className="pb-6">Priority Worldwide</p>
-            <a className="pb-1" href="https://priorityworldwide.com">
-              www.priorityworldwide.com
+            <p className="pb-6">brand</p>
+            <a className="pb-1" href="https://brand.com">
+              www.brand.com
             </a>
           </div>
           <div className="relative">

@@ -37,7 +37,7 @@ export default function Home() {
     if (status === "authenticated") {
       if (checkIfAnswered === "success") {
         return (
-          <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-lighten bg-[url('/images/global-v1-640x480.jpg')] px-6 py-6 shadow-default dark:border-strokedark dark:bg-white/60 sm:px-7.5">
+          <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-lighten bg-[url('/images/pexels-tirachard-kumtanom-112571-733852.jpg')] px-6 py-6 shadow-default dark:border-strokedark dark:bg-white/60 sm:px-7.5">
             <LogoCard />
             <h3 className="text-xl font-medium py-3">
               Agency Credit Application
@@ -568,10 +568,10 @@ export default function Home() {
                 <div className="border-b-2 py-6">
                   <p className="block text-md m-6">
                     I Hearby Authorize The Release Of Credit Information To
-                    Priority Worldwide. Payment Terms Are Net 30 Days. Payments
+                    brand. Payment Terms Are Net 30 Days. Payments
                     Not Received Within 30 Days Will Be Subject To Finance
                     Charges. By Signature Below, I Acknowledge That I Have Read
-                    And Accept Priority Worldwide’S Terms & Conditions Of
+                    And Accept brand’S Terms & Conditions Of
                     Contract And That In The Event Of Legal Action Is Instituted
                     To Enforce Collection, Agree To Pay Reasonable Attorney’S
                     Fees And Costs For Such Action.

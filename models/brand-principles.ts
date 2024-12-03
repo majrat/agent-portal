@@ -1,8 +1,8 @@
 /* eslint-disable quote-props */
 import mongoose, { Schema, model } from "mongoose";
-import { type_of_priority_principles } from "types/priority_principles";
+import { type_of_brand_principles } from "types/brand_principles";
 
-const priority_principles_schema = new Schema<type_of_priority_principles>(
+const brand_principles_schema = new Schema<type_of_brand_principles>(
   {
     user_id: {
       type: Schema.Types.ObjectId,
@@ -49,10 +49,10 @@ const priority_principles_schema = new Schema<type_of_priority_principles>(
   }
 );
 
-const priority_principles =
-  mongoose.models?.priority_principles ||
-  model<type_of_priority_principles>(
-    "priority_principles",
-    priority_principles_schema
+const brand_principles =
+  mongoose.models?.brand_principles ||
+  model<type_of_brand_principles>(
+    "brand_principles",
+    brand_principles_schema
   );
-export default priority_principles;
+export default brand_principles;

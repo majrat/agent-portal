@@ -1,5 +1,5 @@
 import Modal from "components/common/modal";
-import { setSupplyChainManagementPolicy } from "actions/priority-principles";
+import { setSupplyChainManagementPolicy } from "actions/brand-principles";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
@@ -60,14 +60,14 @@ const SupplyChainManagementPolicyText: React.FC<
           <h2 className="text-title-sm font-bold pb-3 pt-6">Scope</h2>
           <p className="py-3">
             This policy applies to all employees, departments, and divisions of
-            Priority Worldwide (PWW) involved in the selection, management, and
+            brand (PWW) involved in the selection, management, and
             evaluation of suppliers and the procurement of goods and services.
           </p>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
             Policy Statement
           </h2>
           <p className="py-3">
-            At Priority Worldwide, we are committed to a supply chain management
+            At brand, we are committed to a supply chain management
             approach that:
           </p>
           <ul className="ms-9 list-disc">

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { get_all_cargo_security_profile } from "actions/cargo-security-profile";
 import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
-import { getPriorityPrinciples } from "actions/priority-principles";
+import { getbrandPrinciples } from "actions/brand-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
 import { getVendorWelcome } from "actions/vendor-welcome";
 import DefaultLayout from "components/admin/layouts/admin-default-layout";
@@ -20,7 +20,7 @@ export default function Dashboard() {
   const { status, data } = useSession();
   const router = useRouter();
   const [VendorWelcome, setVendorWelcome] = useState<string>("loading");
-  const [PriorityPrinciple, setPriorityPrinciple] = useState<string>("loading");
+  const [brandPrinciple, setbrandPrinciple] = useState<string>("loading");
   const [CargoSecurityProgram, setCargoSecurityProgram] =
     useState<string>("loading");
   const [CodeOfConduct, setCodeOfConduct] = useState<string>("loading");
@@ -39,12 +39,12 @@ export default function Dashboard() {
       })
       .catch((e) => seterror(`${e}`));
 
-    async function fetchPriorityPrincipleData() {
-      return await getPriorityPrinciples(data?.user?.id);
+    async function fetchbrandPrincipleData() {
+      return await getbrandPrinciples(data?.user?.id);
     }
-    fetchPriorityPrincipleData()
+    fetchbrandPrincipleData()
       .then((response) => {
-        setPriorityPrinciple(response?.success);
+        setbrandPrinciple(response?.success);
       })
       .catch((e) => seterror(`${e}`));
 

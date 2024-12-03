@@ -56,7 +56,7 @@ const SignUp: React.FC = () => {
                 />
               </Link>
               <p className="2xl:px-20">
-                Priority Worldwide is a full service logistics provider
+                brand is a full service logistics provider
                 operating around the globe.
               </p>
 
@@ -199,7 +199,7 @@ const SignUp: React.FC = () => {
                 Register using the Organisation Code we mailed you
               </span>
               <h2 className="mb-9 text-xl font-bold text-black dark:text-white sm:text-title-lg">
-                Register your Priority Worldwide Account
+                Register your brand Account
               </h2>
               <form ref={ref} action={handleSubmit}>
                 <div className="mb-4">

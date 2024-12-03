@@ -6,7 +6,7 @@ import DefaultLayout from "components/user/layouts/user-default-layout";
 import CardDataStats from "components/common/card-data-stats";
 import { getVendorWelcome } from "actions/vendor-welcome";
 import { useEffect, useState } from "react";
-import { getPriorityPrinciples } from "actions/priority-principles";
+import { getbrandPrinciples } from "actions/brand-principles";
 import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
@@ -15,7 +15,7 @@ import LogoCard from "../components/common/logo-card";
 import Loader from "components/common/loader";
 import formattedDate from "js/formattedDate";
 import Link from "next/link";
-import { type_of_priority_principles } from "types/priority_principles";
+import { type_of_brand_principles } from "types/brand_principles";
 import { getVendorRegistration } from "actions/vendor-registration";
 import { getBankDetails } from "actions/bank-details";
 import { getAgencyCreditApplication } from "actions/agency-credit-application";
@@ -32,8 +32,8 @@ export default function Home() {
   const [AgencyCreditApplicationData, setAgencyCreditApplicationData] =
     useState<string>("loading");
   const [NDAData, setNDAData] = useState<string>("loading");
-  const [PriorityPrincipleData, setPriorityPrincipleData] =
-    useState<type_of_priority_principles>();
+  const [brandPrincipleData, setbrandPrincipleData] =
+    useState<type_of_brand_principles>();
   const [CargoSecurityProgramAccepted, setCargoSecurityProgramAccepted] =
     useState<string>("loading");
   const [checkIfCodeOfConductAnswered, setcheckIfCodeOfConductAnswered] =
@@ -94,12 +94,12 @@ export default function Home() {
       })
       .catch((e) => seterror(`${e}`));
 
-    async function fetchPriorityPrincipleData() {
-      return await getPriorityPrinciples(data?.user?.id);
+    async function fetchbrandPrincipleData() {
+      return await getbrandPrinciples(data?.user?.id);
     }
-    fetchPriorityPrincipleData()
+    fetchbrandPrincipleData()
       .then((response) => {
-        setPriorityPrincipleData(response?.data);
+        setbrandPrincipleData(response?.data);
       })
       .catch((e) => seterror(`${e}`));
 
@@ -146,7 +146,7 @@ export default function Home() {
       const email = data.user.email;
       const name = data.user.name;
       return (
-        <div className="min-h-screen flex flex-col rounded-sm border text-black dark:text-white border-stroke bg-blend-screen bg-[url('/images/Priority-Worldwide-General-Presentation-Aug-24.jpeg')] bg-cover bg-white/80 px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
+        <div className="min-h-screen flex flex-col rounded-sm border text-black dark:text-white border-stroke bg-blend-screen bg-[url('/images/pexels-veeterzy-303383.jpg')] bg-cover bg-white/80 px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 text-center">
           <LogoCard />
           {error && <p className="text-red">Error: {error}</p>}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-4 py-4">
@@ -244,26 +244,26 @@ export default function Home() {
                   </div>
                   <Link
                     className="hover:text-[#FFBF3C] ps-3 font-medium self-center"
-                    href={"/priority-principles"}
+                    href={"/brand-principles"}
                   >
-                    Priority Principles
+                    brand Principles
                   </Link>
                 </div>
-                {PriorityPrincipleData?.principle?.one_compliance
+                {brandPrincipleData?.principle?.one_compliance
                   ?.anti_corruption_statement_and_policy &&
-                PriorityPrincipleData?.principle?.two_humanities
+                brandPrincipleData?.principle?.two_humanities
                   ?.anti_slavery_human_trafficking_and_forced_labor_policy &&
-                PriorityPrincipleData?.principle?.two_humanities
+                brandPrincipleData?.principle?.two_humanities
                   ?.health_safety_security_and_environmental_policy &&
-                PriorityPrincipleData?.principle?.two_humanities
+                brandPrincipleData?.principle?.two_humanities
                   ?.human_rights_and_modern_slavery_statement &&
-                PriorityPrincipleData?.principle?.two_humanities
+                brandPrincipleData?.principle?.two_humanities
                   ?.whistleblower_policy &&
-                PriorityPrincipleData?.principle?.three_sustainability
+                brandPrincipleData?.principle?.three_sustainability
                   ?.international_standard_for_sustainable_procurement &&
-                PriorityPrincipleData?.principle?.three_sustainability
+                brandPrincipleData?.principle?.three_sustainability
                   ?.sustainable_procurement_policy &&
-                PriorityPrincipleData?.principle?.four_supplier_code_of_conduct
+                brandPrincipleData?.principle?.four_supplier_code_of_conduct
                   ?.supply_chain_management_policy ? (
                   <p className="self-center px-6 font-medium text-meta-3">
                     completed
@@ -278,11 +278,11 @@ export default function Home() {
                 <div className="flex justify-between text-start items-start w-full p-1">
                   <Link
                     className="hover:text-[#FFBF3C]"
-                    href={"/priority-principles/#principle-one-compliance"}
+                    href={"/brand-principles/#principle-one-compliance"}
                   >
                     Principle One: Compliance
                   </Link>
-                  {PriorityPrincipleData?.principle?.one_compliance
+                  {brandPrincipleData?.principle?.one_compliance
                     ?.anti_corruption_statement_and_policy ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -322,17 +322,17 @@ export default function Home() {
                 <div className="flex justify-between text-start items-start w-full p-1">
                   <Link
                     className="hover:text-[#FFBF3C]"
-                    href={"/priority-principles/#principle-two-humanities"}
+                    href={"/brand-principles/#principle-two-humanities"}
                   >
                     Principle Two: Humanities
                   </Link>
-                  {PriorityPrincipleData?.principle?.two_humanities
+                  {brandPrincipleData?.principle?.two_humanities
                     ?.anti_slavery_human_trafficking_and_forced_labor_policy &&
-                  PriorityPrincipleData?.principle?.two_humanities
+                  brandPrincipleData?.principle?.two_humanities
                     ?.health_safety_security_and_environmental_policy &&
-                  PriorityPrincipleData?.principle?.two_humanities
+                  brandPrincipleData?.principle?.two_humanities
                     ?.human_rights_and_modern_slavery_statement &&
-                  PriorityPrincipleData?.principle?.two_humanities
+                  brandPrincipleData?.principle?.two_humanities
                     ?.whistleblower_policy ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -373,14 +373,14 @@ export default function Home() {
                   <Link
                     className="hover:text-[#FFBF3C]"
                     href={
-                      "/priority-principles/#principle-three-sustainability"
+                      "/brand-principles/#principle-three-sustainability"
                     }
                   >
                     Principle Three: Sustainability
                   </Link>
-                  {PriorityPrincipleData?.principle?.three_sustainability
+                  {brandPrincipleData?.principle?.three_sustainability
                     ?.international_standard_for_sustainable_procurement &&
-                  PriorityPrincipleData?.principle?.three_sustainability
+                  brandPrincipleData?.principle?.three_sustainability
                     ?.sustainable_procurement_policy ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -421,12 +421,12 @@ export default function Home() {
                   <Link
                     className="hover:text-[#FFBF3C]"
                     href={
-                      "/priority-principles/#principle-four-supplier-code-of-conduct"
+                      "/brand-principles/#principle-four-supplier-code-of-conduct"
                     }
                   >
                     Principle Four: Supplier code of conduct
                   </Link>
-                  {PriorityPrincipleData?.principle
+                  {brandPrincipleData?.principle
                     ?.four_supplier_code_of_conduct
                     ?.supply_chain_management_policy ? (
                     <svg
@@ -468,7 +468,7 @@ export default function Home() {
                   <Link
                     className="hover:text-[#FFBF3C]"
                     href={
-                      "/priority-principles/#principle-five-cargo-safety-and-security"
+                      "/brand-principles/#principle-five-cargo-safety-and-security"
                     }
                   >
                     Principle Five: Cargo Safety and Security

@@ -35,7 +35,7 @@ export const survey_json = {
             "Remarks",
           "description": "Give a brief description:",
           "placeholder":
-            "I agree to Supplier Code of Conduct from Priority Worldwide.",
+            "I agree to Supplier Code of Conduct from brand.",
         },
         {
           "type": "text",

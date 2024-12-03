@@ -1,4 +1,4 @@
-import { setAntiCorruptionStatementAndPolicy } from "actions/priority-principles";
+import { setAntiCorruptionStatementAndPolicy } from "actions/brand-principles";
 import Modal from "components/common/modal";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
@@ -53,7 +53,7 @@ const AntiCorruptionStatementPolicyText: React.FC<
         <div className="p-6">
           <h2 className="text-title-sm font-bold pb-3">Introduction</h2>
           <p className="py-3">
-            Priority Worldwide (PWW) is committed to conducting business
+            brand (PWW) is committed to conducting business
             ethically and with integrity. We have zero tolerance for corruption
             and bribery in any form. This policy outlines our commitment to
             preventing corruption and bribery and provides guidance to ensure
@@ -184,7 +184,7 @@ const AntiCorruptionStatementPolicyText: React.FC<
           <h2 className="text-title-sm font-bold pb-3 pt-6">
             Policy Statement
           </h2>
-          <p className="py-3">Priority Worldwide prohibits:</p>
+          <p className="py-3">brand prohibits:</p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
               Bribery: No employee or third party acting on behalf of the
@@ -278,7 +278,7 @@ const AntiCorruptionStatementPolicyText: React.FC<
           <ul className="ms-9 list-disc">
             <li className="my-3">
               Encourage employees and third parties to report any concerns or
-              suspicions of corruption or bribery through Priority’s
+              suspicions of corruption or bribery through brand’s
               confidential whistleblower channels.
             </li>
             <li className="my-3">
@@ -339,7 +339,7 @@ const AntiCorruptionStatementPolicyText: React.FC<
             </li>
           </ul>
           <p className="py-3">
-            This Anti-Corruption Statement and Policy underscores Priority
+            This Anti-Corruption Statement and Policy underscores brand
             Worldwide’ s commitment to ethical business practices and zero
             tolerance for corruption and bribery. By adhering to this policy, we
             aim to maintain the highest standards of integrity and compliance in

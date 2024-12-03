@@ -1,5 +1,5 @@
 import Modal from "components/common/modal";
-import { setSustainableProcurementPolicy } from "actions/priority-principles";
+import { setSustainableProcurementPolicy } from "actions/brand-principles";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
@@ -60,14 +60,14 @@ const SustainableProcurementPolicyText: React.FC<
           <h2 className="text-title-sm font-bold pb-3 pt-6">Scope</h2>
           <p className="py-3">
             This policy applies to all employees, departments, and divisions of
-            Priority Worldwide (PWW) involved in the procurement of goods,
+            brand (PWW) involved in the procurement of goods,
             services, and works.
           </p>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
             Policy Statement
           </h2>
           <p className="py-3">
-            At Priority Worldwide, we are committed to sustainable procurement
+            At brand, we are committed to sustainable procurement
             practices that:
           </p>
           <ul className="ms-9 list-disc">

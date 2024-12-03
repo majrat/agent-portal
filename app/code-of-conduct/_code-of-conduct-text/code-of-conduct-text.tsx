@@ -11,7 +11,7 @@ const CodeOfConductText: React.FC<CodeOfConductProps> = ({ isOpenValue }) => {
         <div className="p-6">
           <h2 className="text-title-md pb-3">Introduction</h2>
           <p>
-            At Priority Worldwide, we are committed to conducting our business
+            At brand, we are committed to conducting our business
             in an ethical, sustainable, and socially responsible manner. We
             expect our suppliers to share this commitment and adhere to the
             principles outlined in this Supplier Code of Conduct.
@@ -140,7 +140,7 @@ const CodeOfConductText: React.FC<CodeOfConductProps> = ({ isOpenValue }) => {
           </ul>
           <h2 className="text-title-md pb-3 pt-6">Monitoring and Compliance</h2>
           <p>
-            Priority Worldwide reserves the right to monitor and assess supplier
+            brand reserves the right to monitor and assess supplier
             compliance with this code. This may include:
           </p>
           <ul className="ms-9 list-disc">
@@ -160,7 +160,7 @@ const CodeOfConductText: React.FC<CodeOfConductProps> = ({ isOpenValue }) => {
           <h2 className="text-title-md pb-3 pt-6">Continuous Improvement</h2>
           <p>
             Suppliers are encouraged to continuously improve their practices and
-            performance in line with the principles of this code. Priority
+            performance in line with the principles of this code. brand
             Worldwide will support suppliers in their efforts to enhance their
             social, environmental, and ethical practices.
           </p>
@@ -168,7 +168,7 @@ const CodeOfConductText: React.FC<CodeOfConductProps> = ({ isOpenValue }) => {
           <p>
             Suppliers and their employees are encouraged to report any concerns
             or violations of this code. Reports can be made confidentially and
-            without fear of retaliation through Priority Worldwide’ s designated
+            without fear of retaliation through brand’ s designated
             reporting channels.
           </p>
         </div>

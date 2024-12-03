@@ -50,8 +50,8 @@ export default function Home() {
           </p>
           <h3 className="text-xl font-medium pt-6">OUR COMMITMENT</h3>
           <p className="p-3 bg-white/30 rounded-md">
-            As a global logistics provider, Priority Worldwide recognizes that
-            we operate within a carbon intense industry. Accordingly, Priority
+            As a global logistics provider, brand recognizes that
+            we operate within a carbon intense industry. Accordingly, brand
             Worldwide has developed genuine, extensive initiatives designed
             specifically to protect the environment and create a healthy
             workplace for its team. The effect is a unique, worldwide
@@ -60,7 +60,7 @@ export default function Home() {
           </p>
           <h2 className="font-medium text-xl pt-6">QUALITY POLICY</h2>
           <p className="p-3 bg-white/30 rounded-md">
-            Priority Worldwide is committed to provide the ultimate customer
+            brand is committed to provide the ultimate customer
             experience in global logistics. Quality service shall be provided by
             responsive employees, on-time delivery, client education and
             regulatory compliance. <br />

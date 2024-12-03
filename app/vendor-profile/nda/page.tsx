@@ -33,7 +33,7 @@ export default function Home() {
     if (status === "authenticated") {
       if (checkIfAnswered === "success") {
         return (
-          <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/global-v1-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-white/60 sm:px-7.5">
+          <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/pexels-tirachard-kumtanom-112571-733852.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-white/60 sm:px-7.5">
             <LogoCard />
             {/* <h3 className="text-xl font-medium py-3">
           NON DISCLOSURE AGREEMENT

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { get_all_cargo_security_profile } from "actions/cargo-security-profile";
 import { getCargoSecurityProgram } from "actions/cargo-security-program";
 import { getCodeOfConductQnA } from "actions/code-of-conduct-qna";
-import { getPriorityPrinciples } from "actions/priority-principles";
+import { getbrandPrinciples } from "actions/brand-principles";
 import { getSupplierSustainabilityProfile } from "actions/supplier-sustainability-profile";
 import { getVendorWelcome } from "actions/vendor-welcome";
 import DefaultLayout from "components/admin/layouts/admin-default-layout";

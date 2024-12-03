@@ -17,7 +17,7 @@ const NDA: React.FC<NDAProps> = ({ contracted_partner, isOpenValue }) => {
           <p className="pt-6 text-start">{contracted_partner}</p>
           <p className="pt-6 font-semibold text-start">and</p>
           <p className="pt-6 text-start">
-            Priority Worldwide <br /> 7361 Coca Cola <br /> Hanover, MD 21076
+            brand <br /> 7361 Coca Cola <br /> Hanover, MD 21076
           </p>
           <p className="pt-9 text-start">
             - hereinafter referred to as “contract partner”–

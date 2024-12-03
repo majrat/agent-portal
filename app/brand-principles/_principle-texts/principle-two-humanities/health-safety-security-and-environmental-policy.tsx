@@ -1,5 +1,5 @@
 import Modal from "components/common/modal";
-import { setHealthSafetySecurityAndEnvironmentalPolicy } from "actions/priority-principles";
+import { setHealthSafetySecurityAndEnvironmentalPolicy } from "actions/brand-principles";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
@@ -52,7 +52,7 @@ const HealthSafetySecurityAndEnvironmentalPolicyText: React.FC<
         <div className="p-6">
           <h2 className="text-title-sm font-bold pb-3">Introduction</h2>
           <p className="py-3">
-            Priority Worldwide (PWW) is committed to protecting the health,
+            brand (PWW) is committed to protecting the health,
             safety, and security of our employees, contractors, visitors, and
             the communities in which we operate, as well as preserving the
             environment. Our HSSE policy outlines our commitment to maintaining
@@ -236,7 +236,7 @@ const HealthSafetySecurityAndEnvironmentalPolicyText: React.FC<
             HSSE and their role in achieving our objectives.
           </p>
           <p className="py-3">
-            This HSSE policy demonstrates Priority Worldwide’ s commitment to
+            This HSSE policy demonstrates brand’ s commitment to
             protecting health, safety, security, and the environment in all
             aspects of our operations. By adhering to this policy, we aim to
             create a safe, secure, and sustainable working environment for all.

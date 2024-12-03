@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-export interface type_of_priority_principles {
+export interface type_of_brand_principles {
   _id: String;
   user_id: Schema.Types.ObjectId;
   principle: {

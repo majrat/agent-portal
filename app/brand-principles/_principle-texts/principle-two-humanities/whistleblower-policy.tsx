@@ -1,5 +1,5 @@
 import Modal from "components/common/modal";
-import { setWhistleblowerPolicy } from "actions/priority-principles";
+import { setWhistleblowerPolicy } from "actions/brand-principles";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 

@@ -1,5 +1,5 @@
 import Modal from "components/common/modal";
-import { setAntiSlaveryHumanTraffickingAndForcedLaborPolicy } from "actions/priority-principles";
+import { setAntiSlaveryHumanTraffickingAndForcedLaborPolicy } from "actions/brand-principles";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
@@ -51,7 +51,7 @@ const AntiSlaveryHumanTraffickingAndForcedLaborPolicyText: React.FC<
         <div className="p-6">
           <h2 className="text-title-sm font-bold pb-3">Introduction</h2>
           <p className="py-3">
-            At Priority Worldwide (PWW), we are committed to conducting our
+            At brand (PWW), we are committed to conducting our
             business in an ethical and socially responsible manner. We recognize
             the serious issues of slavery, human trafficking and forced labor,
             and we are dedicated to taking steps to eradicate these practices

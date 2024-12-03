@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DefaultLayout from "../../components/user/layouts/user-default-layout";
 import React, { useEffect, useState } from "react";
-import { getPriorityPrinciples } from "actions/priority-principles";
+import { getbrandPrinciples } from "actions/brand-principles";
 import { useRouter } from "next/navigation";
 import LogoCard from "components/common/logo-card";
 import Loader from "components/common/loader";
@@ -124,7 +124,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      return await getPriorityPrinciples(data?.user?.id);
+      return await getbrandPrinciples(data?.user?.id);
     }
     fetchData()
       .then((response) => {
@@ -184,7 +184,7 @@ export default function Home() {
         );
       } else {
         return (
-          <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/domestic-2-640x480.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark sm:px-7.5">
+          <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/pexels-thepaintedsquare-583848.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark sm:px-7.5">
             {/* Overlay */}
             <div>
               {error && <p className="text-red">{error}</p>}
@@ -197,14 +197,14 @@ export default function Home() {
                 >
                   <Image
                     className="rounded"
-                    src={"/images/compliance-compass.JPG"}
+                    src={"/images/logoipsum-290.svg"}
                     alt="Logo"
-                    width={321}
-                    height={135}
+                    width={321 /2}
+                    height={135 /2}
                   />
                 </Link>
                 <h3 className="text-xl font-medium self-center md:block hidden">
-                  PRIORITY PRINCIPLES
+                  BRAND PRINCIPLES
                 </h3>
                 <Link
                   className="self-center flex justify-center md:justify-end"
@@ -212,14 +212,14 @@ export default function Home() {
                 >
                   <Image
                     className="rounded"
-                    src={"/images/ISO-logo.png"}
+                    src={"/images/logoipsum-291.svg"}
                     alt="Logo"
-                    width={1169 / 4}
-                    height={570 / 4}
+                    width={1169 / 8}
+                    height={570 / 8}
                   />
                 </Link>
                 <h3 className="text-xl font-medium self-center block md:hidden">
-                  PRIORITY PRINCIPLES
+                  brand PRINCIPLES
                 </h3>
               </div>
               <ul className="relative list-disc p-6 bg-white/60 rounded-md">

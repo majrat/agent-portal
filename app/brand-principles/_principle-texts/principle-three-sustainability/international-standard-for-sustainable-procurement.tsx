@@ -1,5 +1,5 @@
 import Modal from "components/common/modal";
-import { setInternationalStandardForSustainableProcurement } from "actions/priority-principles";
+import { setInternationalStandardForSustainableProcurement } from "actions/brand-principles";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 

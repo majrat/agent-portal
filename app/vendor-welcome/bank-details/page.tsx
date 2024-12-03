@@ -22,7 +22,7 @@ export default function Home() {
     const userId = { user_id: data?.user?.id };
     await setVendorWelcome(userId)
       .then(() => {
-        router.push("/priority-principles");
+        router.push("/brand-principles");
       })
       .catch((e) => seterror(`${e}`));
   };
@@ -56,7 +56,7 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] p-6 bg-white/30 rounded-md">
               <h2 className="font-semibold text-xl">USA</h2>
               <p>
-                Air Cargo Transport Services, Inc. Traded as: Priority Worldwide
+                Air Cargo Transport Services, Inc. Traded as: brand
                 7361 Coca Cola Dr Hanover, MD 21076 T: +1.410.766.7470
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">CANADA</h2>
               <p>
-                PWS Logistics Montreal Traded as : Priority Worldwide / Priorité
+                PWS Logistics Montreal Traded as : brand / Priorité
                 Mondial 195 Avenue du Voyageur Pointe Claire, QC H9R 6B2 T:
                 +1.514.905.5983
               </p>
@@ -78,7 +78,7 @@ export default function Home() {
               <h2 className="font-semibold text-xl">USA USD TRANSACTIONS</h2>
               <p>
                 PNC Bank 8800 Tinicum Blvd Philadelphia, PA 19153 ABA/Routing
-                Number: 031000053 Swift: PNCCUS33 Beneficiary: Priority
+                Number: 031000053 Swift: PNCCUS33 Beneficiary: brand
                 Worldwide
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">UAE</h2>
               <p>
-                Priority Worldwide Logistics LLC 3503 Aspect Tower Business
+                brand Logistics LLC 3503 Aspect Tower Business
                 Avenue, Business Bay, Dubai. United Arab Emirates
               </p>
             </div>
@@ -107,7 +107,7 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">AUSTRALIA</h2>
               <p>
-                Priority Worldwide Pty. Ltd Suite 39, Bay 5, 2 Locomotive Street
+                brand Pty. Ltd Suite 39, Bay 5, 2 Locomotive Street
                 South Eveleigh NSW 2015 Sydney, Australia
               </p>
             </div>

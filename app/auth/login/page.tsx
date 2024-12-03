@@ -66,7 +66,7 @@ export default function Login() {
               </Link>
 
               <p className="2xl:px-20">
-                Priority Worldwide is a full service logistics provider
+                brand is a full service logistics provider
                 operating around the globe.
               </p>
 
@@ -201,7 +201,7 @@ export default function Login() {
                 Authentication Required
               </span>
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                Sign In to Priority Worldwide
+                Sign In to brand
               </h2>
 
               <form action={handleSubmit}>

@@ -23,7 +23,7 @@ export default function Home() {
     const userId = { user_id: data?.user?.id };
     await setVendorWelcome(userId)
       .then(() => {
-        router.push("/priority-principles");
+        router.push("/brand-principles");
       })
       .catch((e) => seterror(`${e}`));
   };
@@ -44,23 +44,23 @@ export default function Home() {
         <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/home-bg-02.png')] px-3 lg:px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           <LogoCard />
           <h2 className="text-xl font-medium py-6">
-            PHYSICAL OFFICES OF PRIORITY WORLDWIDE
+            PHYSICAL OFFICES OF brand
           </h2>
           <div className="grid md:grid-cols-2 gap-10 place-items-center">
             <MapCard
               main_location="Benin"
               address="Lot 712 Maison Issiaka I. Gbegamey-Centre, 12eme arondissement de Cotonou, Cotonou, Benin"
-              email="benin@priorityworldwide.com"
+              email="benin@brand.com"
               telephone="+22996040699"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/7PY9N1W3bhzVv6r59"
-              iframe_link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187972.0631662173!2d-73.76706251007089!3d45.557040200179955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x24a5165d183a9795%3A0x25bbe8f83daf42ae!2sPriority%20Worldwide!5e1!3m2!1sen!2sae!4v1732184495191!5m2!1sen!2sae"
+              iframe_link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187972.0631662173!2d-73.76706251007089!3d45.557040200179955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x24a5165d183a9795%3A0x25bbe8f83daf42ae!2sbrand%20Worldwide!5e1!3m2!1sen!2sae!4v1732184495191!5m2!1sen!2sae"
             />
 
             <MapCard
               main_location="Central African Republic"
               address="CROISEMENT SICA-BENZ-VI, 1ER IMMEUBLE NDJOKO 2 ieme ETAGE, Bangui, Central African Republic"
-              email="car@priorityworldwide.com"
+              email="car@brand.com"
               telephone="+23675657582"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/NdwMDZ1Ym2D9ctQq8"
@@ -69,8 +69,8 @@ export default function Home() {
 
             <MapCard
               main_location="Australia"
-              address="Priority Worldwide Pty Ltd Suite 39, Bay 5, 2 Locomotive Street, South Eveleigh NSW 2015, Australia"
-              email="sales.au@priorityworldwide.com"
+              address="brand Pty Ltd Suite 39, Bay 5, 2 Locomotive Street, South Eveleigh NSW 2015, Australia"
+              email="sales.au@brand.com"
               telephone=""
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/zWUJZuqt2Cww6XBAA"
@@ -80,7 +80,7 @@ export default function Home() {
             <MapCard
               main_location="Bosnia"
               address="PWS Bosnia d.o.o. Srebrenik, ul. 21. Srebrenicke brigade bb Srebrenik, 75359 Bosnia and Herzegovina"
-              email="bosnia@priorityworldwide.com"
+              email="bosnia@brand.com"
               telephone="+38762885360"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/xv2fS1H69uomt4bF6"
@@ -90,7 +90,7 @@ export default function Home() {
             <MapCard
               main_location="Burkina Faso"
               address="Boulevard des Tansoba, face gare routiere 10 BP 13608, Ouagadougou, Burkina Faso"
-              email="burkina@priorityworldwide.com"
+              email="burkina@brand.com"
               telephone=""
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/qvmFpLLaNMouYLDd6"
@@ -99,18 +99,18 @@ export default function Home() {
 
             <MapCard
               main_location="Canada"
-              address="Priority Worldwide / Priorité, Mondiale 195 Avenue du Voyageur, Pointe Claire, QC H9R 6B2, Canada"
-              email="sales.ca@priorityworldwide.com"
+              address="brand / Priorité, Mondiale 195 Avenue du Voyageur, Pointe Claire, QC H9R 6B2, Canada"
+              email="sales.ca@brand.com"
               telephone="+15149055983"
               aog_hotline="+17189473702"
               gmap_link="https://maps.app.goo.gl/uKRrfrQFrcURtssg8"
-              iframe_link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.9409345760964!2d-73.79191092326049!3d45.46427097107399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc917b39971bd11%3A0xb4f1d8e09aa51f37!2sPriority%20Worldwide!5e1!3m2!1sen!2sae!4v1730551925929!5m2!1sen!2sae"
+              iframe_link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.9409345760964!2d-73.79191092326049!3d45.46427097107399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc917b39971bd11%3A0xb4f1d8e09aa51f37!2sbrand%20Worldwide!5e1!3m2!1sen!2sae!4v1730551925929!5m2!1sen!2sae"
             />
 
             <MapCard
               main_location="Chad"
               address="BOULEVARD PRESIDENT NGARTA TOUMBALBAYE, IMMEUBLE SAAR, QUARTIER KLEMAT, N’DJAMENA, CHAD"
-              email="chad@priorityworldwide.com"
+              email="chad@brand.com"
               telephone="+23566541919"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/HLZhjkTKBB8vgHWf7"
@@ -120,7 +120,7 @@ export default function Home() {
             <MapCard
               main_location="Lebanon"
               address="Sin El Fil – Horsh Tabet, Center 288 – Ground Floor, Beirut, Lebanon"
-              email="lebanon@priorityworldwide.com"
+              email="lebanon@brand.com"
               telephone="+9611500047"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/q4xUhTwtEyQrYWZR9"
@@ -131,7 +131,7 @@ export default function Home() {
               main_location="Mali"
               address="BACO DJICORONI ACI, RUE 631 PORTE 836, BAMAKO – MALI"
               fax="+22320280107"
-              email="mali@priorityworldwide.com"
+              email="mali@brand.com"
               telephone="+22344905113"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/zZovMTCofNoMUyTz6"
@@ -141,7 +141,7 @@ export default function Home() {
             <MapCard
               main_location="Niger"
               address="Boulevard Mali Béro, Complexe Commercial HAMA PATÉ, Block #5 Niamey, Niger"
-              email="niger@priorityworldwide.com"
+              email="niger@brand.com"
               telephone="+22791151060"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/4w2EEX3qXe2osvz5A"
@@ -151,7 +151,7 @@ export default function Home() {
             <MapCard
               main_location="Senegal"
               address="Les Almadies, Lot Numéro 154 Deuxième étage, Dakar, Senegal"
-              email="senegal@priorityworldwide.com"
+              email="senegal@brand.com"
               telephone=""
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/y57gtLkac6fqyJxt6"
@@ -161,7 +161,7 @@ export default function Home() {
             <MapCard
               main_location="Togo"
               address="1907 Avenue de la paix, B.P. 1819, Lome, Togo"
-              email="togo@priorityworldwide.com"
+              email="togo@brand.com"
               telephone="+22890146066"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/NSJ7iPfFvheicrYT6"
@@ -170,9 +170,9 @@ export default function Home() {
 
             <MapCard
               main_location="UAE / Dubai"
-              address="Priority Worldwide FZCO G 31, West Wing 3 DAFZA, AL Quds
-                  Street PO Box : 371639, Priority Worldwide Logistics LLC 3503 Aspect Tower, Business Bay, Dubai 2260 – United Arab Emirates"
-              email="dubai@priorityworldwide.com"
+              address="brand FZCO G 31, West Wing 3 DAFZA, AL Quds
+                  Street PO Box : 371639, brand Logistics LLC 3503 Aspect Tower, Business Bay, Dubai 2260 – United Arab Emirates"
+              email="dubai@brand.com"
               telephone="+97147187128"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/cWVuASyk8rEv2RYE6"
@@ -182,7 +182,7 @@ export default function Home() {
             <MapCard
               main_location="USA / BWI"
               address="7361 Coca Cola Dr, Hanover, MD 21076 USA"
-              email="sales@priorityworldwide.com"
+              email="sales@brand.com"
               telephone="+14107667470"
               aog_hotline="+17189473702"
               gmap_link="https://maps.app.goo.gl/VaP7KewPasST8C5Y9"
@@ -192,7 +192,7 @@ export default function Home() {
             <MapCard
               main_location="USA / LAX"
               address="1200 W Walnut, Compton, CA 90220"
-              email="laxsales@priorityworldwide.com"
+              email="laxsales@brand.com"
               telephone="+13103488449"
               aog_hotline=""
               gmap_link="https://maps.app.goo.gl/5huT1Z3FFoMyob3MA"
@@ -202,7 +202,7 @@ export default function Home() {
 
           <div className="relative">
             <div className="fixed z-20 bottom-9 right-9 bg-[#FFBF3C]/80 cursor-pointer hover:bg-[#FFBF3C] px-3 py-2 font-bold text-white rounded-2xl flex">
-              <Link href="/priority-principles">
+              <Link href="/brand-principles">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
