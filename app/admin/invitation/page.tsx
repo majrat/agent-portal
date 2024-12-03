@@ -27,10 +27,10 @@ export default function Dashboard() {
       org_code: formData.get("org_code"),
     });
     console.log("res===>", res)
-    if (res?.success === false) {
+    if (res?.success === "failed") {
       setError(res.message as string);
     }
-    if (res?.success === true) {
+    if (res?.success === "success") {
       setSuccess(res?.message);
       setError("");
       await new Promise((resolve) => setTimeout(resolve, 2500));
