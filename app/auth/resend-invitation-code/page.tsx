@@ -54,8 +54,7 @@ const SignUp: React.FC = () => {
                 />
               </Link>
               <p className="2xl:px-20">
-                brand is a full service logistics provider
-                operating around the globe.
+                Brand is a Lorem ipsum dolor sit amet consectetur.
               </p>
 
               <span className="mt-15 inline-block">

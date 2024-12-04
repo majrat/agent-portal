@@ -57,7 +57,7 @@ export default function Login() {
                   height={32}
                 />
                 <Image
-                  className="dark:hidden bg-meta-4 rounded p-2"
+                  className="dark:hidden rounded p-2"
                   src={"/logo.svg"}
                   alt="Logo"
                   width={176}
@@ -66,8 +66,7 @@ export default function Login() {
               </Link>
 
               <p className="2xl:px-20">
-                brand is a full service logistics provider
-                operating around the globe.
+                Brand is Lorem ipsum, dolor sit amet consectetur adipisicing.
               </p>
 
               <span className="mt-15 inline-block">
