@@ -69,7 +69,7 @@ export default function Assessment() {
             <div className="max-w-full overflow-x-auto">
               <div className="border-b-4 border-slate-700 mb-9">
                 <h2 className="text-lg text-stone-900 sm:text-3xl font-semibold mb-1 text-center">
-                  Cargo Security Profile
+                  Lorem ipsum dolor sit.
                 </h2>
                 <p className="text-lg text-stone-900 sm:text-xl mb-8 text-center flex items-center justify-center gap-2">
                   Already Answered

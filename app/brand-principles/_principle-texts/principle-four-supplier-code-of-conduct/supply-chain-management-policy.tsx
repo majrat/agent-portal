@@ -47,152 +47,167 @@ const SupplyChainManagementPolicyText: React.FC<
           <path d="M9 11l4 0" />
         </svg>
       }
-      title="Supply Chain Management Policy"
+      title="dolor sit amet consectetur"
       content=<div className="text-black border-t-2 bg-white dark:bg-meta-4 dark:text-white">
         <div className="p-6">
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Purpose</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            The purpose of this policy is to establish a framework for managing
-            our supply chain effectively, ensuring that it supports our business
-            objectives and aligns with our commitment to sustainability,
-            quality, and ethical standards.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, laborum quas quos quo alias doloremque tempora minus
+            dignissimos inventore sint magni aperiam facere possimus. Est nihil
+            delectus odit optio quasi?
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Scope</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            This policy applies to all employees, departments, and divisions of
-            brand (PWW) involved in the selection, management, and
-            evaluation of suppliers and the procurement of goods and services.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+            optio dignissimos minus fuga iste sit eaque explicabo, qui excepturi
+            a vel itaque nulla debitis consequuntur sapiente dicta fugit
+            recusandae quod.
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Policy Statement
-          </h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            At brand, we are committed to a supply chain management
-            approach that:
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+            veritatis dolores explicabo, animi corrupti dolore rem minus, eaque
+            ut assumenda expedita. Nam asperiores quos earum blanditiis numquam
+            quaerat, quas eos!
           </p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Ensures the timely and efficient delivery of quality goods and
-              services
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur, exercitationem molestiae itaque quo magni ea
+              perspiciatis dolorum soluta voluptate odio cumque mollitia, sunt
+              ipsum. Quaerat minima tempora hic recusandae quod.
             </li>
+            <li className="my-3">Lorem ipsum dolor sit amet consectetur.</li>
+            <li className="my-3">Lorem ipsum dolor sit amet.</li>
             <li className="my-3">
-              Promotes sustainability and ethical practices
-            </li>
-            <li className="my-3">Reduces risks and enhances resilience</li>
-            <li className="my-3">
-              Fosters strong and collaborative relationships with suppliers
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </li>
           </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Principles</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            Our supply chain management activities will be guided by the
-            following principles:
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat,
+            reiciendis?
           </p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Quality and Reliability: We will source goods and services that
-              meet our quality standards and deliver reliability to our
-              operations and customers.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Sustainability: We will integrate environmental and social
-              sustainability considerations into our supply chain decisions to
-              minimize negative impacts.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Ethical Conduct: We will uphold high ethical standards in all
-              supply chain activities, including compliance with laws,
-              regulations, and human rights.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Risk Management: We will identify, assess, and mitigate risks in
-              our supply chain to ensure continuity and resilience.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Innovation and Improvement: We will encourage innovation and
-              continuous improvement in our supply chain processes and
-              relationships.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Cost Efficiency: We will seek to achieve cost efficiency while
-              maintaining the quality and sustainability of our supply chain.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Transparency and Accountability: We will ensure transparency in
-              our supply chain activities and hold ourselves accountable for our
-              decisions and actions.
-            </li>
-          </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Supplier Selection and Management
-          </h2>
-          <p className="py-3">To implement this policy, we will:</p>
-          <ul className="ms-9 list-disc">
-            <li className="my-3">
-              Develop criteria for selecting and evaluating suppliers based on
-              quality, sustainability, ethical conduct, and cost efficiency.
-            </li>
-            <li className="my-3">
-              Conduct due diligence and regular assessments of suppliers to
-              ensure compliance with our standards and expectations.
-            </li>
-            <li className="my-3">
-              Foster long-term relationships with suppliers that demonstrate a
-              commitment to continuous improvement and innovation.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
           </ul>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Sustainability and Ethical Standards
+            Lorem ipsum dolor sit amet.
           </h2>
-          <p className="py-3">
-            We will work with suppliers who share our commitment to
-            sustainability and ethical standards by:
-          </p>
+          <p className="py-3">Lorem ipsum dolor sit.:</p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Encouraging the adoption of environmentally friendly practices and
-              reducing carbon footprints.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
             </li>
             <li className="my-3">
-              Ensuring that suppliers uphold labor rights, provide safe working
-              conditions, and avoid practices such as child labor and forced
-              labor.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
             </li>
             <li className="my-3">
-              Promoting fair trade and ethical sourcing of materials.
-            </li>
-          </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Risk Management</h2>
-          <p className="py-3">
-            We will enhance the resilience of our supply chain by:
-          </p>
-          <ul className="ms-9 list-disc">
-            <li className="my-3">
-              Identifying potential risks, including geopolitical,
-              environmental, and economic factors.
-            </li>
-            <li className="my-3">
-              Developing contingency plans and diversifying our supply base to
-              mitigate risks.
-            </li>
-            <li className="my-3">
-              Continuously monitoring and reviewing supply chain risks and
-              implementing corrective actions as needed.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
             </li>
           </ul>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Monitoring and Review
+            Lorem ipsum dolor sit amet.
           </h2>
           <p className="py-3">
-            We will regularly monitor our supply chain management practices to
-            ensure compliance with this policy and review the policy annually to
-            incorporate improvements and address emerging challenges.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam,
+            aut qui?
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Responsibility</h2>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            All employees involved in supply chain activities are responsible
-            for adhering to this policy. The CEO, CFO and Director of Compliance
-            will oversee the implementation and monitoring of this policy.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A fuga
+              fugiat aliquam cumque ipsa?
+            </li>
+            <li className="my-3">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+              minima cumque officia, quas quidem natus!
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              quisquam saepe esse ex tempore aut excepturi.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem, ipsum dolor.
+          </h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae,
+            quisquam dolorem saepe delectus dignissimos quasi. Optio, maiores
+            esse aliquam autem eum reiciendis odio quisquam quae laudantium
+            molestiae at magni tempore!
+          </p>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            praesentium consequuntur culpa labore optio. Asperiores
+            necessitatibus deserunt sunt, sed dolorem optio odio repellat
+            suscipit fugit perferendis molestiae qui, adipisci quidem?
           </p>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-end gap-4">

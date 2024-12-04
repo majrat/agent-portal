@@ -47,132 +47,167 @@ const SustainableProcurementPolicyText: React.FC<
           <path d="M9 11l4 0" />
         </svg>
       }
-      title="Sustainable Procurement Policy"
+      title="consectetur adipisicing elit"
       content=<div className="text-black border-t-2 bg-white dark:bg-meta-4 dark:text-white">
-        <div className="p-6">
-          <h2 className="text-title-sm font-bold pb-3">Purpose</h2>
+       <div className="p-6">
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            The purpose of this policy is to integrate sustainability into our
-            procurement practices to ensure that all purchasing decisions
-            consider economic, environmental, and social impacts, thereby
-            contributing to sustainable development.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, laborum quas quos quo alias doloremque tempora minus
+            dignissimos inventore sint magni aperiam facere possimus. Est nihil
+            delectus odit optio quasi?
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Scope</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            This policy applies to all employees, departments, and divisions of
-            brand (PWW) involved in the procurement of goods,
-            services, and works.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+            optio dignissimos minus fuga iste sit eaque explicabo, qui excepturi
+            a vel itaque nulla debitis consequuntur sapiente dicta fugit
+            recusandae quod.
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Policy Statement
-          </h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            At brand, we are committed to sustainable procurement
-            practices that:
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+            veritatis dolores explicabo, animi corrupti dolore rem minus, eaque
+            ut assumenda expedita. Nam asperiores quos earum blanditiis numquam
+            quaerat, quas eos!
           </p>
           <ul className="ms-9 list-disc">
-            <li className="my-3">Reduce environmental impact</li>
-            <li className="my-3">Promote social responsibility</li>
-            <li className="my-3">Deliver economic value</li>
+            <li className="my-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur, exercitationem molestiae itaque quo magni ea
+              perspiciatis dolorum soluta voluptate odio cumque mollitia, sunt
+              ipsum. Quaerat minima tempora hic recusandae quod.
+            </li>
+            <li className="my-3">Lorem ipsum dolor sit amet consectetur.</li>
+            <li className="my-3">Lorem ipsum dolor sit amet.</li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
           </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Principles</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            Our sustainable procurement activities will be guided by the
-            following principles:
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat,
+            reiciendis?
           </p>
-          <ul className="ms-9">
-            <li className="my-3">
-              <b>Accountability:</b> We will be accountable for our procurement
-              decisions and their impacts on society, the economy, and the
-              environment.
-            </li>
-            <li className="my-3">
-              <b>Transparency:</b> Our procurement processes will be transparent
-              and open to scrutiny, fostering trust among stakeholders.
-            </li>
-            <li className="my-3">
-              <b>Ethical Behavior:</b> We will conduct our procurement
-              activities ethically, avoiding corruption and respecting human
-              rights.
-            </li>
-            <li className="my-3">
-              <b>Full and Fair Opportunity:</b> We will provide full and fair
-              opportunities to all potential suppliers, encouraging competition
-              and innovation.
-            </li>
-            <li className="my-3">
-              <b>Respect for Stakeholder Interests:</b> We will consider the
-              interests of all stakeholders, including suppliers, employees, and
-              communities, in our procurement decisions.
-            </li>
-            <li className="my-3">
-              <b>Respect for the Rule of Law:</b> We will comply with all
-              applicable laws and regulations in our procurement activities.
-            </li>
-            <li className="my-3">
-              <b>Respect for International Norms of Behavior:</b> We will adhere
-              to internationally recognized standards and norms, such as those
-              related to labor rights and environmental protection.
-            </li>
-            <li className="my-3">
-              <b>Respect for Human Rights:</b> We will uphold human rights in
-              our procurement processes, ensuring no exploitation or abuse
-              occurs.
-            </li>
-            <li className="my-3">
-              <b>Innovation:</b> We will encourage and support innovation in our
-              procurement activities, seeking out sustainable solutions and
-              improvements.
-            </li>
-            <li className="my-3">
-              <b>Focus on Needs:</b> Our procurement will be driven by the
-              genuine needs of the organization, avoiding over-consumption and
-              waste.
-            </li>
-            <li className="my-3">
-              <b>Integration:</b> We will integrate sustainability
-              considerations into our procurement policies and practices, making
-              them part of our core operations.
-            </li>
-            <li className="my-3">
-              <b>Improvement:</b> We will pursue continuous improvement in our
-              procurement practices, regularly reviewing and enhancing
-              sustainability performance.
-            </li>
-          </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Implementation</h2>
-          <p className="py-3">To implement this policy, PWW will:</p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Train employees involved in procurement in sustainable practices.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Develop criteria for assessing the sustainability of suppliers and
-              products.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Engage with suppliers to encourage sustainable practices and
-              improve supply chain sustainability.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Monitor and report on the sustainability performance of our
-              procurement activities.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
           </ul>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Monitoring and Review
+            Lorem ipsum dolor sit amet.
+          </h2>
+          <p className="py-3">Lorem ipsum dolor sit.:</p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem ipsum dolor sit amet.
           </h2>
           <p className="py-3">
-            We will regularly monitor our procurement practices to ensure
-            compliance with this policy and review the policy annually to
-            incorporate improvements and address emerging sustainability
-            challenges.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam,
+            aut qui?
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Responsibility</h2>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            All employees involved in procurement are responsible for adhering
-            to this policy. The CEO, CFO and Director of Compliance will oversee
-            the implementation and monitoring of this policy.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A fuga
+              fugiat aliquam cumque ipsa?
+            </li>
+            <li className="my-3">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+              minima cumque officia, quas quidem natus!
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              quisquam saepe esse ex tempore aut excepturi.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem, ipsum dolor.
+          </h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae,
+            quisquam dolorem saepe delectus dignissimos quasi. Optio, maiores
+            esse aliquam autem eum reiciendis odio quisquam quae laudantium
+            molestiae at magni tempore!
+          </p>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            praesentium consequuntur culpa labore optio. Asperiores
+            necessitatibus deserunt sunt, sed dolorem optio odio repellat
+            suscipit fugit perferendis molestiae qui, adipisci quidem?
           </p>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-end gap-4">

@@ -44,28 +44,17 @@ export default function Home() {
           <LogoCard />
           <h3 className="text-xl font-medium pt-6">MISSION STATEMENT</h3>
           <p className="p-3 bg-white/30 rounded-md">
-            Our philosophy is to ensure the ULTIMATE customer experience and
-            facilitate the creation of new, sustainable business through
-            enhanced team cooperation and employee awareness.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum enim perspiciatis eos velit. Fugiat modi sunt est saepe cum voluptatibus officia sequi numquam voluptatem consequuntur commodi cumque, optio harum dicta.
           </p>
           <h3 className="text-xl font-medium pt-6">OUR COMMITMENT</h3>
           <p className="p-3 bg-white/30 rounded-md">
-            As a global logistics provider, brand recognizes that
-            we operate within a carbon intense industry. Accordingly, brand
-            Worldwide has developed genuine, extensive initiatives designed
-            specifically to protect the environment and create a healthy
-            workplace for its team. The effect is a unique, worldwide
-            organization that’s woven sustainability initiatives into its core
-            mission whilst providing best in class service.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nostrum, veritatis ex quas perferendis ipsam repellendus itaque, numquam, accusamus magni amet. Exercitationem neque impedit ullam doloribus optio earum ipsum. Officia?
+            Molestias nisi praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur consequatur, optio fuga? Ipsa maxime nam, ut tempore accusamus alias magni iste commodi asperiores aliquid incidunt dolore eius ratione!
           </p>
           <h2 className="font-medium text-xl pt-6">QUALITY POLICY</h2>
           <p className="p-3 bg-white/30 rounded-md">
-            brand is committed to provide the ultimate customer
-            experience in global logistics. Quality service shall be provided by
-            responsive employees, on-time delivery, client education and
-            regulatory compliance. <br />
-            We further commit to limit our impact on the fragile ecosystem that
-            we live in through concrete, measurable actions.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam voluptas, asperiores animi delectus laudantium, neque facilis nobis voluptatem necessitatibus ullam assumenda pariatur. Fugit, pariatur odit sapiente voluptatem natus sequi doloremque!
+            Iure, nesciunt soluta atque qui quibusdam distinctio facere voluptatum excepturi voluptate illo! Odio earum necessitatibus asperiores illum quas inventore consectetur facere reprehenderit? Adipisci explicabo deserunt a excepturi. Perspiciatis, facilis recusandae.
           </p>
           <div className="p-3 grid xl:grid-cols-2 grid-cols-1 gap-3">
             <div className="flex bg-white/30 rounded-md p-3">
@@ -86,10 +75,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">P</span>rotect our
-                environment through our purchasing decisions, energy
-                conservation, waste management efforts and by being
-                discretionary about the types of business we handle
+                <span className="font-extrabold text-lg">I</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aliquid neque perferendis dicta voluptate nisi excepturi hic, vero, corrupti esse, laborum voluptatem explicabo quo ipsam. Quod harum id labore voluptatum!
               </p>
             </div>
             <div className="flex bg-white/30 rounded-md p-3">
@@ -110,9 +96,7 @@ export default function Home() {
                 className="px-3 self-center "
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">R</span>ise to the
-                challenges and opportunities of the complex global arena that we
-                operate in
+                <span className="font-extrabold text-lg">N</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque beatae natus inventore? Soluta omnis ratione rem harum eaque, saepe magnam, doloribus voluptatem repudiandae deserunt, commodi nulla qui aut ab repellat!
               </p>
             </div>
             <div className="flex bg-white/30 rounded-md p-3">
@@ -133,9 +117,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">I</span>nstill a
-                reverence within our organization for the environment and its
-                inhabitants
+                <span className="font-extrabold text-lg">T</span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi totam aliquid deserunt laboriosam vel harum eum quasi corporis ut, accusantium placeat, ipsum voluptates nostrum at ratione adipisci, amet eveniet? Nisi!
               </p>
             </div>
             <div className="flex bg-white/30 rounded-md p-3">
@@ -156,9 +138,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">O</span>perate with
-                integrity 24/7 by embodying the highest standard in business
-                ethics and practices
+                <span className="font-extrabold text-lg">E</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio cumque vero odit eveniet mollitia dolorum accusantium porro excepturi ullam consequatur? Repellat aliquid est hic alias, explicabo obcaecati quas dignissimos delectus?
               </p>
             </div>
             <div className="flex bg-white/30 rounded-md p-3">
@@ -179,9 +159,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">R</span>espect fellow
-                employees and foster individual professional growth through
-                regular training and employee recognition programs
+                <span className="font-extrabold text-lg">R</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi dolores repudiandae distinctio repellat reprehenderit numquam aut mollitia quaerat voluptas, asperiores sed accusamus ipsum ea, vitae perspiciatis natus quo iusto.
               </p>
             </div>
 
@@ -203,9 +181,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">I</span>nspire
-                individuals to continually improve operational and quality
-                processes through the routine review of quality objectives
+                <span className="font-extrabold text-lg">N</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui molestiae, hic et laudantium itaque magni deleniti aperiam fuga fugit consequatur odio possimus neque ipsa quae impedit explicabo sit ipsum iure!
               </p>
             </div>
             <div className="flex bg-white/30 rounded-md p-3">
@@ -226,9 +202,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">T</span>ranscend
-                industry standards to become a pillar of excellence within our
-                community
+                <span className="font-extrabold text-lg">E</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis earum repellat, ut numquam maxime facilis, doloremque eveniet assumenda, molestiae officia sint voluptatem possimus excepturi deleniti consequuntur beatae fuga nesciunt debitis.
               </p>
             </div>
 
@@ -250,9 +224,7 @@ export default function Home() {
                 className="px-3 self-center"
                 style={{ width: "90%", height: "auto" }}
               >
-                <span className="font-extrabold text-lg">Y</span>ield results
-                that ensure stable growth for the company and its employees
-                without sacrificing our values
+                <span className="font-extrabold text-lg">T</span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, optio, iusto nemo cum minus dignissimos numquam itaque, libero consectetur aliquam pariatur tempora alias? Assumenda, enim deserunt error numquam accusamus quas.
               </p>
             </div>
           </div>

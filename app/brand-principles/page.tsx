@@ -219,7 +219,7 @@ export default function Home() {
                   />
                 </Link>
                 <h3 className="text-xl font-medium self-center block md:hidden">
-                  brand PRINCIPLES
+                  BRAND PRINCIPLES
                 </h3>
               </div>
               <ul className="relative list-disc p-6 bg-white/60 rounded-md">
@@ -228,13 +228,10 @@ export default function Home() {
                     className="font-bold border-b-2 border-[#fdc82e]"
                     id="principle-one-compliance"
                   >
-                    Principle One: Compliance
+                    Principle 1: Lorem.
                   </span>{" "}
-                  - Compliance in international logistics is crucial for the
-                  seamless and efficient movement of goods across borders.
-                  Adhering to international regulations, trade agreements, and
-                  customs requirements ensures that our operations run smoothly
-                  and legally.
+                  - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto vel magni quae ipsam numquam et. Perferendis laudantium impedit provident eaque non tempora delectus expedita unde doloremque? Laborum accusantium fuga soluta!
+                  Cumque adipisci blanditiis quisquam reprehenderit animi rerum vitae non officiis quis quo voluptatum, eum maiores ut ipsum repellendus, unde fugiat nulla tenetur tempora necessitatibus perspiciatis hic. Maiores minus saepe unde!
                   <ul className="list-disc">
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <AntiCorruptionStatementPolicyText
@@ -295,15 +292,10 @@ export default function Home() {
                     className="font-bold border-b-2 border-[#fdc82e]"
                     id="principle-two-humanities"
                   >
-                    Principle Two: Humanities
+                    Principle 2: Lorem
                   </span>{" "}
-                  - Humanities enrich international logistics by providing the
-                  cultural insight, ethical foundation, communication skills,
-                  and global perspective necessary for effective and responsible
-                  supply chain management. Embracing the humanities ensures that
-                  logistics professionals are not only technically proficient
-                  but also culturally aware and ethically grounded, ultimately
-                  leading to more sustainable and successful global operations.
+                  - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ratione ullam explicabo perspiciatis a blanditiis sequi facilis deleniti qui libero, quae quidem ea labore! In nobis eius architecto! A, eveniet!
+                  Saepe vel mollitia consequatur praesentium quod labore laborum fugiat, modi ab vero eaque doloribus. Vero earum amet quasi, minus officia harum, corrupti dolore quaerat nisi ad magnam animi consequuntur! Debitis.
                   <ul className="list-disc">
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <AntiSlaveryHumanTraffickingAndForcedLaborPolicyText
@@ -470,27 +462,7 @@ export default function Home() {
                           <sub className="text-meta-1">Pending</sub>
                         </>
                       )} */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                        <path d="M12 17v.01" />
-                        <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
-                      </svg>
-                      <sub className="text-meta-1">
-                        Awaiting Content: Please provide details
-                      </sub>
+                      
                     </li>
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <WhistleblowerPolicyText
@@ -541,27 +513,7 @@ export default function Home() {
                           <sub className="text-meta-1">Pending</sub>
                         </>
                       )} */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                        <path d="M12 17v.01" />
-                        <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
-                      </svg>
-                      <sub className="text-meta-1">
-                        Awaiting Content: Please provide details
-                      </sub>
+                     
                     </li>
                   </ul>
                 </li>
@@ -570,16 +522,11 @@ export default function Home() {
                     className="font-bold border-b-2 border-[#fdc82e]"
                     id="principle-three-sustainability"
                   >
-                    Principle Three: Sustainability
+                    Principle 3: Lorem
                   </span>{" "}
-                  - Sustainability in international logistics is essential for
-                  protecting the environment, ensuring regulatory compliance,
-                  achieving economic efficiency, meeting market demands,
-                  managing risks, fulfilling corporate social responsibility,
-                  and fostering innovation. By prioritizing sustainability,
-                  logistics providers can contribute to a more sustainable and
-                  resilient global supply chain, benefiting businesses,
-                  communities, and the planet.
+                  - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi eius consequuntur, aperiam ea itaque delectus, quod rerum qui dolore eos expedita deserunt odio libero nostrum, iure doloremque recusandae rem fuga.
+                  Porro error rem alias tempore quaerat, minus sequi aliquid recusandae exercitationem at maiores suscipit impedit cupiditate sed, vitae facilis? Incidunt perspiciatis porro eveniet aspernatur facere voluptatem, pariatur eaque ut minus.
+                  Commodi dolore similique sequi aperiam optio, veritatis aliquid minima facilis nobis molestias pariatur omnis mollitia ipsum! Saepe ipsam at deleniti perspiciatis facere repellat, laborum obcaecati! Minima possimus inventore praesentium ducimus?
                   <ul className="list-disc">
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <InternationalStandardForSustainableProcurementText
@@ -636,27 +583,7 @@ export default function Home() {
                           <sub className="text-meta-1">Pending</sub>
                         </>
                       )} */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                        <path d="M12 17v.01" />
-                        <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
-                      </svg>
-                      <sub className="text-meta-1">
-                        Awaiting Content: Please provide details
-                      </sub>
+                      
                     </li>
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <SustainableProcurementPolicyText
@@ -717,15 +644,11 @@ export default function Home() {
                     className="font-bold border-b-2 border-[#fdc82e]"
                     id="principle-four-supplier-code-of-conduct"
                   >
-                    Principle Four: Supplier Code Of Conduct
+                   Principle 4: Lorem, ipsum dolor.
                   </span>{" "}
-                  - A supplier code of conduct is essential in international
-                  logistics for upholding ethical standards, ensuring regulatory
-                  compliance, maintaining quality, promoting sustainability,
-                  enhancing reputation, mitigating risks, fulfilling social
-                  responsibility, and driving innovation. By implementing and
-                  enforcing a robust code of conduct, companies can build a more
-                  resilient, responsible, and successful supply chain.
+                  - Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptas! Eius voluptatem mollitia sint sit pariatur dolorem doloremque cumque? Sequi molestias aut hic quidem! Possimus adipisci dolore esse delectus iusto!
+                  Veritatis enim soluta aliquam perferendis non error eos sint nisi architecto praesentium quasi blanditiis culpa deserunt vitae reprehenderit asperiores, laboriosam deleniti magni est beatae corrupti provident quos. Quis, ab laboriosam.
+                  Alias totam ullam ratione quae ad at, nostrum nulla iste. Cum accusantium hic delectus aspernatur minima harum repellat fugit temporibus! Minus tenetur autem, nobis officiis nostrum quae ipsum porro nisi?
                   <ul className="list-disc">
                     <li className="text-meta-4 flex cursor-pointer my-3">
                       <SupplyChainManagementPolicyText
@@ -814,39 +737,12 @@ export default function Home() {
                     className="font-bold border-b-2 border-[#fdc82e]"
                     id="principle-five-cargo-safety-and-security"
                   >
-                    Principle Five: Cargo Safety and Security
+                    Principle 5: Lorem ipsum dolor sit.
                   </span>{" "}
-                  - Cargo safety and security are fundamental to the success of
-                  international logistics. They protect goods, ensure regulatory
-                  compliance, mitigate risks, build customer trust, reduce
-                  liability, enhance operational efficiency, bolster brand
-                  reputation, and maintain supply chain continuity. By
-                  prioritizing cargo safety and security, logistics providers
-                  can deliver reliable and secure services, supporting global
-                  trade and economic growth.
-                  <span className="flex pt-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                      <path d="M12 17v.01" />
-                      <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
-                    </svg>
-                    <sub className="text-meta-1">
-                      Awaiting Content: Please provide details
-                    </sub>
-                  </span>
+                  - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis itaque saepe quisquam vitae, sapiente animi voluptate est. Quisquam ipsa, quae eum, dolorum corporis dolores deleniti quas exercitationem sint officia dolore.
+                  Accusantium fugit et facilis praesentium molestiae ex a? Voluptatibus, sit voluptates! Ab perferendis eius at ducimus vero iste id, quas minus aliquid, quisquam illo? Quasi provident voluptate aut rerum aspernatur?
+                  Et accusantium beatae nihil aut praesentium? Doloremque, possimus tempora! Deserunt libero sed consectetur. Nobis fugit minima, tempore neque consequuntur ex esse vitae dignissimos vel doloribus, id recusandae optio explicabo sequi!
+                 
                   {/* <ul className="list-disc">
                   <li className="text-meta-4 flex cursor-pointer my-3">
                     CTPAT/PIP/AEO writeup

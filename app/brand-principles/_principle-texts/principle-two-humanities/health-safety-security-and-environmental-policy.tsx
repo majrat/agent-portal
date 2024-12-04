@@ -47,199 +47,167 @@ const HealthSafetySecurityAndEnvironmentalPolicyText: React.FC<
           <path d="M9 11l4 0" />
         </svg>
       }
-      title="Health, Safety, Security and Environmental (HSSE) Policy"
+      title="deserunt sunt, sed dolorem optio"
       content=<div className="text-black border-t-2 bg-white dark:bg-meta-4 dark:text-white">
         <div className="p-6">
-          <h2 className="text-title-sm font-bold pb-3">Introduction</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            brand (PWW) is committed to protecting the health,
-            safety, and security of our employees, contractors, visitors, and
-            the communities in which we operate, as well as preserving the
-            environment. Our HSSE policy outlines our commitment to maintaining
-            the highest standards of health, safety, security, and environmental
-            performance in all our business activities.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, laborum quas quos quo alias doloremque tempora minus
+            dignissimos inventore sint magni aperiam facere possimus. Est nihil
+            delectus odit optio quasi?
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Scope</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            This policy applies to all employees, contractors, and visitors at
-            all PWW locations and extends to all activities and operations under
-            our control.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+            optio dignissimos minus fuga iste sit eaque explicabo, qui excepturi
+            a vel itaque nulla debitis consequuntur sapiente dicta fugit
+            recusandae quod.
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Health and Safety Commitment
-          </h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            We are dedicated to providing a safe and healthy working environment
-            by:
-          </p>
-          <ul className="ms-9 list-disc">
-            <li className="my-3">
-              Complying with all applicable health and safety laws, regulations,
-              and industry standards.
-            </li>
-            <li className="my-3">
-              Identifying and assessing health and safety risks and implementing
-              appropriate control measures.
-            </li>
-            <li className="my-3">
-              Providing training, resources, and equipment to ensure the safety
-              and well-being of our employees.
-            </li>
-            <li className="my-3">
-              Encouraging active participation and consultation with employees
-              on health and safety matters.
-            </li>
-            <li className="my-3">
-              Reporting and investigating incidents and near-misses to prevent
-              recurrence and improve safety performance.
-            </li>
-          </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Security Commitment
-          </h2>
-          <p className="py-3">
-            We are committed to maintaining a secure working environment by:
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+            veritatis dolores explicabo, animi corrupti dolore rem minus, eaque
+            ut assumenda expedita. Nam asperiores quos earum blanditiis numquam
+            quaerat, quas eos!
           </p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Protecting our employees, contractors, visitors, and assets from
-              security threats.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur, exercitationem molestiae itaque quo magni ea
+              perspiciatis dolorum soluta voluptate odio cumque mollitia, sunt
+              ipsum. Quaerat minima tempora hic recusandae quod.
             </li>
+            <li className="my-3">Lorem ipsum dolor sit amet consectetur.</li>
+            <li className="my-3">Lorem ipsum dolor sit amet.</li>
             <li className="my-3">
-              Implementing security measures to prevent unauthorized access,
-              theft, and vandalism.
-            </li>
-            <li className="my-3">
-              Ensuring compliance with all applicable security laws,
-              regulations, and industry standards.
-            </li>
-            <li className="my-3">
-              Providing training and resources to employees to enhance their
-              awareness and response to security risks.
-            </li>
-            <li className="my-3">
-              Regularly reviewing and updating our security protocols and
-              procedures.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </li>
           </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Environmental Commitment
-          </h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            We are dedicated to minimizing our environmental impact and
-            promoting sustainability by:
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat,
+            reiciendis?
           </p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Complying with all applicable environmental laws, regulations, and
-              industry standards.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Implementing practices to reduce waste, emissions, and resource
-              consumption.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Promoting the use of sustainable materials, energy-efficient
-              processes, and renewable energy sources.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Encouraging recycling and the responsible disposal of waste.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Conducting regular environmental audits and assessments to
-              identify areas for improvement.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
             <li className="my-3">
-              Engaging with stakeholders to support environmental conservation
-              and sustainability initiatives.
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
             </li>
           </ul>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Roles and Responsibilities
+            Lorem ipsum dolor sit amet.
           </h2>
+          <p className="py-3">Lorem ipsum dolor sit.:</p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Management: Responsible for providing leadership, resources, and
-              support to implement and maintain the HSSE policy.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
             </li>
             <li className="my-3">
-              Supervisors: Responsible for ensuring compliance with HSSE
-              policies and procedures within their areas of control.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
             </li>
             <li className="my-3">
-              Employees and Contractors: Responsible for following HSSE policies
-              and procedures, reporting hazards, and participating in HSSE
-              training and initiatives.
-            </li>
-            <li className="my-3">
-              Compliance: Responsible for developing, implementing, and
-              monitoring HSSE programs and initiatives, and providing guidance
-              and support to all employees and contractors.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
             </li>
           </ul>
           <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Training and Awareness
+            Lorem ipsum dolor sit amet.
           </h2>
           <p className="py-3">
-            We will provide ongoing training and education to ensure that all
-            employees and contractors are aware of their HSSE responsibilities
-            and are equipped with the knowledge and skills to perform their
-            duties safely and responsibly.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Monitoring and Review
-          </h2>
-          <p className="py-3">
-            We will regularly monitor and review our HSSE performance to ensure
-            continuous improvement and compliance with this policy. This
-            includes:
-          </p>
-          <ul className="ms-9 list-disc">
-            <li className="my-3">
-              Conducting regular audits, inspections, and assessments.
-            </li>
-            <li className="my-3">
-              Setting and reviewing HSSE objectives and targets.
-            </li>
-            <li className="my-3">
-              Investigating incidents and implementing corrective actions.
-            </li>
-            <li className="my-3">
-              Reporting on HSSE performance to stakeholders.
-            </li>
-          </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Continuous Improvement
-          </h2>
-          <p className="py-3">
-            We are committed to continuously improving our HSSE management
-            system and performance by:
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam,
+            aut qui?
           </p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              Encouraging feedback and suggestions from employees, contractors,
-              and stakeholders.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </li>
             <li className="my-3">
-              Staying informed about advancements in HSSE practices and
-              technologies.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos.
             </li>
             <li className="my-3">
-              Regularly reviewing and updating our HSSE policies, procedures,
-              and practices.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </li>
           </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Communication</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            We will communicate this policy to all employees, contractors, and
-            relevant stakeholders to ensure they understand our commitment to
-            HSSE and their role in achieving our objectives.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?
           </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A fuga
+              fugiat aliquam cumque ipsa?
+            </li>
+            <li className="my-3">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+              minima cumque officia, quas quidem natus!
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              quisquam saepe esse ex tempore aut excepturi.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem, ipsum dolor.
+          </h2>
           <p className="py-3">
-            This HSSE policy demonstrates brand’ s commitment to
-            protecting health, safety, security, and the environment in all
-            aspects of our operations. By adhering to this policy, we aim to
-            create a safe, secure, and sustainable working environment for all.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae,
+            quisquam dolorem saepe delectus dignissimos quasi. Optio, maiores
+            esse aliquam autem eum reiciendis odio quisquam quae laudantium
+            molestiae at magni tempore!
+          </p>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            praesentium consequuntur culpa labore optio. Asperiores
+            necessitatibus deserunt sunt, sed dolorem optio odio repellat
+            suscipit fugit perferendis molestiae qui, adipisci quidem?
           </p>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-end gap-4">

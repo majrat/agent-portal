@@ -46,170 +46,167 @@ const AntiSlaveryHumanTraffickingAndForcedLaborPolicyText: React.FC<
           <path d="M9 11l4 0" />
         </svg>
       }
-      title="Anti-slavery, Human Trafficking and Forced Labor Policy"
+      title="labore optio. Asperiores necessitatibus"
       content=<div className="text-black border-t-2 bg-white dark:bg-meta-4 dark:text-white">
         <div className="p-6">
-          <h2 className="text-title-sm font-bold pb-3">Introduction</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            At brand (PWW), we are committed to conducting our
-            business in an ethical and socially responsible manner. We recognize
-            the serious issues of slavery, human trafficking and forced labor,
-            and we are dedicated to taking steps to eradicate these practices
-            from our operations and supply chains.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, laborum quas quos quo alias doloremque tempora minus
+            dignissimos inventore sint magni aperiam facere possimus. Est nihil
+            delectus odit optio quasi?
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Organizational Commitment:
-          </h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
           <p className="py-3">
-            PWW is dedicated to maintaining the highest standards of integrity
-            and ethical behavior. We unequivocally condemn all forms of slavery,
-            human trafficking and forced labor and are committed to ensuring
-            that such practices have no place within our organization.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+            optio dignissimos minus fuga iste sit eaque explicabo, qui excepturi
+            a vel itaque nulla debitis consequuntur sapiente dicta fugit
+            recusandae quod.
           </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Policy Scope:</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            This policy applies to all employees, contractors, and business
-            partners of PWW and extends to all operations, activities, and
-            supply chains.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Risk Assessment:
-          </h2>
-          <p className="py-3">
-            We regularly assess the risk of slavery, human trafficking and
-            forced labor in our supply chains and operations to identify and
-            mitigate potential issues.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Due Diligence:</h2>
-          <p className="py-3">
-            PWW conducts due diligence on all new suppliers and business
-            partners to ensure compliance with our standards.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Employee Responsibilities:
-          </h2>
-          <p className="py-3">
-            Every employee is responsible for upholding this policy and
-            reporting any concerns related to slavery, human trafficking or
-            forced labor promptly.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Training:</h2>
-          <p className="py-3">
-            We provide training to all employees to raise awareness of the risks
-            of slavery, human trafficking and forced labor and to equip them
-            with the knowledge to identify and report potential issues.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Communication Channels:
-          </h2>
-          <p className="py-3">
-            We maintain open channels for reporting, ensuring confidentiality
-            and non-retaliation for whistleblowers.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Supplier Relations:
-          </h2>
-          <p className="py-3">
-            PWW expects suppliers and business partners to comply with all
-            applicable laws and regulations related to slavery, human
-            trafficking and forced labor. We reserve the right to terminate
-            relationships with entities that do not meet these standards.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Monitoring and Compliance:
-          </h2>
-          <p className="py-3">
-            We conduct regular monitoring and audits to ensure compliance with
-            this policy, and corrective actions are taken promptly if violations
-            are identified.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Consequences for Non-Compliance:
-          </h2>
-          <p className="py-3">
-            Violations of this policy will result in appropriate disciplinary
-            action, including termination of employment or business
-            relationships, and may lead to legal proceedings.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Review and Continuous Improvement:
-          </h2>
-          <p className="py-3">
-            We commit to regularly reviewing and updating this policy to ensure
-            its effectiveness and relevance in addressing emerging risks and
-            challenges.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Definitions:</h2>
-          <p className="py-3">
-            <b>Human trafficking</b> refers to the illegal and exploitative
-            trade of human beings for various purposes, often involving force,
-            fraud, or coercion. The United Nations defines human trafficking as:
-            &quot;The recruitment, transportation, transfer, harboring, or
-            receipt of persons by means of threat, use of force or other forms
-            of coercion, of abduction, of fraud, of deception, of the abuse of
-            power or of a position of vulnerability or of the giving or
-            receiving of payments or benefits to achieve the consent of a person
-            having control over another person, for the purpose of exploitation.
-            Exploitation shall include, at a minimum, the exploitation of the
-            prostitution of others or other forms of sexual exploitation, forced
-            labor or services, slavery or practices similar to slavery,
-            servitude or the removal of organs.&quot;
-          </p>
-          <p className="py-3">
-            <b>Forced labor,</b> also known as involuntary labor or unfree
-            labor, refers to work or services that people are forced to
-            undertake against their will, under threat of punishment or
-            coercion. This can involve various forms of compulsion, such as
-            physical force, intimidation, withholding of wages, debt bondage, or
-            any other means of controlling individuals to exploit their labor.
-          </p>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">
-            Key elements of forced labor include:
-          </h2>
-          <ul className="ms-9 list-disc">
-            <li className="my-3">
-              <b>Coercion:</b> Individuals are compelled to work through the use
-              of force, threats, or other forms of intimidation.
-            </li>
-            <li className="my-3">
-              <b>Lack of Free Will:</b> Workers do not have the freedom to
-              refuse or leave the work due to the coercive circumstances they
-              face.
-            </li>
-          </ul>
-          <p className="pt-3">
-            <b>Exploitation:</b> The labor is often exploited for economic gain,
-            and the workers may be subjected to degrading conditions, long
-            hours, and inadequate compensation.
-          </p>
-          <p className="py-1">
-            Forced labor can take various forms, including but not limited to:
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+            veritatis dolores explicabo, animi corrupti dolore rem minus, eaque
+            ut assumenda expedita. Nam asperiores quos earum blanditiis numquam
+            quaerat, quas eos!
           </p>
           <ul className="ms-9 list-disc">
             <li className="my-3">
-              <b>Bonded Labor:</b> Workers are forced to work to repay a debt,
-              often under conditions that make it impossible to ever repay.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur, exercitationem molestiae itaque quo magni ea
+              perspiciatis dolorum soluta voluptate odio cumque mollitia, sunt
+              ipsum. Quaerat minima tempora hic recusandae quod.
             </li>
+            <li className="my-3">Lorem ipsum dolor sit amet consectetur.</li>
+            <li className="my-3">Lorem ipsum dolor sit amet.</li>
             <li className="my-3">
-              <b>Child Labor:</b> Children are forced to work under conditions
-              that deprive them of their childhood and interfere with their
-              ability to attend regular schools.
-            </li>
-            <li className="my-3">
-              <b>Human Trafficking:</b> Individuals are compelled to work
-              through force, fraud, or coercion, often as part of a broader
-              human trafficking scheme.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </li>
           </ul>
-          <h2 className="text-title-sm font-bold pb-3 pt-6">Reporting:</h2>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
           <p className="py-3">
-            If you suspect activity that is inconsistent with this policy,
-            please contact the Director of Compliance or the Global Human
-            Trafficking Hotline at 1-844-888-FREE and its email address at
-            <a href="mailto:help@befree.org" className="text-primary">
-              {" "}
-              help@befree.org.
-            </a>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat,
+            reiciendis?
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+            <li className="my-3">
+              Lorem, ipsum dolor: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Reiciendis error incidunt sint nulla voluptates
+              modi nobis dolore odio iure eos unde inventore enim sequi aperiam
+              ea perferendis, quod explicabo harum!
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem ipsum dolor sit amet.
+          </h2>
+          <p className="py-3">Lorem ipsum dolor sit.:</p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              unde dicta blanditiis repellendus amet, excepturi vel explicabo
+              mollitia nesciunt dignissimos harum eius quas sunt odit dolorem
+              eligendi iste ipsam. Similique.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem ipsum dolor sit amet.
+          </h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam,
+            aut qui?
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos.
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem, ipsum.</h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit?
+          </p>
+          <ul className="ms-9 list-disc">
+            <li className="my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A fuga
+              fugiat aliquam cumque ipsa?
+            </li>
+            <li className="my-3">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+              minima cumque officia, quas quidem natus!
+            </li>
+            <li className="my-3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+              quisquam saepe esse ex tempore aut excepturi.
+            </li>
+          </ul>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">
+            Lorem, ipsum dolor.
+          </h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae,
+            quisquam dolorem saepe delectus dignissimos quasi. Optio, maiores
+            esse aliquam autem eum reiciendis odio quisquam quae laudantium
+            molestiae at magni tempore!
+          </p>
+          <h2 className="text-title-sm font-bold pb-3 pt-6">Lorem.</h2>
+          <p className="py-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            praesentium consequuntur culpa labore optio. Asperiores
+            necessitatibus deserunt sunt, sed dolorem optio odio repellat
+            suscipit fugit perferendis molestiae qui, adipisci quidem?
           </p>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-end gap-4">

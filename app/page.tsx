@@ -280,7 +280,7 @@ export default function Home() {
                     className="hover:text-[#FFBF3C]"
                     href={"/brand-principles/#principle-one-compliance"}
                   >
-                    Principle One: Compliance
+                    Principle One: Lorem
                   </Link>
                   {brandPrincipleData?.principle?.one_compliance
                     ?.anti_corruption_statement_and_policy ? (
@@ -324,7 +324,7 @@ export default function Home() {
                     className="hover:text-[#FFBF3C]"
                     href={"/brand-principles/#principle-two-humanities"}
                   >
-                    Principle Two: Humanities
+                    Principle Two: Lorem
                   </Link>
                   {brandPrincipleData?.principle?.two_humanities
                     ?.anti_slavery_human_trafficking_and_forced_labor_policy &&
@@ -376,7 +376,7 @@ export default function Home() {
                       "/brand-principles/#principle-three-sustainability"
                     }
                   >
-                    Principle Three: Sustainability
+                    Principle Three: Lorem
                   </Link>
                   {brandPrincipleData?.principle?.three_sustainability
                     ?.international_standard_for_sustainable_procurement &&
@@ -424,7 +424,7 @@ export default function Home() {
                       "/brand-principles/#principle-four-supplier-code-of-conduct"
                     }
                   >
-                    Principle Four: Supplier code of conduct
+                    Principle Four: Lorem, ipsum dolor.
                   </Link>
                   {brandPrincipleData?.principle
                     ?.four_supplier_code_of_conduct
@@ -471,31 +471,8 @@ export default function Home() {
                       "/brand-principles/#principle-five-cargo-safety-and-security"
                     }
                   >
-                    Principle Five: Cargo Safety and Security
+                    Principle Five: Lorem ipsum dolor sit.
                   </Link>
-                  <div className="flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-file-unknown text-meta-1"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                      <path d="M12 17v.01" />
-                      <path d="M12 14a1.5 1.5 0 1 0 -1.14 -2.474" />
-                    </svg>
-                    <sub className="text-meta-1">
-                      Awaiting Content: Please provide details
-                    </sub>
-                  </div>
                 </div>
               </div>
             </div>

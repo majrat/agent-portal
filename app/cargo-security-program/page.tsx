@@ -41,106 +41,65 @@ export default function CargoSecurityProgram() {
         <div className="min-h-screen rounded-sm border text-black border-stroke bg-white/80 bg-blend-screen bg-[url('/images/pexels-tirachard-kumtanom-112571-733852.jpg')] bg-cover px-6 py-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5">
           {error && <p className="text-red">{error}</p>}
           <LogoCard />
-          <h2 className="text-xl font-medium py-6">CARGO SECURITY PROGRAM</h2>
+          <h2 className="text-xl font-medium py-6">Lorem, ipsum dolor.</h2>
           <div className="p-6 bg-white/80 rounded-md">
             <div className="grid md:grid-cols-2">
               <div>
-                <p className="pb-1">To: brand Business Partner</p>
+                <p className="pb-1">To: Lorem ipsum dolor sit.</p>
                 <p className="pb-6">
-                  Re: Customs-Trade Partnership Against Terrorism (C-TPAT),
-                  Partners in Protection (PIP), Authorized Economic Operator
-                  (AEO)
+                  Re: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, quam.
                 </p>
               </div>
               <div className="md:text-end">
-                <p className="pb-3">7361 Coca Cola Drive Hanover, MD 21076</p>
-                <p>+1.410.766.7470 | TELEPHONE</p>
-                <p>+1.800.727.1085 | TOLL FREE</p>
-                <p className="pb-3">+1.718.947.3702 | 24/7 AOG HOTLINE</p>
+                <p className="pb-3">7361 Lorem ipsum dolor sit amet. 21076</p>
+                <p>+1.234.567.8900 | TELEPHONE</p>
+                <p>+1.234.567.8900 | TOLL FREE</p>
+                <p className="pb-3">+1.234.567.8900 | 24/7 AOG HOTLINE</p>
                 <a href="mailto:sales@brand.com">
-                  sales@brand.com
+                  lorem@brand.com
                 </a>
               </div>
             </div>
             <p className="pb-6">Dear Sir/Madam;</p>
             <p className="pb-6">
-              Since 2007, brand has been a certified participant of
-              the C-TPAT program, a partnership between the trade community and
-              U.S. Customs and Border Protection (CBP), designed to establish
-              supply chain security processes to prevent terrorist devices and
-              other contraband from entering the global supply chain. Since
-              2016, brand Canada has been a certified participant
-              of the PIP program, an equivalent program in Canada. We have
-              recently opened additional international offices and will be
-              participating in their AEO Programs.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit similique earum eveniet consectetur. Est modi enim nulla consectetur autem deserunt optio. Repellendus inventore fuga facere consequatur dolorum laudantium labore.
+              Earum maiores laudantium aliquid sequi nulla animi libero illum temporibus molestias! Iste accusantium amet assumenda repudiandae asperiores quisquam saepe fuga quibusdam! Reprehenderit, aperiam explicabo. At quod fugit deleniti molestiae! Minima!
+              Totam maiores cum incidunt ad quia nobis nemo odio minima deleniti sit veniam aliquid porro animi veritatis, cupiditate ut iure quisquam non magni modi officiis necessitatibus a distinctio sint. Ipsa.
             </p>
             <p className="pb-6">
-              As a member of the C-TPAT, PIP and other AEO programs, brand
-              Worldwide is required to engage with all our business partners
-              (clients, vendors and overseas agents) in order to strengthen and
-              aid in the development and maintenance of a security program that
-              aims to ensure the integrity of all shipments. Together we will
-              work to prevent the introduction of unauthorized materials into
-              any cargo, container, trailer, or other shipping conveyance. The
-              C-TPAT/PIP/AEO minimum security criteria outlined in the
-              attachment are a necessary means to that end. After reviewing the
-              criteria and answering the questions, you should implement any
-              security and/or trade compliance improvements necessary to comply
-              and consider applying for C-TPAT, PIP or AEO membership, if
-              eligible.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ut placeat repellendus amet, dolor excepturi, sapiente voluptate natus modi impedit culpa ratione libero, illum doloribus assumenda minus quod corrupti ducimus?
+              Illo, dignissimos exercitationem. Labore consequuntur est ipsum quo atque! Sapiente fuga, totam harum reprehenderit ratione officia fugit illum libero exercitationem eligendi nobis vero repellendus quae illo veniam itaque. Voluptatibus, sunt.
+              Porro illo fugit aliquid eos, exercitationem ratione officiis! Impedit voluptatem, ipsa soluta magni libero aut recusandae aliquam voluptatum incidunt dignissimos, quam animi deleniti eius ipsam, unde labore esse excepturi rerum.
+              Dolorem nam sit blanditiis eligendi porro maxime in tempora fugiat suscipit ullam nesciunt velit hic debitis nemo omnis, quos itaque! Magnam dolorem cupiditate quisquam molestias nam laboriosam nobis alias vel.
             </p>
             <p className="pb-6">
-              If you are already a member of the C-TPAT, PIP programs, please
-              email your Status Verification Interface (SVI) number or
-              certificate of membership to our Director of Compliance, Lauren
-              Priddy, at lpriddy@brand.com. In concert with U.S.
-              CBP, CBSA and the World Customs Organization, several other
-              countries have developed similar, equivalent programs designated
-              Authorized Economic Operator programs. If you are a member of one
-              of these programs, please forward a certificate of membership from
-              your customs agency.
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nobis dolore aliquam quasi autem nihil iure corrupti quos tempore? Possimus, esse? Excepturi ut delectus reprehenderit cum maiores qui, facere repellendus.
+             Sequi eligendi perferendis veniam! Temporibus vitae ratione eius placeat. Veniam voluptates nisi asperiores molestias laudantium temporibus, illo qui ratione perferendis deleniti reiciendis. Tenetur hic asperiores officiis deserunt, quae temporibus obcaecati.
+             Quasi debitis deleniti pariatur aliquid cum quaerat nihil doloremque, amet repellat mollitia! Accusantium ad doloremque tempore, quisquam vero id exercitationem. Nulla hic quia pariatur quas aperiam ab odit voluptas voluptatibus.
+             Ipsa doloremque ipsam beatae ex dolorem necessitatibus repellat delectus, deserunt harum labore nobis, perspiciatis laborum nam enim amet veritatis earum reprehenderit! Veritatis dicta quae quod pariatur maxime quam! Iusto, asperiores!
             </p>
             <p className="pb-6">
-              Whether or not you are a member of C-TPAT, PIP or an equivalent
-              program, we ask that you complete and return to us the attached
-              questionnaire on your current security procedures. Completion of
-              this questionnaire will aid us in ensuring the security of the
-              supply chain we maintain and will assist us in determining what
-              support we can give regarding the enhancement of your security
-              program. Full and complete responses to this questionnaire will
-              also aid us in determining how frequently we may be required under
-              the programs to conduct site visits to verify security procedures
-              are in place. We thank you in advance for your cooperation.
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. A corrupti voluptates, repudiandae qui aliquid ab veritatis tempore. Molestias officia quidem reprehenderit doloribus, eveniet, pariatur quas odio, id praesentium nam magni?
+             Dolorum quis alias corrupti natus aut accusamus? At nihil officiis alias reiciendis commodi rem quaerat, quas reprehenderit doloremque nam tempore debitis, esse sapiente consequatur pariatur est atque ipsa voluptatum qui?
+             Soluta perspiciatis omnis corrupti rerum similique, aspernatur nisi, eos accusamus deleniti perferendis dignissimos eligendi corporis vel sint, blanditiis atque! Exercitationem aut in ea sed ut assumenda, tempore odit quam fugit.
+             Eum ratione itaque laborum ea quisquam voluptates non? Ducimus laborum praesentium, facere harum architecto iste quidem corrupti voluptate minus cumque dignissimos magnam eos ab doloremque quae nisi soluta aspernatur eius.
+             Necessitatibus magni quidem accusamus, magnam praesentium esse dicta exercitationem corrupti. Voluptas natus tempora dolor deleniti. Eaque excepturi voluptatibus dolorem explicabo, magnam eos iure ipsum, necessitatibus, facilis nisi illo esse doloremque?
             </p>
             <p className="pb-6">
-              We encourage you in turn to educate your business partners about
-              C-TPAT, PIP and the Authorized Economic Operator programs.
-              Emphasis on trailer and 7 - point container inspections, seal
-              processes, live-time tracking and monitoring of cargo en-route,
-              personnel and access control security and security awareness
-              training is requested. Inspection of containers should be
-              documents, and a copy of the completed inspection forwarded to
-              brand along with the other documents associated with
-              the shipment(s). All loaded U.S.-bound or Canada-bound
-              containers/trailers must be secured with an ISO PAS 17712 high
-              security seal. You must also have written procedures within your
-              supply chain for recognizing and reporting compromised seals on
-              your containers and unknown/unauthorized persons within your
-              facilities. If you should need assistance with any of these
-              issues, please contact us for further information and training.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa omnis deleniti ut deserunt sit sed magnam sunt excepturi, esse iste impedit ex officiis harum accusamus laboriosam libero et repudiandae voluptate.
+              Accusantium cumque minus saepe consequatur iure ducimus nulla ad sequi eaque ea quas neque, aperiam totam earum perspiciatis possimus reiciendis dolores doloribus mollitia voluptate reprehenderit non repudiandae aliquam deserunt? Facere.
+              Inventore officia ex corrupti dolore qui commodi natus sunt maiores aut provident. Exercitationem necessitatibus voluptatem officia iusto! Quae ex aliquam, quis tempore, ipsa aliquid suscipit ducimus obcaecati, corrupti eos cupiditate!
+              Nisi expedita dolor quos eaque quod? Eius deserunt molestias dolor nulla tempore, quas ea quia vero accusamus ipsa laudantium eaque! Earum iure sequi omnis optio distinctio eveniet aliquam ab corporis.
+              Dolorum, voluptate ducimus! Odio et necessitatibus earum eos? Soluta nemo reiciendis culpa dolorem minus quidem esse, est ab quia, architecto incidunt aspernatur possimus, laborum ducimus illo facere delectus quo voluptas.
             </p>
 
             <p className="pb-6">
-              In sum, we are asking all our business partners to have a
-              documented cargo and supply chain security program. Please contact
-              us at the above phone number or email us with questions regarding
-              C-TPAT, PIP, AEO, developing your own security plan, or any other
-              supply chain security matters, and return to us the completed
-              security questionnaire as soon as possible.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vel excepturi aut id laboriosam veniam velit quasi. Expedita quod architecto ad omnis maxime. Debitis vitae et dolorum aut voluptates alias.
+              Quaerat, soluta expedita nam facere officiis quas, laboriosam, praesentium iusto cum facilis omnis? Quisquam distinctio odio eos itaque ducimus provident? Assumenda iure incidunt commodi quis, quas eligendi cumque voluptates officiis.
             </p>
 
-            <p className="pb-1">Lauren Priddy, CHB, CCS</p>
-            <p className="pb-1">Director of Compliance</p>
+            <p className="pb-1">Lorem, ipsum dolor., CHB, CCS</p>
+            <p className="pb-1">Lorem ipsum dolor sit.</p>
             <p className="pb-6">brand</p>
             <a className="pb-1" href="https://brand.com">
               www.brand.com

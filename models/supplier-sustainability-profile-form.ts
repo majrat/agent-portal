@@ -16,7 +16,7 @@ export const surveyJson = {
           "name": "question1",
           "isRequired": true,
           "title":
-            "Do you have a publicly available Environmental/Sustainability Policy?",
+            "Do you have a publicly praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "choices": ["Yes", "No", "Partial"],
         },
         {
@@ -24,7 +24,7 @@ export const surveyJson = {
           "name": "question2",
           "isRequired": true,
           "title":
-            "Has your company developed an Environmental Management System endorsed by management?",
+            "Has your company praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "choices": ["Yes", "No", "Partial"],
         },
         {
@@ -32,7 +32,7 @@ export const surveyJson = {
           "name": "question3",
           "isRequired": true,
           "title":
-            "Does your company assess environmental risks or impacts before starting a new activity or project?",
+            "Does your company praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "choices": ["Yes", "No", "Partial"],
         },
         {
@@ -40,16 +40,16 @@ export const surveyJson = {
           "name": "question4",
           "isRequired": true,
           "title":
-            "How often is your company's environmental statutory compliance evaluated internally or externally?",
+            "How often is your company's praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "placeholder":
-            "We are part of the UN Global Compact, so we are regularly reviewing our environmental compliance. We do not make a product, so a number of things do not apply to us.",
+            "praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur",
         },
         {
           "type": "radiogroup",
           "name": "question5",
           "isRequired": true,
           "title":
-            "Has your company developed an emergency response procedure to reduce or mitigate environmental impacts of your business operations?",
+            "Has your company praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "choices": ["Yes", "No"],
         },
         {
@@ -57,7 +57,7 @@ export const surveyJson = {
           "name": "question6",
           "isRequired": true,
           "title":
-            "Has your company been reported, charged or sanctioned for the violation of Environmental Laws over the past 5 years, or is the company currently facing any legal proceedings to that effect?",
+            "Has your company praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "choices": ["Yes", "No"],
         },
         {
@@ -65,14 +65,14 @@ export const surveyJson = {
           "name": "question7",
           "isRequired": true,
           "title":
-            "Are measures in place to prevent spills and/or pollution (air, water, land, etc.)",
+            "Are measures praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur",
           "choices": ["Yes", "No"],
         },
         {
           "type": "radiogroup",
           "name": "question8",
           "isRequired": true,
-          "title": "Does your company collect and report environmental data?",
+          "title": "Does your company praesentium, quasi, commodi temporibus nam rem unde accusamus consectetur?",
           "choices": ["Yes", "No"],
         },
       ],

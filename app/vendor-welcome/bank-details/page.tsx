@@ -44,10 +44,7 @@ export default function Home() {
           <LogoCard />
           <h2 className="font-medium text-xl py-3">BANK DETAILS</h2>
           <p className="p-6 bg-white/30 rounded-md">
-            Statements and settlements between The United States, Canada, UAE
-            and Australia offices are completely separate; there shall be no
-            contra settling, carryover or any other financial mixing between
-            countries without prior approval.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum vero dolorum adipisci, voluptatum at aspernatur libero iste eum maxime, deleniti et facilis perspiciatis quos neque a rerum. Quasi, deserunt animi!
           </p>
 
           <h3 className="text-lg font-medium py-9">Remit To Address :</h3>
@@ -56,17 +53,16 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] p-6 bg-white/30 rounded-md">
               <h2 className="font-semibold text-xl">USA</h2>
               <p>
-                Air Cargo Transport Services, Inc. Traded as: brand
-                7361 Coca Cola Dr Hanover, MD 21076 T: +1.410.766.7470
+                Lorem ipsum dolor sit amet, consectetur adipisicing, Inc. Traded as: brand
+                1234 Lorem, ipsum dolor., MD 12345 T: +1.234.567.8900
               </p>
             </div>
 
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">CANADA</h2>
               <p>
-                PWS Logistics Montreal Traded as : brand / Priorité
-                Mondial 195 Avenue du Voyageur Pointe Claire, QC H9R 6B2 T:
-                +1.514.905.5983
+              Lorem ipsum dolor sit amet, consectetur adipisicing, Inc. Traded as: brand
+              1234 Lorem, ipsum dolor., MD 12345 T: +1.234.567.8900
               </p>
             </div>
           </div>
@@ -77,8 +73,8 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">USA USD TRANSACTIONS</h2>
               <p>
-                PNC Bank 8800 Tinicum Blvd Philadelphia, PA 19153 ABA/Routing
-                Number: 031000053 Swift: PNCCUS33 Beneficiary: brand
+              Lorem ipsum dolor sit amet, consectetur adipisicing, Inc. Traded as: brand
+              1234 Lorem, ipsum dolor., MD 12345 T: +1.234.567.8900: brand
                 Worldwide
               </p>
             </div>
@@ -86,9 +82,8 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">CANADA TRANSACTIONS</h2>
               <p>
-                The Royal Bank of Canada 316 Dorval Ave Lachine, QC H9S 3H7
-                Transit No. 01271 Swift: ROYCCAT2 CAD Account No. 100-447-2 USD
-                Account No. 400-115-2
+              Lorem ipsum dolor sit amet, consectetur adipisicing, Inc. Traded as: brand
+              1234 Lorem, ipsum dolor., MD 12345 T: +1.234.567.8900
               </p>
             </div>
           </div>
@@ -99,16 +94,16 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">UAE</h2>
               <p>
-                brand Logistics LLC 3503 Aspect Tower Business
-                Avenue, Business Bay, Dubai. United Arab Emirates
+              Lorem ipsum dolor sit amet, consectetur adipisicing, Inc. Traded as: brand
+              1234 Lorem, ipsum dolor., MD 12345 T: +1.234.567.8900
               </p>
             </div>
 
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">AUSTRALIA</h2>
               <p>
-                brand Pty. Ltd Suite 39, Bay 5, 2 Locomotive Street
-                South Eveleigh NSW 2015 Sydney, Australia
+              Lorem ipsum dolor sit amet, consectetur adipisicing, Inc. Traded as: brand
+              1234 Lorem, ipsum dolor., MD 12345 T: +1.234.567.8900
               </p>
             </div>
           </div>
@@ -119,33 +114,30 @@ export default function Home() {
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">UAE TRANSACTIONS</h2>
               <p>
-                First Abu Dhabi Bank Abu Baqar Siddique Road Diera Dubai 18977
-                SWIFT: NBADAEAA IBAN: USD: AE540351031325611921002 AED:
-                AE10351031325611921001 EUR: AE270351031325611921003
+                First Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum. 12345
+                SWIFT: ABCD123 IBAN: USD: AE12345678900987654321 AED:
+                AE12345678900987654321 EUR: AE12345678900987654321
               </p>
             </div>
 
             <div className="border-l-4 border-[#fdc82e] rounded-md p-6 bg-white/30">
               <h2 className="font-semibold text-xl">AU TRANSACTIONS</h2>
               <p>
-                Commonwealth Bank of Australia 799 Pacific Highway Chatswood NSW
-                2067 SWIFT: CTBAAU2S BSB: 062 000 AUD Account: 20564301 USD
-                ACCOUNT: 20592230 EUR: 20592248 GBP: 20592257 NZD: 20592265
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum. 12345
+                SWIFT: ABCD123 IBAN: USD: AE12345678900987654321 AED:
+                AE12345678900987654321 EUR: AE12345678900987654321
               </p>
             </div>
           </div>
 
           <p className="p-6 bg-white/30 font-semibold rounded-md">
-            Bank details must be provided on bank letterhead, signed and
-            stamped. No payments shall be made until this is provided. Bank
-            account changes must also be in the same format.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque in illum ipsum nostrum esse dolores incidunt temporibus aspernatur sint aperiam odit, perferendis doloribus repudiandae. Harum vero dicta laudantium labore id?
           </p>
           <h2 className="font-medium text-xl py-3">
             Important Settlement Note:
           </h2>
           <p className="p-6 bg-white/30 rounded-md">
-            Invoices must be settled in the currency of invoice. USD transfers
-            MAY ONLY BE MADE IF THE INVOICE IS ISSUED IN USD.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatum nulla mollitia tempora maxime, dignissimos praesentium reiciendis deserunt assumenda corporis suscipit cumque nisi facere dolore rem culpa. Est, veniam? Ab.
           </p>
 
           <div className="relative">
